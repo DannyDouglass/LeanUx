@@ -6,7 +6,7 @@ Below are some of the steps web took to get the application setup for developmen
 Git
 ---
 
-* Setup application structure and created repository:
+Setup application structure and created repository:
     $ LeanUx git:(master) tree -d -L 2
     .
     ├── docs
@@ -14,7 +14,7 @@ Git
         ├── api
         └── web
 
-* Downloaded [git ignore for node.js](https://github.com/github/gitignore/blob/master/Node.gitignore).
+Downloaded [git ignore for node.js](https://github.com/github/gitignore/blob/master/Node.gitignore).
 
 Express Boilerplate
 -------------------
