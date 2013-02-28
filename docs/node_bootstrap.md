@@ -42,7 +42,7 @@ and any middleware associated with it have also been removed.
 Installing Dependencies
 -----------------------
 
-All dependencies are installed in the `api/node_modules` directory. This directory is not tracked by git (exlcuded via .gitignore)
+All dependencies are installed in the `api/node_modules` directory. This directory is not tracked by git (exlcuded via `.gitignore`)
 as packages can dynamically be installed via `npm`:
 
     $ cd api
