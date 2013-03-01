@@ -59,6 +59,24 @@ as packages can dynamically be installed via `npm`:
     ├── send@0.1.0 (mime@1.2.6)
     └── connect@2.7.2
 
+Keep Your Node and NPM Installs Up to Date
+------------------------------------------
+
+As packages are added and upgraded, they'll require a higher version of the
+`node` runtime. You won't be able to install these packages if your `node` or `npm`
+installs are out of date. We recommend installing the [homebrew package manager](http://mxcl.github.com/homebrew/)
+to manage `node` and `npm`.
+
+If you already have `homebrew` installed, run:
+
+    $ brew update
+    $ brew upgrade
+
+The first command, `brew update`, will update `homebrew` itself and pull down
+new formula definitions. The second command, `brew upgrade [FORMULA]`, will upgrade all
+out of date formulas to their latest version. See `brew help` for more
+options.
+
 Running the Application
 ------------------------
 
