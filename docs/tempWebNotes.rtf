@@ -1,0 +1,46 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww19000\viewh11040\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 prerequisites:
+\b0 \
+\
+install node.js\
+install npm\
+\
+
+\b getting started:
+\b0 \
+\
+use npm to install requires.js, bower globally: npm install -g requirejs bower\
+\
+
+\b prepare distribution package:\
+
+\b0 run the following command in the /web directory: r.js -o app/build/app.build.js\
+\
+
+\b bit of history:
+\b0 \
+\
+add .bowerrc to route of web folder and configure to download dependencies in lib folder (empty lib folder in source control)\
+	\{\
+		"directory": "/app/lib"\
+	\}\
+\
+setup component.js to include dependencies:\
+\
+	\{\
+		"name" : "Lean Ux Prototype",\
+		"version" : "0.1.0",\
+		"dependencies" : \{\
+			"jquery" : null,\
+			"backbone-amd" : null,\
+			"underscore-amd" : null,\
+			"requirejs" : null\
+		\}\
+	\}\
+\
+run "bower install" from command line to setup all dependencies in lib folder}
