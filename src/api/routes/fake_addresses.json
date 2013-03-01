@@ -1,0 +1,11 @@
+[
+  { city: "Arlington"   , state: "Virginia"   , zipcode: 22202 , street1: "109 Humphrey Ave"     , street2: "Apt 19"   } ,
+  { city: "Atlanta"     , state: "Georgia"    , zipcode: 34456 , street1: "12 Courtney Lane"     , street2: "Apt F12"  } ,
+  { city: "New York"    , state: "New York"   , zipcode: 12209 , street1: "5519 Apps Drive"      , street2: null       } ,
+  { city: "Detroit"     , state: "Michigan"   , zipcode: 81345 , street1: "605 Courtland Ave"    , street2: "Apt 291S" } ,
+  { city: "Chicago"     , state: "Illinois"   , zipcode: 77803 , street1: "813 Slappy Blvd"      , street2: "Suite 12" } ,
+  { city: "Lithonia"    , state: "Georgia"    , zipcode: 60349 , street1: "1123 Blackely Hall"   , street2: null       } ,
+  { city: "St. Louis"   , state: "Missouri"   , zipcode: 45903 , street1: "909 Fort St"          , street2: "Suite 19" } ,
+  { city: "Miami"       , state: "Florida"    , zipcode: 21305 , street1: "3148 Brockford Rd"    , street2: "Cte 45"   } ,
+  { city: "Los Angeles" , state: "California" , zipcode: 50973 , street1: "219 Rackford's Place" , street2: null       }
+]
