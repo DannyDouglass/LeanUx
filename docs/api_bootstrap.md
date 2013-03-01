@@ -77,6 +77,14 @@ new formula definitions. The second command, `brew upgrade [FORMULA]`, will upgr
 out of date formulas to their latest version. See `brew help` for more
 options.
 
+**NOTE:** If you've already installed the [OS X GCC Installer](https://github.com/kennethreitz/osx-gcc-installer),
+you'll most likely need to reinstall [X Code](https://developer.apple.com/xcode/) and it's command line
+tools (Preferences -> Downloads -> Components if you're on OS X 10.8 or later) over the top of it.
+OS X 10.7 (and possibly older) users should [check here.](https://developer.apple.com/downloads/index.action)
+Each installer writes slightly different flavors/versions of the `gcc` and `cc` compilers to your system.
+At the time of this writing, I got compiler errors when trying to upgrade to the latest version of `node`.
+This was due to the fact that I uninstalled `X Code` in favor of the `OS X GCC Installer` in order to compile ruby 2.0.
+
 Running the Application
 ------------------------
 
