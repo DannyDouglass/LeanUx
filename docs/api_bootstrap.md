@@ -64,7 +64,7 @@ Keep Your Node and NPM Installs Up to Date
 
 As packages are added and upgraded, they'll require a higher version of the
 `node` runtime. You won't be able to install these packages if your `node` or `npm`
-installs are out of date. We recommend installing the [homebrew package manager](http://mxcl.github.com/homebrew/)
+installs are out of date. If you're on OS X, we recommend installing the [homebrew package manager](http://mxcl.github.com/homebrew/)
 to manage `node` and `npm`.
 
 If you already have `homebrew` installed, run:
