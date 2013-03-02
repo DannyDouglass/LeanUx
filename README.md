@@ -3,7 +3,7 @@ Lean Ux Prototype
 
 Coming to a web app near you...
 
-Running the Application
+Running the Server Application
 ------------------------
 
 To launch the application:
@@ -17,7 +17,7 @@ You should see node launch the application on port `3000` unless you override it
 
 The application should now be accessible via `http://localhost:3000`.
 
-Running the Application with Supervisor
+Running the Server Application with Supervisor
 ---------------------------------------
 
 [Supervisor](https://github.com/isaacs/node-supervisor) is a handy command line utility that refreshes the application
@@ -26,7 +26,7 @@ get this out of the box. To install supervisor, execute the following:
 
     $ npm install supervisor -g
 
-Then to run the application, execute:
+Then to launch the server, execute:
 
     $ cd api
     $ supervisor app.js
