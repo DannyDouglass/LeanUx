@@ -8,6 +8,7 @@ var app = express();
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
+  app.use(express.compress())
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
@@ -19,6 +20,7 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+app.get('/', routes.index);
 app.get('/index', routes.index);
 app.get('/addresses', address.list);
 

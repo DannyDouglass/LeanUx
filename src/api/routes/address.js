@@ -1,3 +1,3 @@
 exports.list = function(req, res){
-  res.sendFile("respond with a resource");
+  res.sendfile("seeds/addresses.json");
 };
