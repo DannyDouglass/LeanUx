@@ -1,3 +1,9 @@
+var Address = require('../models/address');
+
 exports.list = function(req, res){
-  res.sendfile("seeds/addresses.json");
+  Address.find(function(err, addresses) {
+    if (err) throw err;
+
+    res.json(addresses);
+  });
 };
