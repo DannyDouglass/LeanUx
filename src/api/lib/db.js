@@ -26,3 +26,14 @@ function connect() {
 function disconnect() {
   mongoose.disconnect();
 }
+
+function dispose() {
+  console.log('attemptin to dispose db connection');
+  disconnect();
+  console.log('successfully disposed db connection.');
+}
+
+process.on('SIGINT', function() {
+  dispose();
+  process.exit();
+});
