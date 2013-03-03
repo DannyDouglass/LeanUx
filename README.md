@@ -44,3 +44,15 @@ Mongoose vs Native Driver
 The server currently uses [mongoose](http://mongoosejs.com/) to interface with the target `mongodb` instance.
 It's not as fast as the [native mongodb driver](http://docs.mongodb.org/ecosystem/drivers/node-js/), but it does provide a much more
 convenient higher level DSL for communicating with `mongodb`. You can think of it as `NHibernate` vs `ADO.NET`.
+
+Pushing Documents to the Cloud
+------------------------------
+
+The [Mongo Db REST API](https://support.mongolab.com/entries/20433053-rest-api-for-mongodb) allows us to script out
+CRUD operations (amongst many others) against our instance in the cloud. For example, I added an address document by
+issuing the following command:
+
+    $ curl -v \
+      -d "{ city: 'Arlington', state: 'Virginia', zipcode: 22202, street1: '109 Humphrey Ave', street2: 'Apt 19' }" \
+      -H Content-Type:application/json \
+      "https://api.mongolab.com/api/1/databases/leanux/collections/addresses?apiKey=<our_API_key_provided_by_mongolab>
