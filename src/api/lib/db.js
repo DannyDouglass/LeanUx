@@ -28,7 +28,7 @@ function disconnect() {
 }
 
 function dispose() {
-  console.log('attemptin to dispose db connection');
+  console.log('disposing db connection');
   disconnect();
   console.log('successfully disposed db connection.');
 }
