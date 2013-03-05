@@ -18,6 +18,9 @@ To launch the application:
     $ cd api/bin
     $ ./node.sh
 
+**NOTE:** You can execute the script from any directory. It knows how to locate
+it's current directory and resolve all paths relative to that location.
+
 You should see node launch the application on port `3000` unless you override it on the shell or `export` a variable in `~/.bashrc or ~/.bash_profile`:
 
     $ PORT=5000 ./node.sh
@@ -37,6 +40,9 @@ Then to launch the server, execute:
 
     $ cd api/bin
     $ ./supervisor.sh
+
+**NOTE:** You can execute the script from any directory. It knows how to locate
+it's current directory and resolve all paths relative to that location.
 
 If you check the contents of `supervisor.sh`, you'll notice it's watching
 specific directories for changes. As the structure of the application grows and
