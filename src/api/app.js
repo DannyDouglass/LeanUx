@@ -1,8 +1,10 @@
 var express = require('express'),
   routes = require('./routes'),
   address = require('./routes/address'),
+  employeeProfile = require('./routes/employee_profile'),
   http = require('http'),
-  path = require('path');
+  path = require('path'),
+  db = require('./lib/db');
 
 var app = express();
 
@@ -22,8 +24,17 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 app.get('/index', routes.index);
-app.get('/addresses', address.list);
+
+app.get('/addresses', address.findAll);
+app.get('/employeeprofiles', employeeProfile.findAll);
+
+db.connect();
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
+});
+
+process.on('SIGINT', function() {
+  db.dispose();
+  process.exit();
 });

@@ -62,7 +62,7 @@ node_modules
 _ReSharper*
 
 # Others
-[Bb]in
+#[Bb]in remove bin ignore until we have a specific folder or folders that we want to ignore.
 [Oo]bj
 sql
 TestResults

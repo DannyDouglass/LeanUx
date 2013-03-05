@@ -15,25 +15,18 @@ connection.on('open', function() {
   console.log('Successfully established connection to leanux database.');
 });
 
-connect();
-
-function connect() {
+module.exports.connect = function() {
   var url = 'mongodb://' + username + ':' + password + address;
 
   mongoose.connect(url);
-}
+};
 
-function disconnect() {
+module.exports.disconnect = function() {
   mongoose.disconnect();
-}
+};
 
 function dispose() {
   console.log('disposing db connection');
   disconnect();
   console.log('successfully disposed db connection.');
 }
-
-process.on('SIGINT', function() {
-  dispose();
-  process.exit();
-});
