@@ -15,12 +15,12 @@ Running the Server
 
 To launch the application:
 
-    $ cd api
-    $ node app
+    $ cd api/bin
+    $ ./node.sh
 
 You should see node launch the application on port `3000` unless you override it on the shell or `export` a variable in `~/.bashrc or ~/.bash_profile`:
 
-    $ PORT=5000 node app
+    $ PORT=5000 ./node.sh
 
 The application should now be accessible via `http://localhost:3000`.
 
@@ -35,8 +35,15 @@ get this out of the box. To install supervisor, execute the following:
 
 Then to launch the server, execute:
 
-    $ cd api
-    $ supervisor app
+    $ cd api/bin
+    $ ./supervisor.sh
+
+If you check the contents of `supervisor.sh`, you'll notice it's watching
+specific directories for changes. As the structure of the application grows and
+changes, be sure to update what directories get watched. It may seem cumbersome to
+have to white-list everything, but better to be explicit than inadvertently
+watching irrelevant directories like node_modules (in the sense that it's contents
+are dynamically created).
 
 Mongoose vs Native Driver
 -------------------------
