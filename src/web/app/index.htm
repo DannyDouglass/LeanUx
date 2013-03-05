@@ -5,11 +5,126 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	    <title>Lean Ux Prototype</title>
 	    <meta name="description" content="">
-	    <meta name="viewport" content="width=device-width">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link href="lib-local/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	    <link href="css/styles.css" rel="stylesheet" media="screen">
     </head>
 
     <body>
+    	<script id="buttonTemplate" type="text/template">
+	    	<div class="btn-group">
+				<button class="btn">Left</button>
+				<button class="btn">Middle</button>
+				<button class="btn">Right</button>
+			</div>
+		</script>
+
     	<script data-main="js/main.js" src="lib/requirejs/require.js"></script>
-    	<h1>Home</h1>
+    	
+    	<div id="page">
+    		<div id="mainNavigation" class="navbar">
+				<div class="navbar-inner">
+				<a class="brand" href="#">Cooperative.com</a>
+				<ul class="nav">
+					<li class="active"><a href="#">Administration</a></li>
+					<li><a href="#">Personal</a></li>
+					<li style="width: 20px;">&nbsp;</li>
+					<li class="divider-vertical"></li>
+					<li style="width: 20px;">&nbsp;</li>
+					<li><a href="#">Library</a></li>
+					<li><a href="#">News</a></li>
+					<li><a href="#">Conferences & Education</a></li>
+					<li><a href="#">Community & Membership</a></li>
+					<li><a href="#">My Profile</a></li>
+				</ul>
+				<p class=".navbar-text pull-right" style="padding-top: 9px"><a href="#">Log Out</a></p>
+			</div>
+			</div>
+			<header>
+				<img src="images/banner-cooperative.png" style="border: solid 1px #ddd;" />
+			</header>
+              
+			<div id="contentContainer">
+				<ul id="secondaryNavigation" class="nav nav-tabs">
+	            	<li class="dropdown">
+	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Co-op Retirement <b class="caret"></b></a>
+                		<ul class="dropdown-menu">
+							<li><a href="#">401 (k) Pension Plan Administration</a></li>
+							<li><a href="#">401 (k) Pension Plan Contributions</a></li>
+							<li><a href="#">401 (k) Pension Plan Loan Repayments</a></li>
+							<li><a href="#">401 (k) Pension Plan Employer Expenses</a></li>
+		                </ul>
+					</li>
+	            	<li class="dropdown">
+	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Co-op Insurance <b class="caret"></b></a>
+                		<ul class="dropdown-menu">
+							<li><a href="#">My Co-op's Insurance Plans</a></li>
+							<li><a href="#">Tax-Advantaged Side Accounts</a></li>
+							<li><a href="#">Medicare Part D</a></li>
+							<li><a href="#">PPO Provider Nomination</a></li>
+		                </ul>
+					</li>
+					<li class="dropdown">
+	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Salary & Payroll <b class="caret"></b></a>
+                		<ul class="dropdown-menu">
+							<li><a href="#">November 15 Base Salaries</a></li>
+							<li><a href="#">W-2 Salaries</a></li>
+							<li><a href="#">Payroll Transactions</a></li>
+		                </ul>
+					</li>
+					<li class="dropdown active">
+	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee Administration <b class="caret"></b></a>
+                		<ul class="dropdown-menu">
+							<li><a href="#">New Hire/Re-Hire</a></li>
+							<li><a href="#">Internal Transfer</a></li>
+							<li><a href="#">Separation</a></li>
+							<li><a href="#">Benefit Eligibility Status Change</a></li>
+		                </ul>
+					</li>
+					<li class="dropdown">
+	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Reports <b class="caret"></b></a>
+                		<ul class="dropdown-menu">
+							<li><a href="#">RS Plan Contributions</a></li>
+							<li><a href="#">401 (k) Plan Contributions</a></li>
+							<li><a href="#">401 (k) Loan Repayments</a></li>
+							<li><a href="#">Salary Collection</a></li>
+		                </ul>
+					</li>
+					<li class="dropdown">
+	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Help & Resources <b class="caret"></b></a>
+                		<ul class="dropdown-menu">
+							<li><a href="#">Quick Reference Guide for BAs</a></li>
+							<li><a href="#">Quick Roadmap for BAs</a></li>
+							<li><a href="#">Contact NRECA</a></li>
+		                </ul>
+					</li>
+	            </ul>
+	            <div id="contentArea">
+            		<ul class="breadcrumb">
+						<li><a href="#">Administration Home</a> <span class="divider">/</span></li>
+						<li><a href="#">Employee Administration</a> <span class="divider">/</span></li>
+						<li class="active">New Hire</li>
+					</ul>
+					<div style="margin: 0 10px;">
+						<h3>New Hire</h3>
+					</div>
+	            </div>
+            </div>
+            <footer>
+            	<div id="footerLinks">
+	            	<a href="#">About Cooperative.com</a>
+	            	<a href="#">About NRECA</a>
+	            	<a href="#">About Federated</a>
+	            	<a href="#">About CFC</a>
+	            	<a href="#">Jobs</a>
+	            	<a href="#">Contact Us</a>
+            	</div>
+            	<ul id="footerLogos">
+            		<li><img src="images/logo-nreca.png" /></li>
+            		<li><img src="images/logo-federal.png" /></li>
+            		<li><img src="images/logo-cfc.png" /></li>
+        		</ul>
+            </footer>
+		</div>
     </body>
 </html>
