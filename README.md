@@ -44,12 +44,9 @@ Then to launch the server, execute:
 **NOTE:** You can execute the script from any directory. It knows how to locate
 it's current directory and resolve all paths relative to that location.
 
-If you check the contents of `supervisor.sh`, you'll notice it's watching
-specific directories for changes. As the structure of the application grows and
-changes, be sure to update what directories get watched. It may seem cumbersome to
-have to white-list everything, but better to be explicit than inadvertently
-watching irrelevant directories like node_modules (in the sense that it's contents
-are dynamically created).
+If you check the contents of `supervisor.sh`, you'll notice it's watching the
+entire `app` directory for changes. It will restart the application if any
+file changes in any folder under `api`. For example, `routes`, `models`, etc.
 
 Mongoose vs Native Driver
 -------------------------
