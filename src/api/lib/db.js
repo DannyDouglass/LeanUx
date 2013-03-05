@@ -22,11 +22,8 @@ module.exports.connect = function() {
 };
 
 module.exports.disconnect = function() {
+  console.log('disposing db connection');
   mongoose.disconnect();
+  console.log('successfully disposed db connection.');
 };
 
-function dispose() {
-  console.log('disposing db connection');
-  disconnect();
-  console.log('successfully disposed db connection.');
-}

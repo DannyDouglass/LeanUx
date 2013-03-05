@@ -35,6 +35,6 @@ http.createServer(app).listen(app.get('port'), function(){
 });
 
 process.on('SIGINT', function() {
-  db.dispose();
+  db.disconnect();
   process.exit();
 });
