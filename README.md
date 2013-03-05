@@ -87,8 +87,8 @@ To populate data for this model:
 
 Now you've got a seed that we'll plant in the cloud for you. Notice that the
 name of the seed file is the plural form of the model. This is by convention,
-and conforms to the expectations of `Mongo` in that your collections names
-are the pluralized form of your model name. So for a `Book` model, your seed
+and conforms to the expectations of `Mongo` in that your collection names
+are the pluralized form of your models' names. So for a `Book` model, your seed
 file should be named `books.json`. Make sense? Perfect...
 
 If you'd like to push multiple documents, just use an array in your seed file:
