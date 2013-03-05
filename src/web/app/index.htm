@@ -130,14 +130,81 @@
 		                </ul>
 					</li>
 	            </ul>
-	            <div id="contentArea">
+	            <div id="contentArea" class="clearfix">
             		<ul class="breadcrumb">
 						<li><a href="#">Administration Home</a> <span class="divider">/</span></li>
 						<li><a href="#">Employee Administration</a> <span class="divider">/</span></li>
 						<li class="active">New Hire</li>
 					</ul>
-					<div style="margin: 0 10px;">
-						<h3>New Hire</h3>
+					<div id="leftSubContentColumn">
+						<div class="clearfix" style="margin: 10px 0;">
+							<h3 style="float: left;">New Hire</h3>
+							<!--<h4 style="float: left;">Recent New Hires</h4>-->
+							<button class="btn btn-large" style="float: right; margin-top: 30px;"><i class="icon-plus-sign"></i> Add a New Hire</button>
+						</div>
+						<table id="recentNewHires" class="table table-striped table-outlined">
+							<thead>
+								<tr>
+									<td>EMPLOYEE NAME</td>
+									<td>SSN</td>
+									<td>DATE OF HIRE</td>
+									<td>STATUS</td>
+									<td></td>
+									<td></td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="notComplete">
+									<td class="strong">Jonathan Employee</td>
+									<td>XXX-XX-2121</td>
+									<td>02/02/2013</td>
+									<td class="notComplete">
+										<div>Not Completed</div>
+										<div>3 of 5: Beneficiaries</div>
+									</td>
+									<td><button class="btn btn-danger">Delete</button></td>
+									<td><button class="btn">Continue</button></td>
+								</tr>
+								<tr>
+									<td class="strong">Robert Lineman</td>
+									<td>XXX-XX-3456</td>
+									<td>01/28/2013</td>
+									<td class="pending">
+										<div>Pending Completion</div>
+									</td>
+									<td><button class="btn btn-danger">Delete</button></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="strong"><a href="#">Jane Smith</td>
+									<td>XXX-XX-1111</td>
+									<td>01/25/2013</td>
+									<td>
+										<div>Completed</div>
+									</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="strong"><a href="#">Katie McDonal</td>
+									<td>XXX-XX-8907</td>
+									<td>01/18/2013</td>
+									<td>
+										<div>Completed</div>
+									</td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div id="rightSubContentColumn">
+						<div id="needHelpWell" class="well well-small">
+							<strong>Need Help?</strong><br />
+							<strong>(123) 456-7890</strong><br />
+							7am - 7pm CST, Monday - Friday<br />
+							Or <a href="#">Contact Us via email</a>
+						</div>
 					</div>
 	            </div>
             </div>
@@ -151,9 +218,9 @@
 	            	<a href="#">Contact Us</a>
             	</div>
             	<ul id="footerLogos">
-            		<li><img src="images/logo-nreca.png" /></li>
-            		<li><img src="images/logo-federal.png" /></li>
-            		<li><img src="images/logo-cfc.png" /></li>
+            		<li><a href="http://nreca.coop" title="Visit the NRECA Website"><img src="images/logo-nreca.png" /></a></li>
+            		<li><a href="http://federatedrural.com" title="Visit the Federated Website"><img src="images/logo-federal.png" /></a></li>
+            		<li><a href="http://nrucfc.com" title="Visit the CFC Website"><img src="images/logo-cfc.png" /></a></li>
         		</ul>
             </footer>
 		</div>
