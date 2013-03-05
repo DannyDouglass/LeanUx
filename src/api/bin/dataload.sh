@@ -10,7 +10,7 @@ function push_collection_to_cloud {
 
   # for debugging purposes, add -v to the beginning of the command
   curl -d "${json_payload}" \
-       -H content-type:application/json \
+       -H Content-type:application/json \
        "https://api.mongolab.com/api/1/databases/leanux/collections/$1?apiKey=KnFCGWr9E2lELaxN6grJ4kwy73nmBLNz"
 
   echo "\nPushed collection ${collection_name} to cloud."
