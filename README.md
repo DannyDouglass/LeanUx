@@ -86,16 +86,16 @@ To populate data for this model:
     $ echo '{ year: 1999, make: "Chevy", model: "Caprice" }' > cars.json
 
 Now you've got a seed that we'll plant in the cloud for you. Notice that the
-name of the seed file is the plural form of the model. This is by convention
-and conforms to the expectations of `Mongo Db` in that your collections names
+name of the seed file is the plural form of the model. This is by convention,
+and conforms to the expectations of `Mongo` in that your collections names
 are the pluralized form of your model name. So for a `Book` model, your seed
 file should be named `books.json`. Make sense? Perfect...
 
-If you'd like to push multiple documents, just use and array in your seed file:
+If you'd like to push multiple documents, just use an array in your seed file:
 
     $ [ {doc1...} {doc2}...{doc3}...{docn} ]
 
-Once you're got your seed file in place:
+Once you've got your seed file in place:
 
     $ cd api/bin
     $ ./dataload.sh
@@ -104,10 +104,10 @@ Once you're got your seed file in place:
 seeds in the cloud. Of course when I say "plant" and "seed", I mean it's going to create a
 collection for you and stuff some documents in it. Don't worry if the
 collection doesn't exist and you're running the script for the first time.
-`Mongo` will politely take care this for you as it will automatically create any
+`Mongo` will politely take care this for you, as it will automatically create any
 collection that does not already exist.
 
 You can run `dataload.sh` as many times as you like. It performs both setup
 and teardown per invocation.
 
-Happy farming...:+1: 
+Happy farming...:+1:
