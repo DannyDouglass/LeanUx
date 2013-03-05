@@ -56,3 +56,58 @@ issuing the following command:
       -d "{ city: 'Arlington', state: 'Virginia', zipcode: 22202, street1: '109 Humphrey Ave', street2: 'Apt 19' }" \
       -H Content-Type:application/json \
       "https://api.mongolab.com/api/1/databases/leanux/collections/addresses?apiKey=<our_API_key_provided_by_mongolab>
+
+Populating Sample Data
+----------------------
+
+We've set up a really convenient convention based mechanism for adding sample
+data to the database. Lets say you're working with a `Car`. On the server,
+you'll have:
+
+    var db = require('../lib/db');
+
+    var CarSchema = new db.Schema({
+      year    : { type: Number },
+      make    : { type: String },
+      model   : { type: String }
+    });
+
+And on the client, you've got something to the affect of:
+
+    var Car = Backbone.Model.extend({
+
+      initialize: function() { ... },
+
+    });
+
+To populate data for this model:
+
+    $ cd api/seeds
+    $ echo '{ year: 1999, make: "Chevy", model: "Caprice" }' > cars.json
+
+Now you've got a seed that we'll plant in the cloud for you. Notice that the
+name of the seed file is the plural form of the model. This is by convention
+and conforms to the expectations of `Mongo Db` in that your collections names
+are the pluralized form of your model name. So for a `Book` model, your seed
+file should be named `books.json`. Make sense? Perfect...
+
+If you'd like to push multiple documents, just use and array in your seed file:
+
+    $ [ {doc1...} {doc2}...{doc3}...{docn} ]
+
+Once you're got your seed file in place:
+
+    $ cd api/bin
+    $ ./dataload.sh
+
+`dataload.sh` is a convenient shell script that will kindly plant all your
+seeds in the cloud. Of course when I say "plant" and "seed", I mean it's going to create a
+collection for you and stuff some documents in it. Don't worry if the
+collection doesn't exist and you're running the script for the first time.
+`Mongo` will politely take care this for you as it will automatically create any
+collection that does not already exist.
+
+You can run `dataload.sh` as many times as you like. It performs both setup
+and teardown per invocation.
+
+Happy farming...:+1: 
