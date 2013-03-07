@@ -1,6 +1,8 @@
 #! /bin/sh
 
-seeds_dir=../seeds
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+api=$dir/..
+seeds_dir=$api/seeds
 seed_files=$(find ${seeds_dir} -type f -maxdepth 1) # find files only, excluding directories if there are any
 
 function push_collection_to_cloud {
