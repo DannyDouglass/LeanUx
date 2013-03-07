@@ -57,6 +57,14 @@ module.exports.update = function(id, employeeProfile, callback) {
   });
 };
 
+// would like to use delete, but it's a reserved keyword so using remove
+// instead
+module.exports.remove = function(id, callback) {
+  console.log('made it to code');
+  console.log("id is: ", id);
+  EmployeeProfile.findByIdAndRemove(id, callback);
+};
+
 // white-list expected incoming attributes to prevent mass assignment.
 function sanitizeClientModel(model) {
   var sanitizedClientModel = _.pick(model, 'socialSecurityNumber', 'dateOfHire', 'salutation',

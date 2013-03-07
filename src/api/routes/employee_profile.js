@@ -33,3 +33,12 @@ exports.put = function(req, res) {
     res.json(employeeProfile);
   });
 };
+
+exports.remove = function(req, res) {
+  EmployeeProfile.remove(req.params.id, function(err, employeeProfile) {
+    if (err) res.send(500);
+    if (!employeeProfile) res.send(404);
+
+    res.send(200);
+  });
+};

@@ -31,6 +31,7 @@ app.get('/employeeprofiles', employeeProfile.getAll);
 app.get('/employeeprofiles/:id', employeeProfile.getById);
 app.post('/employeeprofiles', employeeProfile.post);
 app.put('/employeeprofiles/:id', employeeProfile.put);
+app.del('/employeeprofiles/:id', employeeProfile.remove);
 
 db.connect();
 
