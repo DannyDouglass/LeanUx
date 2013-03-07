@@ -1,21 +1,21 @@
-define(['backbone', 'jquery', 'views/landing', 'views/addNewHire'], function(Backbone, $, LandingView, AddNewHireView){
+define(['backbone', 'jquery', 'views/landingview', 'views/employeeprofileview', 'views/loadingview'], function(Backbone, $, LandingView, EmployeeProfileView, LoadingView){
 	var AppRouter = Backbone.Router.extend({
 		routes : { 
 			"" : "landingPage",
-			"newHire/new" : "addNewHire"
+			"employeeProfile" : "employeeProfilePage"
 		},
 		initialize: function() {
 			
 		},
 		landingPage: function(){
-			console.log('render landing view');
+			var loadingView = new LoadingView();
 			var landingView = new LandingView();
-			landingView.render();
+			setTimeout(function(){ landingView.render() } , 1500);
 		},
-		addNewHire: function(){
-			console.log('render addNewHire view');
-			var addNewHireView = new AddNewHireView();
-			addNewHireView.render();
+		employeeProfilePage: function(){
+			var loadingView = new LoadingView();
+			var employeeProfileView = new EmployeeProfileView();
+			setTimeout(function(){ employeeProfileView.render() } , 1500);
 		}
 	});
 
