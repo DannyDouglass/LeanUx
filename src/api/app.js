@@ -26,7 +26,11 @@ app.get('/', routes.index);
 app.get('/index', routes.index);
 
 app.get('/addresses', address.findAll);
-app.get('/employeeprofiles', employeeProfile.findAll);
+
+app.get('/employeeprofiles', employeeProfile.getAll);
+app.get('/employeeprofiles/:id', employeeProfile.getById);
+app.post('/employeeprofiles', employeeProfile.post);
+app.put('/employeeprofiles/:id', employeeProfile.put);
 
 db.connect();
 

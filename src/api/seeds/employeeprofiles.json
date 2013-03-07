@@ -1,12 +1,12 @@
 [
-  { socialSeurityNumber: "111-11-1111" , dateOfHire: "12/01/2012" , salutation: "Mr"  ,
+  { socialSecurityNumber: "111-11-1111" , dateOfHire: "12/01/2012" , salutation: "Mr"  ,
     firstName: "John"                  , lastName: "Skeet"        , suffix: "Jr."     , maritalStatus: "Single"  , dateOfBirth: "01/01/2013"} ,
-  { socialSeurityNumber: "222-22-2222" , dateOfHire: "01/05/2012" , salutation: "Mr"  ,
+  { socialSecurityNumber: "222-22-2222" , dateOfHire: "01/05/2012" , salutation: "Mr"  ,
     firstName: "Penelope"              , lastName: "Cruise"       , suffix: null      , maritalStatus: "Married" , dateOfBirth: "01/01/2013"} ,
-  { socialSeurityNumber: "333-33-3333" , dateOfHire: "02/02/2012" , salutation: "Mr"  ,
+  { socialSecurityNumber: "333-33-3333" , dateOfHire: "02/02/2012" , salutation: "Mr"  ,
     firstName: "Saturn"                , lastName: "Rain"         , suffix: null      , maritalStatus: "Single"  , dateOfBirth: "03/11/2013"} ,
-  { socialSeurityNumber: "444-44-4444" , dateOfHire: "03/09/2012" , salutation: "Mr"  ,
+  { socialSecurityNumber: "444-44-4444" , dateOfHire: "03/09/2012" , salutation: "Mr"  ,
     firstName: "Yehuda"                , lastName: "Katz"         , suffix: "Sr."     , maritalStatus: "Single"  , dateOfBirth: "09/13/2014"} ,
-  { socialSeurityNumber: "555-55-5555" , dateOfHire: "04/04/2012" , salutation: "Mrs" ,
+  { socialSecurityNumber: "555-55-5555" , dateOfHire: "04/04/2012" , salutation: "Mrs" ,
     firstName: "Elizabeth"             , lastName: "Skeet"        , suffix: null      , maritalStatus: "Married" , dateOfBirth: "05/07/2013"}
 ]
