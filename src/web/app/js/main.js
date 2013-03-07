@@ -13,6 +13,9 @@ require.config({
   }
 });
 
-require(['views/app'], function(AppView){
-  new AppView;
+require(['app'], function(App)
+{ 
+    App.initialize(); 
 });
+
+LeanUx = {};
