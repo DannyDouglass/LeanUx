@@ -25,7 +25,7 @@ Then create a virtual host in your local Apache instance by adding the following
 
 	<VirtualHost *:80>
     	ServerName leanux.local
-    	DocumentRoot /Users/mbc0/code/LeanUx/src/web/app
+    	DocumentRoot /{Path_to_your_LeanUX_clone}/src/web/app
     	DirectoryIndex index.htm
     	ErrorLog /var/log/apache2/leanux.local-error_log
     	TransferLog /var/log/apache2/leanux.local-access_log
