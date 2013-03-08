@@ -54,7 +54,9 @@ Verify that Apache is listening for connections on port 80:
 
 	$ sudo lsof -iTCP:80 -sTCP:LISTEN
 	
-And verify that you can pull up `http://leanux.local/index.htm`
+Verify that you can pull up `http://leanux.local/index.htm`.
+
+Also verify that you can access `http://leanux.local/api/employeeProfiles`. If you get a "503 - Service Temporarily Unavailable" error, make sure node is running and listening on port 3000.
 
 Running the Server
 ------------------
