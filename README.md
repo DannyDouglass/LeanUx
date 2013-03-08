@@ -25,9 +25,21 @@ Then create a virtual host in your local Apache instance by adding the following
 
 	<VirtualHost *:80>
     	ServerName leanux.local
-    	DocumentRoot /Users/mbc0/code/LeanUx/src
+    	DocumentRoot /Users/mbc0/code/LeanUx/src/web/app
     	ErrorLog /var/log/apache2/leanux.local-error_log
     	TransferLog /var/log/apache2/leanux.local-access_log
+
+    	ProxyRequests Off
+
+    	<Proxy *>
+        	Order deny,allow
+        	Allow from all
+    	</Proxy>
+
+    	<Location /api>
+        	ProxyPass http://localhost:3000
+        	ProxyPassReverse http://localhost:3000
+    	</Location>
 	</VirtualHost>
 	
 Then start Apache:
@@ -42,7 +54,7 @@ Verify that Apache is listening for connections on port 80:
 
 	$ sudo lsof -iTCP:80 -sTCP:LISTEN
 	
-And verify that you can get a directory listing from `http://leanux.local`
+And verify that you can pull up `http://leanux.local/index.htm`
 
 Running the Server
 ------------------
