@@ -23,7 +23,7 @@ Add the following line to the bottom:
 	
 Then create a virtual host in your local Apache instance by adding the following to `/etc/apache2/httpd.conf` via the command line as in the previous step.  
 
-**Be sure to change the ** {PATH_TO_YOUR_LEANUX_CLONE} **to match your local path**:
+**Be sure to change the {PATH_TO_YOUR_LEANUX_CLONE} to match your local path**:
 
 	<VirtualHost *:80>
     	ServerName leanux.local
