@@ -21,11 +21,13 @@ Add the following line to the bottom:
 
 	127.0.0.1	leanux.local
 	
-Then create a virtual host in your local Apache instance by adding the following to `/etc/apache2/httpd.conf`
+Then create a virtual host in your local Apache instance by adding the following to `/etc/apache2/httpd.conf` via the command line as in the previous step.  
+
+**Be sure to change the ** {PATH_TO_YOUR_LEANUX_CLONE} **to match your local path**:
 
 	<VirtualHost *:80>
     	ServerName leanux.local
-    	DocumentRoot /{Path_to_your_LeanUX_clone}/src/web/app
+    	DocumentRoot /{PATH_TO_YOUR_LEANUX_CLONE}/src/web/app
     	DirectoryIndex index.htm
     	ErrorLog /var/log/apache2/leanux.local-error_log
     	TransferLog /var/log/apache2/leanux.local-access_log
