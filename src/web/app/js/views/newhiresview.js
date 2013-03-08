@@ -16,8 +16,8 @@ define(['backbone', 'jquery', 'bootstrap', '../router', 'views/rightsidebarview'
 			var rows = [];
 
 			console.log(this.collection);
-			this.collection.each(function (item) {
-				var itemView = new self.NewHiresItemView({ model: item });
+			$(this.collection).each(function (item) {
+				var itemView = new NewHiresItemView({ model: item });
             	rows.push(itemView.render().el);
 			});
 			console.log(rows);
@@ -39,10 +39,11 @@ define(['backbone', 'jquery', 'bootstrap', '../router', 'views/rightsidebarview'
 		tagName: "tr",
 		template: _.template($("#NewHiresItemTemplate").html()),
 
-		initialize: function(){
+		initialize: function() {
 
 		},
-		render: function(){
+		
+		render: function() {
 
 		}
 	});
