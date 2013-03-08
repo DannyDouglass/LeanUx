@@ -1,9 +1,7 @@
 define(['jquery', 'underscore', 'backbone', 'models/newhiresmodel'], function($, _, Backbone, NewHiresModel) {
-	var EmployeeProfileCollection = Backbone.Model.extend({
+	var EmployeeProfileCollection = Backbone.Collection.extend({
 		model: NewHiresModel,
-		url: function() {
-            return "/api/employeeprofiles";
-		}
+		url: "/api/employeeprofiles"
 	});
 
 	return EmployeeProfileCollection;

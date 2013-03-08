@@ -1,30 +1,36 @@
-define(['backbone', 'jquery', 'bootstrap', '../router', 'views/rightsidebarview', 'collections/newhirescollection'], 
-	function(Backbone, $, Bootstrap, Router, RightSideBarView, NewHiresCollection){
+define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rightsidebarview', 'collections/newhirescollection'], 
+	function(Backbone, $, _, Bootstrap, Router, RightSideBarView, NewHiresCollection){
 
 	var NewHiresView = Backbone.View.extend({
-		el: "#leftSubContentColumn",
-		template: _.template($("#newHireLandingTemplate").html()),
+		//el: "#leftSubContentColumn",
+		tagName: "table",
+		className: "table table-striped table-outlined",
+		//template: _.template($("#newHireLandingTemplate").html()),
 
 		initialize: function(){
 			this.collection = new NewHiresCollection();
-			var newHires = this.collection.fetch();
+			this.collection.fetch();
 		},
 		render: function(){
-			this.$el.empty();
-			
 			var self = this;
 			var rows = [];
 
-			console.log(this.collection);
-			$(this.collection).each(function (item) {
+			this.collection.each(function (item) {
 				var itemView = new NewHiresItemView({ model: item });
             	rows.push(itemView.render().el);
 			});
-			console.log(rows);
 
 			var rightSideBarView = new RightSideBarView();
-			this.$el.html(this.template);
 			rightSideBarView.render();
+
+			this.$el.append(_.template($("#newHireTableHeader").html())());
+			this.$el.append(rows);
+			$("#leftSubContentColumn")
+				.empty()
+				.append(_.template($("#newHireLandingHeader").html())())
+				.append(this.$el);
+
+			return this;
 		},
 		events: {
 	        "click #addNewHire": "addNewHire"
@@ -42,9 +48,10 @@ define(['backbone', 'jquery', 'bootstrap', '../router', 'views/rightsidebarview'
 		initialize: function() {
 
 		},
-		
-		render: function() {
 
+		render: function() {
+			this.$el.html(this.template(this.model.toJSON()));
+			return this;
 		}
 	});
 

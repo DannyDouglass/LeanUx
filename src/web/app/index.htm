@@ -26,60 +26,53 @@
 			</div>
 		</script>
 
-		<script id="newHireLandingTemplate" type="text/template">
+		<script id="newHireLandingHeader" type="text/template">
 			<div class="clearfix" style="margin: 0 0 10px 0">
-				<h3 style="float: left;">New Hire</h3>
-				<!--<h4 style="float: left;">Recent New Hires</h4>-->
-				<button id="addNewHire" class="btn btn-large" style="float: right; margin-top: 30px;"><i class="icon-plus-sign"></i> Add a New Hire</button>
+			    <h3 style="float: left;">New Hire</h3>
+			    <button id="addNewHire" class="btn btn-large" style="float: right; margin-top: 30px;">
+			        <i class="icon-plus-sign"></i> Add a New Hire
+			    </button>
 			</div>
+		</script>
+
+		<script id="newHireTableHeader" type="text/template">
+			<thead>
+				<tr>
+					<td>EMPLOYEE NAME</td>
+					<td>SSN</td>
+					<td>DATE OF HIRE</td>
+					<td>STATUS</td>
+					<td></td>
+					<td></td>
+				</tr>
+			</thead>
+		</script>
+
+		<script id="newHireLandingTemplate" type="text/template">
 			<table id="recentNewHires" class="table table-striped table-outlined">
-				<thead>
-					<tr><td>EMPLOYEE NAME</td><td>SSN</td><td>DATE OF HIRE</td><td>STATUS</td><td></td><td></td></tr>
-				</thead>
-				<tbody>
-					<tr class="notComplete">
-						<td class="strong">Jonathan Employee</td><td>XXX-XX-2121</td><td>02/02/2013</td>
-						<td class="notComplete"><div>Not Completed</div><div>3 of 5: Beneficiaries</div></td>
-						<td><button class="btn btn-danger">Delete</button></td>
-						<td><button class="btn">Continue</button></td>
-					</tr>
-					<tr>
-						<td class="strong">Robert Lineman</td>
-						<td>XXX-XX-3456</td>
-						<td>01/28/2013</td>
-						<td class="pending"><div>Pending Completion</div></td>
-						<td><button class="btn btn-danger">Delete</button></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="strong"><a href="#">Jane Smith</td>
-						<td>XXX-XX-1111</td>
-						<td>01/25/2013</td>
-						<td><div>Completed</div></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="strong"><a href="#">Katie McDonald</td>
-						<td>XXX-XX-8907</td>
-						<td>01/18/2013</td>
-						<td><div>Completed</div></td>
-						<td></td>
-						<td></td>
-					</tr>
+				<tbody id="newHires">
 				</tbody>
 			</table>
 		</script>
 
 		<script id="NewHiresItemTemplate" type="text/template">
-			<tr>
-				<td class="strong"><a href="#"><%= firstName %></td>
-				<td><%= socialSecurityNumber %></td>
-				<td><%= dateOfHire %></td>
-				<td><div><[No Status]</div></td>
-				<td>[No Delete]</td>
-				<td>[No Continue]</td>
-			</tr>
+			<td class="strong">
+				<a href="#">
+					<%= firstName %>
+					<%= lastName %>
+				</a>
+			</td>
+			<td><%= socialSecurityNumber %></td>
+			<td><%= dateOfHire %></td>
+			<td>
+				<div><%= status %></div>
+			</td>
+			<td>
+				<a class="btn btn-link" href="javascript:void(0);">Delete</a>
+			</td>
+			<td>
+				<button class="btn">Continue</button>
+			</td>
 		</script>
 
 		<script id="employeeProfileTemplate" type="text/template">
