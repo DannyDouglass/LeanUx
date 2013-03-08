@@ -8,6 +8,7 @@ define(['backbone', 'jquery', 'bootstrap'], function(Backbone, $, Bootstrap){
 		},
 		render: function(){
 			this.$el.empty();
+			$('#rightSubContentColumn').empty();
 			this.$el.html(this.template);
 		}
 	});

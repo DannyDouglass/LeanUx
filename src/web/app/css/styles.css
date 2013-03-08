@@ -13,7 +13,7 @@ div#contentContainer { margin: 0 20px;  }
 			table#recentNewHires thead { font-weight: bold; }
 			table#recentNewHires tbody tr.notComplete, table#recentNewHires tbody tr td.pending { font-style: italic; }
 			table#recentNewHires tbody tr td.strong, table#recentNewHires tbody tr td.notComplete { font-weight: bold; }
-		div#rightSubContentColumn { float: right; width: 240px; margin: 95px  0 0; }
+		div#rightSubContentColumn { float: right; width: 240px; margin: 85px  0 0; }
 footer { text-align: center; margin: 0 20px 0 20px; }
 	div#footerLinksTop { background-color: #f5f5f5; padding: 15px 0; border: solid 1px #ddd; border-top: none; }
 	div#footerLinksTop a, #footerLinksBottom a { padding: 0 25px; }
