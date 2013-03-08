@@ -10,6 +10,40 @@ Coming to a web app near you...
 The server is a REST API written in [node](http://nodejs.org/) that handles all database and external service communication.
 It uses the [NO SQL Mongo Db database](http://www.mongodb.org/) for persistence/data access.
 
+Local website
+-------------------
+
+Edit your hosts file:
+
+	$ sudo nano -w /etc/hosts
+
+Add the following line to the bottom:
+
+	127.0.0.1	leanux.local
+	
+Then create a virtual host in your local Apache instance by adding the following to `/etc/apache2/httpd.conf`
+
+	<VirtualHost *:80>
+    	ServerName leanux.local
+    	DocumentRoot /Users/mbc0/code/LeanUx/src
+    	ErrorLog /var/log/apache2/leanux.local-error_log
+    	TransferLog /var/log/apache2/leanux.local-access_log
+	</VirtualHost>
+	
+Then start Apache:
+
+	$ sudo apachectl start
+	
+**To launch Apache at startup:**
+
+	sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
+	
+Verify that Apache is listening for connections on port 80:
+
+	$ sudo lsof -iTCP:80 -sTCP:LISTEN
+	
+And verify that you can get a directory listing from `http://leanux.local`
+
 Running the Server
 ------------------
 
