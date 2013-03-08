@@ -4,16 +4,25 @@ var express = require('express'),
   employeeProfile = require('./routes/employee_profile'),
   http = require('http'),
   path = require('path'),
-  db = require('./lib/db');
+  db = require('./lib/db'),
+  cors = require('cors');
 
 var app = express();
 
+var corsOptions = {
+  origin: 'http://leanux.local'
+};
+
+app.configure('development', function(){
+  app.use(cors(corsOptions));
+});
+
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
+  app.use(express.bodyParser());
   app.use(express.compress());
   app.use(express.favicon());
   app.use(express.logger('dev'));
-  app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
 });
