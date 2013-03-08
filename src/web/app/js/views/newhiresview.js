@@ -15,6 +15,7 @@ define(['backbone', 'jquery', 'bootstrap', '../router', 'views/rightsidebarview'
 			var self = this;
 			var rows = [];
 
+			console.log(this.collection);
 			this.collection.each(function (item) {
 				var itemView = new self.NewHiresItemView({ model: item });
             	rows.push(itemView.render().el);

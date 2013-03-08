@@ -13,7 +13,7 @@ require.config({
   }
 });
 
-require(['app'], function(App)
+require(['jquery', 'bootstrap', 'underscore', 'backbone', 'app'], function($, Bootstrap, _, Backbone, App)
 { 
     App.initialize(); 
 });
