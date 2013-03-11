@@ -18,11 +18,13 @@ exports.getById = function(req, res) {
 };
 
 exports.post = function(req, res) {
-  EmployeeProfile.save(req.body, function(err, employeeProfile) {
+  /*EmployeeProfile.save(req.body, function(err, employeeProfile) {
     if (err) res.send(500);
 
     res.json(employeeProfile);
-  });
+  });*/
+
+  res.json(req.body);
 };
 
 exports.put = function(req, res) {
