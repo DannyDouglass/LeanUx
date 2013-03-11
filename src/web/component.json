@@ -1,10 +1,11 @@
 {
-	"name" : "Lean Ux Prototype",
-	"version" : "0.1.0",
-	"dependencies" : {
-		"jquery" : null,
-		"backbone-amd" : null,
-		"underscore-amd" : null,
-		"requirejs" : null
-	}
+  "name": "Lean Ux Prototype",
+  "version": "0.1.0",
+  "dependencies": {
+    "jquery": null,
+    "backbone-amd": null,
+    "underscore-amd": null,
+    "requirejs": null,
+    "requirejs-text": "~2.0.5"
+  }
 }

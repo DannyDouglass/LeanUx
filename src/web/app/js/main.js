@@ -3,7 +3,8 @@ require.config({
     "jquery" : "../lib/jquery/jquery.min",
     "bootstrap" : "../lib-local/bootstrap/js/bootstrap.min",
     "underscore" : "../lib/underscore-amd/underscore-min",
-    "backbone" : "../lib/backbone-amd/backbone-min"
+    "backbone" : "../lib/backbone-amd/backbone-min",
+    "text": "../lib/requirejs-text/text"
   },
   shim: { 
   	"bootstrap" : {
