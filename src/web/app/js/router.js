@@ -1,4 +1,6 @@
-define(['backbone', 'jquery', 'views/newhiresview', 'views/employeeprofileview', 'views/loadingview'], function(Backbone, $, NewHiresView, EmployeeProfileView, LoadingView){
+define(['backbone', 'jquery', 'views/newhiresview', 'views/employeeprofileview', 'views/loadingview'], 
+function(Backbone, $, NewHiresView, EmployeeProfileView, LoadingView){
+
 	var AppRouter = Backbone.Router.extend({
 		routes : { 
 			"" : "NewHiresView",
