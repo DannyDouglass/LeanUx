@@ -10,5 +10,17 @@
     maritalStatus: "Single"             , dateOfBirth: "03/11/1991" , status: "Pending Completion" , statusLocation: null                    } ,
   { socialSecurityNumber: "000-44-8907" , dateOfHire: "01/18/2013"  , salutation: "Mr"             ,
     firstName: "Katie"                 , lastName: "McDonal"          , suffix: "Sr."                ,
-    maritalStatus: "Single"             , dateOfBirth: "09/13/1985" , status: "Complete"           , statusLocation: null                    } 
+    maritalStatus: "Single"             , dateOfBirth: "09/13/1985" , status: "Complete"           , statusLocation: null                    } ,
+  { socialSecurityNumber: "000-00-0001" , dateOfHire: "01/28/2013"  , salutation: "Mr"             ,
+    firstName: "DELETE"               , lastName: "TEST"        , suffix: null                 ,
+    maritalStatus: "Married"            , dateOfBirth: "01/01/1970" , status: "Not Completed"      , statusLocation: "3 of 5: Beneficiaries" } ,
+  { socialSecurityNumber: "000-00-0002" , dateOfHire: "01/28/2013"  , salutation: "Mr"             ,
+    firstName: "DELETE"               , lastName: "TEST 2"        , suffix: null                 ,
+    maritalStatus: "Married"            , dateOfBirth: "01/01/1970" , status: "Not Completed"      , statusLocation: "3 of 5: Beneficiaries" } ,
+  { socialSecurityNumber: "000-00-0003" , dateOfHire: "01/28/2013"  , salutation: "Mr"             ,
+    firstName: "DELETE"               , lastName: "TEST 3"        , suffix: null                 ,
+    maritalStatus: "Married"            , dateOfBirth: "01/01/1970" , status: "Not Completed"      , statusLocation: "3 of 5: Beneficiaries" } ,
+  { socialSecurityNumber: "000-00-0004" , dateOfHire: "01/28/2013"  , salutation: "Mr"             ,
+    firstName: "DELETE"               , lastName: "TEST 4"        , suffix: null                 ,
+    maritalStatus: "Married"            , dateOfBirth: "01/01/1970" , status: "Not Completed"      , statusLocation: "3 of 5: Beneficiaries" } 
 ]
