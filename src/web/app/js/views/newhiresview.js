@@ -2,10 +2,8 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 	function(Backbone, $, _, Bootstrap, Router, RightSideBarView, NewHiresCollection){
 
 	var NewHiresView = Backbone.View.extend({
-		//el: "#leftSubContentColumn",
 		tagName: "table",
 		className: "table table-striped table-outlined",
-		//template: _.template($("#newHireLandingTemplate").html()),
 
 		initialize: function(){
 			this.collection = new NewHiresCollection();
@@ -15,7 +13,8 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 			var self = this;
 			var rows = [];
 
-			this.collection.each(function (item) {
+			var sorted = this.collection.sortBy(this.sort);
+			_.each(sorted, function (item) {
 				var itemView = new NewHiresItemView({ model: item });
             	rows.push(itemView.render().el);
 			});
@@ -32,12 +31,25 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 
 			return this;
 		},
+
 		events: {
 	        "click #addNewHire": "addNewHire"
 	    },
+
 	    addNewHire: function(ev) {
 	    	ev.preventDefault();
 	    	LeanUx.router.navigate('employeeProfile', true);
+	    },
+
+	    sort: function (newHire) {
+	    	var status = newHire.get("status");
+			if (status === "Not Completed") {
+				return 0;
+			} else if (status === "Pending Completion") {
+				return 1;
+			} else {
+				return 2;
+			}
 	    }
 	});
 
