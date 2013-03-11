@@ -1,5 +1,5 @@
 define(['backbone', 'jquery', 'views/newhiresview', 'views/employeeprofileview', 'views/loadingview', 'collections/newhirescollection'], 
-	function(Backbone, $, NewHiresView, EmployeeProfileView, LoadingView, NewHiresCollection){
+	function(Backbone, $, NewHiresView, EmployeeProfileView, LoadingView, NewHiresCollection){	
 	
 	var AppRouter = Backbone.Router.extend({
 		routes : { 
