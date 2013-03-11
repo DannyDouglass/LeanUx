@@ -2,10 +2,8 @@
 
 An expirement on implementing a new application architecture focused on flexibility, performance, and ability to deliver to multiple devices/platforms.
 
-<br /> 
-
 ## Getting Started
-***
+------------------
 
 **Note**: Only Mac-based setup documented at this time
 
@@ -16,9 +14,8 @@ After downloading the source, follow these instructions to get up and running lo
 3. [Configure local sites](#configurelocalsites)
 4. [Running the API Node.js Server](#runningapiserver)
  
-<br />
-
-### 1 Install Prerequisites
+### 1. Install Prerequisites
+----------------------------
 
 <a id="#prerequisites"></a>
 
@@ -30,10 +27,8 @@ You can download these in a variety of ways, but the recommend path is provided 
 	$ brew install npm
 	$ npm install -g requirejs bower
 
-<br />
-
 ### 2. Download Web & API Dependencies
-
+--------------------------------------
 <a id="#dependencies"></a>
 
 #### Web
@@ -54,9 +49,8 @@ as packages can dynamically be installed via `npm`:
 Read more about
 [Keeping your dependencies up to date](https://github.com/DannyDouglass/LeanUx/blob/master/docs/api_bootstrap.md) in the API Documentation
 
-<br />
-
 ### 3. Configure Local Sites
+----------------------------
 
 <a id="#configurelocalsites"></a>
 Edit your hosts file:
@@ -107,9 +101,8 @@ Verify that you can pull up `http://leanux.local/index.htm`.
 
 Also verify that you can access `http://leanux.local/api/employeeProfiles`. If you get a "503 - Service Temporarily Unavailable" error, make sure node is running and listening on port 3000.
 
-<br />
-
 ### 4. Running the API Server
+-----------------------------
 
 <a id="#runningapiserver"></a>
 To launch the application:
@@ -139,7 +132,6 @@ If you check the contents of `supervisor.sh`, you'll notice it's watching the
 entire `app` directory for changes. It will restart the application if any
 file changes in any folder under `api`. For example, `routes`, `models`, etc.
 
-<br />
 ## More Information
 ***
 
