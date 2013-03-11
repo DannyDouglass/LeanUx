@@ -7,9 +7,9 @@ define(['backbone', 'jquery', 'views/newhiresview', 'views/employeeprofileview',
 			"employeeProfile" : "employeeProfilePage"
 		},
 		initialize: function() {
-			var loadingView = new LoadingView();
 		},
 		NewHiresView: function(){
+			var loadingView = new LoadingView();
 			LeanUx.newHiresCollection = new NewHiresCollection();
 			LeanUx.newHiresCollection.fetch({
 				success: function(){
