@@ -6,8 +6,8 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 		className: "table table-striped table-outlined",
 
 		initialize: function(){
-			this.collection = new NewHiresCollection();
-			this.collection.fetch();
+			this.collection = LeanUx.newHiresCollection;
+			this.render();
 		},
 		render: function(){
 			var self = this;
@@ -22,13 +22,12 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 			var rightSideBarView = new RightSideBarView();
 			rightSideBarView.render();
 
-			this.$el.append(_.template($("#newHireTableHeader").html())());
+			this.$el.append(_.template($("#newHireTableHeader").html()));
 			this.$el.append(rows);
 			$("#leftSubContentColumn")
 				.empty()
-				.append(_.template($("#newHireLandingHeader").html())())
+				.append(_.template($("#newHireLandingHeader").html()))
 				.append(this.$el);
-
 			return this;
 		},
 

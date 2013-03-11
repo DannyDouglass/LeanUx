@@ -1,4 +1,6 @@
-define(['backbone', 'jquery', 'views/newhiresview', 'views/employeeprofileview', 'views/loadingview'], function(Backbone, $, NewHiresView, EmployeeProfileView, LoadingView){
+define(['backbone', 'jquery', 'views/newhiresview', 'views/employeeprofileview', 'views/loadingview', 'collections/newhirescollection'], 
+	function(Backbone, $, NewHiresView, EmployeeProfileView, LoadingView, NewHiresCollection){
+	
 	var AppRouter = Backbone.Router.extend({
 		routes : { 
 			"" : "NewHiresView",
@@ -9,13 +11,17 @@ define(['backbone', 'jquery', 'views/newhiresview', 'views/employeeprofileview',
 		},
 		NewHiresView: function(){
 			var loadingView = new LoadingView();
-			var newHiresView = new NewHiresView();
-			setTimeout(function(){ newHiresView.render() } , 1500);
+			LeanUx.newHiresCollection = new NewHiresCollection();
+			LeanUx.newHiresCollection.fetch({
+				success: function(){
+					var newHiresView = new NewHiresView();
+				}
+			});
 		},
 		employeeProfilePage: function(){
 			var loadingView = new LoadingView();
 			var employeeProfileView = new EmployeeProfileView();
-			setTimeout(function(){ employeeProfileView.render() } , 1500);
+			employeeProfileView.render();
 		}
 	});
 
