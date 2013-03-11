@@ -92,12 +92,12 @@
 			</td>
 			<td>
 				<% if (status === "Not Completed") { %>
-					<button class="btn btn-danger deleteNewHire">Delete</button>
+					<button class="btn btn-danger deleteNewHire"  data-id="<%= _id %>">Delete</button>
 				<% } %>
 			</td>
 			<td>
 				<% if (status === "Not Completed") { %>
-					<button class="btn">Continue</button>
+					<button class="btn" data-id="<%= _id %>">Continue</button>
 				<% } %>
 			</td>
 		</script>

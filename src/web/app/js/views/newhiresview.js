@@ -31,15 +31,6 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 			return this;
 		},
 
-		events: {
-	        "click .deleteNewHire": "deleteNewHire"
-	    },
-
-	    deleteNewHire: function(ev) {
-	    	ev.preventDefault();
-	    	//LeanUx.router.navigate('employeeProfile', true);
-	    },
-
 	    sort: function (newHire) {
 	    	var status = newHire.get("status");
 			if (status === "Not Completed") {
@@ -81,7 +72,19 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 			this.$el.html(this.template(data));
 
 			return this;
-		}
+		},
+
+		events: {
+	        "click .deleteNewHire": "deleteNewHire"
+	    },
+
+	    deleteNewHire: function(ev) {
+	    	ev.preventDefault();
+	        var confirmed = confirm("Delete this item?");
+	        if (confirmed)
+	            this.model.destroy();
+	    	//LeanUx.router.navigate('employeeProfile', true);
+	    }
 	});
 
 	return NewHiresView;
