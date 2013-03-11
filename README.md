@@ -18,7 +18,9 @@ After downloading the source, follow these instructions to get up and running lo
 <br />
 ### 1 Install Prerequisites
 ***
-[](#prerequisites)
+
+<a name="#prerequisites"></a>
+
 You can download these in a variety of ways, but the recommend path is provided below:
 
 **First Install ** [Homebrew](https://github.com/mxcl/homebrew/wiki/Installation) and then run the following commands:
@@ -30,7 +32,8 @@ You can download these in a variety of ways, but the recommend path is provided 
 <br />
 ### 2. Download Web & API Dependencies)
 ***
-[](#dependencies)
+
+<a name="#dependencies"></a>
 
 #### Web
 [Bower](https://github.com/twitter/bower) is used to manage the dependencies in the Web tier.  You can download all web dependencies by running the following commands (*from the root of the LeanUx/src directory*):
@@ -53,7 +56,8 @@ Read more about
 <br />
 ### 3. Configure Local Sites
 ***
-[](#configurelocalsites)
+
+<a name="#configurelocalsites"></a>
 Edit your hosts file:
 
 	$ sudo nano -w /etc/hosts
@@ -105,7 +109,7 @@ Also verify that you can access `http://leanux.local/api/employeeProfiles`. If y
 <br />
 ### 4. Running the API Server
 ***
-[](#runningapiserver)
+<a name="#runningapiserver"></a>
 To launch the application:
 
     $ cd api/bin
