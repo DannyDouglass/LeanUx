@@ -32,12 +32,12 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 		},
 
 		events: {
-	        "click #addNewHire": "addNewHire"
+	        "click .deleteNewHire": "deleteNewHire"
 	    },
 
-	    addNewHire: function(ev) {
+	    deleteNewHire: function(ev) {
 	    	ev.preventDefault();
-	    	LeanUx.router.navigate('employeeProfile', true);
+	    	//LeanUx.router.navigate('employeeProfile', true);
 	    },
 
 	    sort: function (newHire) {

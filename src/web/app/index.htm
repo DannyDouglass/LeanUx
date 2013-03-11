@@ -78,7 +78,7 @@
 			<td><%= dateOfHire %></td>
 			<td>
 				<% if (status === "Not Completed") { %>
-					<strong><%= status %></strong>
+					<strong><em><%= status %></em></strong>
 				<% } else if (status === "Pending Completion") { %>
 					<em><%= status %></em>
 				<% } else { %>
@@ -92,7 +92,7 @@
 			</td>
 			<td>
 				<% if (status === "Not Completed") { %>
-					<button class="btn btn-danger">Delete</button>
+					<button class="btn btn-danger deleteNewHire">Delete</button>
 				<% } %>
 			</td>
 			<td>
