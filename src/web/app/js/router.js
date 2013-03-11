@@ -1,5 +1,5 @@
-define(['backbone', 'jquery', 'views/newhiresview', 'views/employeeprofileview', 'views/loadingview', 'collections/newhirescollection'], 
-	function(Backbone, $, NewHiresView, EmployeeProfileView, LoadingView, NewHiresCollection){	
+define(['backbone', 'jquery', 'views/newhiresview', 'views/employeeprofileview', 'views/loadingview', 'collections/newhirescollection', 'views/error'], 
+	function(Backbone, $, NewHiresView, EmployeeProfileView, LoadingView, NewHiresCollection, ErrorView){	
 	
 	var AppRouter = Backbone.Router.extend({
 		routes : { 
@@ -15,6 +15,9 @@ define(['backbone', 'jquery', 'views/newhiresview', 'views/employeeprofileview',
 			LeanUx.newHiresCollection.fetch({
 				success: function(){
 					var newHiresView = new NewHiresView();
+				},
+				error: function(){
+					var errorView = new ErrorView();
 				}
 			});
 		},
