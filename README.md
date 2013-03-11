@@ -1,18 +1,64 @@
 # Lean Ux Prototype
 
-Coming to a web app near you...
+An expirement on implementing a new application architecture focused on flexibility, performance, and ability to deliver to multiple devices/platforms.
 
-* [REST API Bootstrap](https://github.com/DannyDouglass/LeanUx/blob/master/docs/api_bootstrap.md)
-* [Mongo Db REST API](https://support.mongolab.com/entries/20433053-rest-api-for-mongodb)
+<br /> 
 
-# REST API/Server
+## Getting Started
+***
 
-The server is a REST API written in [node](http://nodejs.org/) that handles all database and external service communication.
-It uses the [NO SQL Mongo Db database](http://www.mongodb.org/) for persistence/data access.
+**Note**: Only Mac-based setup documented at this time
 
-Local website
--------------------
+After downloading the source, follow these instructions to get up and running locally:
 
+1. [Install Prerequisites](#prerequisites)
+2. [Execute commands to download dependencies in Web and API layers](#dependencies) 
+3. [Configure local sites](#configurelocalsites)
+4. [Running the API Node.js Server](#runningapiserver)
+ 
+<br />
+
+### 1 Install Prerequisites
+
+<a id="#prerequisites"></a>
+
+You can download these in a variety of ways, but the recommend path is provided below:
+
+**First Install** [Homebrew](https://github.com/mxcl/homebrew/wiki/Installation) and then run the following commands:
+
+	$ brew install node
+	$ brew install npm
+	$ npm install -g requirejs bower
+
+<br />
+
+### 2. Download Web & API Dependencies
+
+<a id="#dependencies"></a>
+
+#### Web
+[Bower](https://github.com/twitter/bower) is used to manage the dependencies in the Web tier.  You can download all web dependencies by running the following commands (*from the root of the LeanUx/src directory*):
+ 
+	$ cd src/web
+	$ bower install
+
+The first line simply permits exection of the script, while the second executes the bower install process
+
+#### API
+All dependencies are installed in the `api/node_modules` directory. This directory is not tracked by git (exlcuded via `.gitignore`)
+as packages can dynamically be installed via `npm`:
+	
+	$ cd api
+	$ npm install
+   
+Read more about
+[Keeping your dependencies up to date](https://github.com/DannyDouglass/LeanUx/blob/master/docs/api_bootstrap.md) in the API Documentation
+
+<br />
+
+### 3. Configure Local Sites
+
+<a id="#configurelocalsites"></a>
 Edit your hosts file:
 
 	$ sudo nano -w /etc/hosts
@@ -61,9 +107,11 @@ Verify that you can pull up `http://leanux.local/index.htm`.
 
 Also verify that you can access `http://leanux.local/api/employeeProfiles`. If you get a "503 - Service Temporarily Unavailable" error, make sure node is running and listening on port 3000.
 
-Running the Server
-------------------
+<br />
 
+### 4. Running the API Server
+
+<a id="#runningapiserver"></a>
 To launch the application:
 
     $ cd api/bin
@@ -72,18 +120,10 @@ To launch the application:
 **NOTE:** You can execute the script from any directory. It knows how to locate
 it's current directory and resolve all paths relative to that location.
 
-You should see node launch the application on port `3000` unless you override it on the shell or `export` a variable in `~/.bashrc or ~/.bash_profile`:
-
-    $ PORT=5000 ./node.sh
-
 The application should now be accessible via `http://localhost:3000`.
 
-Running the Server with Supervisor
-----------------------------------
-
-[Supervisor](https://github.com/isaacs/node-supervisor) is a handy command line utility that refreshes the application
-if any source files change. Normally you have to reboot your server if you change any code, but with supervisor, you'll
-get this out of the box. To install supervisor, execute the following:
+##### Or…Run the API w/ Supervisor
+Supervisor](https://github.com/isaacs/node-supervisor) is a handy command line utility that refreshes the application if any source files change. Normally you have to reboot your server if you change any code, but with supervisor, you'll get this out of the box. To install supervisor, execute the following:
 
     $ npm install supervisor -g
 
@@ -99,76 +139,8 @@ If you check the contents of `supervisor.sh`, you'll notice it's watching the
 entire `app` directory for changes. It will restart the application if any
 file changes in any folder under `api`. For example, `routes`, `models`, etc.
 
-Mongoose vs Native Driver
--------------------------
+<br />
+## More Information
+***
 
-The server currently uses [mongoose](http://mongoosejs.com/) to interface with the target `mongodb` instance.
-It's not as fast as the [native mongodb driver](http://docs.mongodb.org/ecosystem/drivers/node-js/), but it does provide a much more
-convenient higher level DSL for communicating with `mongodb`. You can think of it as `NHibernate` vs `ADO.NET`.
-
-Pushing Documents to the Cloud
-------------------------------
-
-The [Mongo Db REST API](https://support.mongolab.com/entries/20433053-rest-api-for-mongodb) allows us to script out
-CRUD operations (amongst many others) against our instance in the cloud. For example, I added an address document by
-issuing the following command:
-
-    $ curl -v \
-      -d "{ city: 'Arlington', state: 'Virginia', zipcode: 22202, street1: '109 Humphrey Ave', street2: 'Apt 19' }" \
-      -H Content-Type:application/json \
-      "https://api.mongolab.com/api/1/databases/leanux/collections/addresses?apiKey=<our_API_key_provided_by_mongolab>
-
-Populating Sample Data
-----------------------
-
-We've set up a really convenient convention based mechanism for adding sample
-data to the database. Lets say you're working with a `Car`. On the server,
-you'll have:
-
-    var db = require('../lib/db');
-
-    var CarSchema = new db.Schema({
-      year    : { type: Number },
-      make    : { type: String },
-      model   : { type: String }
-    });
-
-And on the client, you've got something to the affect of:
-
-    var Car = Backbone.Model.extend({
-
-      initialize: function() { ... },
-
-    });
-
-To populate data for this model:
-
-    $ cd api/seeds
-    $ echo '{ year: 1999, make: "Chevy", model: "Caprice" }' > cars.json
-
-Now you've got a seed that we'll plant in the cloud for you. Notice that the
-name of the seed file is the plural form of the model. This is by convention,
-and conforms to the expectations of `Mongo` in that your collection names
-are the pluralized form of your models' names. So for a `Book` model, your seed
-file should be named `books.json`. Make sense? Perfect...
-
-If you'd like to push multiple documents, just use an array in your seed file:
-
-    $ [ {doc1...} {doc2}...{doc3}...{docn} ]
-
-Once you've got your seed file in place:
-
-    $ cd api/bin
-    $ ./dataload.sh
-
-`dataload.sh` is a convenient shell script that will kindly plant all your
-seeds in the cloud. Of course when I say "plant" and "seed", I mean it's going to create a
-collection for you and stuff some documents in it. Don't worry if the
-collection doesn't exist and you're running the script for the first time.
-`Mongo` will politely take care this for you, as it will automatically create any
-collection that does not already exist.
-
-You can run `dataload.sh` as many times as you like. It performs both setup
-and teardown per invocation.
-
-Happy farming...:+1:
+TODO
