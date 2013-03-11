@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 define(
 	['backbone', 'jquery', 'views/newhiresview', 'views/employeeprofileview', 'views/loadingview', 'collections/newhirescollection', 'views/error'], 
 	function(Backbone, $, NewHiresView, EmployeeProfileView, LoadingView, NewHiresCollection, ErrorView) {

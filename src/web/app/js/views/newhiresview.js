@@ -56,12 +56,30 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 		tagName: "tr",
 		template: _.template($("#NewHiresItemTemplate").html()),
 
+		viewHelpers: {
+			formatSSN: function() {
+				var lastFour = /\d{3}-\d{2}-(\d{4})/.exec(this.socialSecurityNumber)[1];
+				return "xxx-xx-" + lastFour;
+			},
+
+			formatDate: function(whichDate) {
+				var theDate = this[whichDate];
+				var parts = /^(\d{4})-(\d{2})-(\d{2})/.exec(theDate);
+
+				return parts[2] + "/" + parts[3] + "/" + parts[1];
+			}
+		},
+
 		initialize: function() {
 
 		},
 
 		render: function() {
-			this.$el.html(this.template(this.model.toJSON()));
+			var data = this.model.toJSON();
+			_.extend(data, this.viewHelpers);
+
+			this.$el.html(this.template(data));
+
 			return this;
 		}
 	});

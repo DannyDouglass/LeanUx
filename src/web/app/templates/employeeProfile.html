@@ -17,17 +17,17 @@
             <ul class="inline">
                 <li style="width: 33%;">
                     <label>Social Security Number *</label>
-                    <input type="text" placeholder="___-__-____" />
+                    <input id="ssn" name="ssn" type="text" value="" placeholder="___-__-____" />
                 </li>
                 <li style="width: 33%;">
                     <label>Date of Hire *</label>
-                    <input type="text" placeholder="__/__/____" />
+                    <input id="dateOfHire" name="dateOfHire" type="text" placeholder="__/__/____" />
                 </li>
                 <li class="text-right" style="width: 29%;">
-                    <button style="margin-top: -15px;" class="btn">Start New Hire</button>
+                    <button id="start_new_hire" style="margin-top: -15px;" class="btn">Start New Hire</button>
                 </li>
             </ul>
-            <div style="border-top: dotted 1px #DFDFDF;">
+            <div style="border-top: dotted 1px #DFDFDF; display: none;">
                 <div>
                     <label>Salutation</label>
                     <select>

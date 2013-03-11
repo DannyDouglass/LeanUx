@@ -74,8 +74,8 @@
 					</a>
 				<% } %>
 			</td>
-			<td><%= socialSecurityNumber %></td>
-			<td><%= dateOfHire %></td>
+			<td><%= formatSSN() %></td>
+			<td><%= formatDate("dateOfHire") %></td>
 			<td>
 				<% if (status === "Not Completed") { %>
 					<strong><em><%= status %></em></strong>
