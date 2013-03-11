@@ -37,7 +37,7 @@
 
 		<script id="newHireTableHeader" type="text/template">
 			<thead>
-				<tr>
+				<tr class="muted" style="font-weight: bold;">
 					<td>EMPLOYEE NAME</td>
 					<td>SSN</td>
 					<td>DATE OF HIRE</td>
@@ -57,21 +57,40 @@
 
 		<script id="NewHiresItemTemplate" type="text/template">
 			<td class="strong">
-				<a href="#">
-					<%= firstName %>
-					<%= lastName %>
-				</a>
+				<% if (status !== "Complete") { %>
+					<strong><em><%= firstName %> <%= lastName %></em></strong>
+				<% } else { %>
+					<a href="#">
+						<%= firstName %>
+						<%= lastName %>
+					</a>
+				<% } %>
 			</td>
 			<td><%= socialSecurityNumber %></td>
 			<td><%= dateOfHire %></td>
 			<td>
-				<div><%= status %></div>
+				<% if (status === "Not Completed") { %>
+					<strong><%= status %></strong>
+				<% } else if (status === "Pending Completion") { %>
+					<em><%= status %></em>
+				<% } else { %>
+					<%= status %>
+				<% } %>
+				<% if (status === "Not Completed") { %>
+					<div>
+						<small><%= statusLocation %></small>
+					</div>
+				<% } %>
 			</td>
 			<td>
-				<a class="btn btn-link" href="javascript:void(0);">Delete</a>
+				<% if (status === "Not Completed") { %>
+					<a class="btn btn-link" href="javascript:void(0);">Delete</a>
+				<% } %>
 			</td>
 			<td>
-				<button class="btn">Continue</button>
+				<% if (status === "Not Completed") { %>
+					<button class="btn">Continue</button>
+				<% } %>
 			</td>
 		</script>
 
