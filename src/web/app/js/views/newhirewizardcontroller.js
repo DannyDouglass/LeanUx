@@ -6,7 +6,6 @@ define(
         var NewHireWizardController = Marionette.Controller.extend({
             start: function() {
                 var rightSideBar = new RightSideBarView();
-                rightSideBar.render();
 
                 var region = new wizard.NewHireWizardRegion();
                 var layout = new wizard.NewHireWizardLayout();

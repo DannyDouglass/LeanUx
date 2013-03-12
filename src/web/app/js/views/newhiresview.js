@@ -7,9 +7,14 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 
 		initialize: function(){
 			this.collection = LeanUx.newHiresCollection;
-			this.render();
+			this.collection.bind("reset", this.render, this);
+        	this.collection.bind("remove", this.render, this);
+        	this.render();
 		},
 		render: function(){
+
+			this.$el.empty();
+			
 			var self = this;
 			var rows = [];
 
@@ -20,7 +25,6 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 			});
 
 			var rightSideBarView = new RightSideBarView();
-			rightSideBarView.render();
 
 			this.$el.append(_.template($("#newHireTableHeader").html()));
 			this.$el.append(rows);
@@ -62,7 +66,6 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 		},
 
 		initialize: function() {
-
 		},
 
 		render: function() {
@@ -83,7 +86,6 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 	        var confirmed = confirm("Delete this item?");
 	        if (confirmed)
 	            this.model.destroy();
-	    	//LeanUx.router.navigate('employeeProfile', true);
 	    }
 	});
 

@@ -5,6 +5,7 @@ define(['backbone', 'jquery', 'bootstrap'], function(Backbone, $, Bootstrap){
 
 		initialize: function(){
 			this.$el.empty();
+			this.render();
 		},
 		render: function(){
 			this.$el.html(this.template);
