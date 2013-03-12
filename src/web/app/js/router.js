@@ -3,12 +3,12 @@ define(
 	function(Backbone, $, NewHiresView, EmployeeProfileView, LoadingView, NewHiresCollection, ErrorView) {
 		var AppRouter = Backbone.Router.extend({
 			routes : { 
-				"" : "NewHiresView",
-				"employeeProfile" : "employeeProfilePage"
+				"" : "showNewHires",
+				"employeeProfile" : "showEmployeeProfile"
 			},
 			initialize: function() {
 			},
-			NewHiresView: function(){
+			showNewHires: function(){
 				var loadingView = new LoadingView();
 				LeanUx.newHiresCollection = new NewHiresCollection();
 				LeanUx.newHiresCollection.fetch({
@@ -20,15 +20,13 @@ define(
 					}
 				});
 			},
-			employeeProfilePage: function(){
+			showEmployeeProfile: function(){
 				var loadingView = new LoadingView();
 				var employeeProfileView = new EmployeeProfileView();
 				employeeProfileView.render();
 			}
 		});
 
-		var appRouter = new AppRouter();
-		Backbone.history.start();
 		return AppRouter;
 	}
 );
