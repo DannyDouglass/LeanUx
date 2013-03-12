@@ -1,6 +1,6 @@
 define(
-	['backbone', 'jquery', 'views/newhiresview', 'views/employeeprofileview', 'views/loadingview', 'views/newhirewizard', "views/wizardprogress", "views/employeeinformationview", 'collections/newhirescollection', 'views/error', "views/rightsidebarview"], 
-	function(Backbone, $, NewHiresView, EmployeeProfileView, LoadingView, NewHireWizard, WizardProgressView, EmployeeInformationView, NewHiresCollection, ErrorView, RightSideBarView) {
+	['backbone', 'jquery', 'views/newhiresview', 'views/employeeprofileview', 'views/loadingview', 'views/newhirewizardcontroller', 'collections/newhirescollection', 'views/error'], 
+	function(Backbone, $, NewHiresView, EmployeeProfileView, LoadingView, NewHireWizardController, NewHiresCollection, ErrorView) {
 		var AppRouter = Backbone.Router.extend({
 			routes : { 
 				"" : "showNewHires",
@@ -21,13 +21,8 @@ define(
 				});
 			},
 			showEmployeeProfile: function() {
-				var wizard = new NewHireWizard();
-				wizard.render();
-				wizard.wizardProgress.show(new WizardProgressView());
-				wizard.wizardCurrent.show(new EmployeeInformationView());
-
-				var rightSideBar = new RightSideBarView();
-				rightSideBar.render();
+				var controller = new NewHireWizardController();
+				controller.start();
 			}
 		});
 

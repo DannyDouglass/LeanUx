@@ -1,17 +1,30 @@
 define(
-    ["jquery", "underscore", "backbone", "marionette", "views/wizardprogress"], 
+    ["jquery", "underscore", "backbone", "marionette"], 
     function($, _, Backbone, Marionette) {
 
-    var NewHireWizard = Backbone.Marionette.Layout.extend({
-        template: "#new_hire_wizard",
-        el: "#leftSubContentColumn",
+        var wizard = {};
 
-        regions: {
-            wizardProgress: "#wizard_progress",
-            wizardCurrent: "#wizard_current"
-        }
-    });
+        wizard.NewHireWizardLayout = Backbone.Marionette.Layout.extend({
+            template: "#new_hire_wizard_template",
 
-    return NewHireWizard;
+            regions: {
+                wizardProgress: "#wizard_progress",
+                wizardCurrent: "#wizard_current"
+            }
+        });
+
+        wizard.NewHireWizardRegion = Marionette.Region.extend({
+            el: "#leftSubContentColumn"
+        });
+
+        wizard.EmployeeInformationView = Backbone.Marionette.ItemView.extend({
+            template: "#employee_information_template"
+        });
+
+        wizard.WizardProgressView = Backbone.Marionette.ItemView.extend({
+            template: "#wizard_progress_template"
+        });
+
+        return wizard;
 
 });
