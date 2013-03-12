@@ -46,8 +46,7 @@ To launch the application:
 
 Then to launch the server, execute:
 
-    $ cd bin
-    $ ./supervisor.sh
+    $ npm start
 
 Open a browser and go to [http://localhost:3000/app/index.htm](http://localhost:3000/app/index.htm) and you are set!
 
