@@ -9,7 +9,6 @@ define(
 			initialize: function(){
 				LeanUx.router.on("route:showNewHires", this.renderNewHires, this);
 				LeanUx.router.on("route:showEmployeeProfile", this.renderEmployeeProfile, this);
-				this.renderNewHires();
 			},
 
 			renderNewHires: function(){
