@@ -4,9 +4,9 @@ define(
 
         var initialize = function() {
             LeanUx.router = new Router();
-            Backbone.history.start();
-            
             LeanUx.breadcrumbView = new BreadcrumbView();
+
+            Backbone.history.start();
         };
 
         return { 

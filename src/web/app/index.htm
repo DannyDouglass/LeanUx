@@ -103,7 +103,26 @@
 		</script>
 
 		<script id="wizard_progress_template" type="text/template">
-			<p>WIZARD PROGRESS BAR</p>
+			<p style="padding-top: 5px;">
+			    <div class="progress">
+			        <div class="bar bar-info" style="width: 20%;">1. New Hire Profile</div>
+			        <div class="bar-inactive" title="Step Incomplete" style="width: 20%;">2. Choose Benefits</div>
+			        <div class="bar-inactive" title="Step Incomplete" style="width: 20%;">3. Beneficiaries</div>
+			        <div class="bar-inactive" title="Step Incomplete" style="width: 20%;">4.Publications</div>
+			        <div class="bar-inactive" title="Step Incomplete" style="width: 20%;">5. Review & Complete</div>
+			    </div>
+			</p>
+			<!-- Example for second page
+			<p>
+			    <div class="progress">
+			        <div class="bar bar-success" style="width: 20%;">1. New Hire Profile</div>
+			        <div class="bar bar-info" style="width: 20%;">2. Choose Benefits</div>
+			        <div class="bar-inactive" style="width: 20%;">3. Beneficiaries</div>
+			        <div class="bar-inactive" style="width: 20%;">4.Publications</div>
+			        <div class="bar-inactive" style="width: 20%;">5. Review & Complete</div>
+			    </div>
+			</p>
+			-->
 		</script>
 
 		<script id="new_hire_wizard_template" type="text/template">
@@ -325,7 +344,6 @@
 	            </ul>
 	            <div id="contentArea" class="clearfix">
             		<ul id="breadcrumb" class="breadcrumb">
-            			<li>test</li>
             		</ul>
 					
 					<div id="leftSubContentColumn"></div>

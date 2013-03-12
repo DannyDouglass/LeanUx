@@ -9,24 +9,25 @@ define(
 			initialize: function(){
 				LeanUx.router.on("route:showNewHires", this.renderNewHires, this);
 				LeanUx.router.on("route:showEmployeeProfile", this.renderEmployeeProfile, this);
-				this.renderNewHires();
 			},
 
 			renderNewHires: function(){
 				$(this.el).empty();
 				$(this.el).append(this.renderBaseBreadcrumb);
+				$(this.el).append("<li>New Hire</li>")
 				return this;
 			},
 
 			renderEmployeeProfile: function(){
 				$(this.el).empty();
 				$(this.el).append(this.renderBaseBreadcrumb);
-				$(this.el).append(" <span class=\"divider\">/</span> <li><a href=\"\">New Hire</a></li>");  
+				$(this.el).append("<li><a href=\"\">New Hire</a><span class=\"divider\">/</span></li>");  
+				$(this.el).append("<li>Add New Hire</li>")
 				return this;
 			},
 
 			renderBaseBreadcrumb: function(){
-				return "<li><a href=\"#\">Administration Home</a> <span class=\"divider\">/</span></li><li><a href=\"#\">Employee Administration</a></li>";
+				return "<li><a href=\"#\">Administration Home</a><span class=\"divider\">/</span></li><li><a href=\"#\">Employee Administration</a><span class=\"divider\">/</span></li>";
 			}
 		});
 
