@@ -3,7 +3,6 @@
 An expirement on implementing a new application architecture focused on flexibility, performance, and ability to deliver to multiple devices/platforms.
 
 ## Getting Started
-------------------
 
 **Note**: Only Mac-based setup documented at this time
 
@@ -13,9 +12,10 @@ After downloading the source, follow these instructions to get up and running lo
 2. [Execute commands to download dependencies in Web and API layers](#2-download-web--api-dependencies) 
 3. [Configure local sites](#3-configure-local-sites)
 4. [Running the API Node.js Server](#4-running-the-api-server)
- 
+
 ### 1. Install Prerequisites
 ----------------------------
+
 You can download these in a variety of ways, but the recommend path is provided below:
 
 **First Install** [Homebrew](https://github.com/mxcl/homebrew/wiki/Installation) and then run the following commands:
@@ -47,6 +47,7 @@ Read more about
 
 ### 3. Configure Local Sites
 ----------------------------
+
 Edit your hosts file:
 
 	$ sudo nano -w /etc/hosts
@@ -97,6 +98,7 @@ Also verify that you can access `http://leanux.local/api/employeeProfiles`. If y
 
 ### 4. Running the API Server
 -----------------------------
+
 To launch the application:
 
     $ cd api/bin
@@ -125,7 +127,6 @@ entire `app` directory for changes. It will restart the application if any
 file changes in any folder under `api`. For example, `routes`, `models`, etc.
 
 ## More Information
-***
 
 * Web Tier Documentation (TODO)
 * API Tier Documentation (TODO)
