@@ -20,12 +20,13 @@ define(
 			renderEmployeeProfile: function(){
 				$(this.el).empty();
 				$(this.el).append(this.renderBaseBreadcrumb);
-				$(this.el).append(" <span class=\"divider\">/</span> <li><a href=\"\">New Hire</a></li>");  
+				$(this.el).append("<li><a href=\"\">New Hire</a><span class=\"divider\">/</span></li>");  
+				$(this.el).append("<li>Add New Hire</li>")
 				return this;
 			},
 
 			renderBaseBreadcrumb: function(){
-				return "<li><a href=\"#\">Administration Home</a> <span class=\"divider\">/</span></li><li><a href=\"#\">Employee Administration</a></li>";
+				return "<li><a href=\"#\">Administration Home</a><span class=\"divider\">/</span></li><li><a href=\"#\">Employee Administration</a><span class=\"divider\">/</span></li>";
 			}
 		});
 
