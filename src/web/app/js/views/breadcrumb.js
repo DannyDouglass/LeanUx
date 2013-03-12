@@ -14,6 +14,7 @@ define(
 			renderNewHires: function(){
 				$(this.el).empty();
 				$(this.el).append(this.renderBaseBreadcrumb);
+				$(this.el).append("<li>New Hire</li>")
 				return this;
 			},
 
