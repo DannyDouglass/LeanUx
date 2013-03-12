@@ -1,10 +1,7 @@
 ########## Custom Lean Ux ###########
 
-# bower dependency location #
-src/[Ww]eb/*/[Ll]ib
-
 # web distributable deployment package output #
-src/[Ww]eb/*[Dd]ist
+[Pp]ublic/*[Dd]ist
 
 ########### Node.js ########### 
 

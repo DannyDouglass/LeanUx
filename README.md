@@ -62,7 +62,7 @@ Then create a virtual host in your local Apache instance by adding the following
 
 	<VirtualHost *:80>
     	ServerName leanux.local
-    	DocumentRoot /{PATH_TO_YOUR_LEANUX_CLONE}/src/web/app
+    	DocumentRoot /{PATH_TO_YOUR_LEANUX_CLONE}/public/app
     	DirectoryIndex index.htm
     	ErrorLog /var/log/apache2/leanux.local-error_log
     	TransferLog /var/log/apache2/leanux.local-access_log
