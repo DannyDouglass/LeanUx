@@ -125,7 +125,7 @@
 		</script>
 
 		<script type="text/template" id="employee_information_template">
-			<div>
+			<div style="padding: 10px 50px 0px 3px">
 				<fieldset>
 			        <legend style="background-color: #DBDBDB; border-radius: 5px; margin-bottom: 0; padding: 5px;">
 			            Employee Information
@@ -134,7 +134,7 @@
 			            <ul class="inline">
 			                <li style="width: 33%;">
 			                    <label>Social Security Number *</label>
-			                    <input id="ssn" name="ssn" type="text" value="" placeholder="___-__-____" />
+			                    <input id="socialSecurityNumber" name="socialSecurityNumber" type="text" value="" placeholder="___-__-____" />
 			                </li>
 			                <li style="width: 33%;">
 			                    <label>Date of Hire *</label>
@@ -144,6 +144,70 @@
 			                    <button id="start_new_hire" style="margin-top: -15px;" class="btn">Start New Hire</button>
 			                </li>
 			            </ul>
+			            <div id="new_hire_details" style="border-top: dotted 1px #DFDFDF; display: none;">
+			                <div>
+			                    <label>Salutation</label>
+			                    <select>
+			                        <option>Mr.</option>
+			                        <option>Mrs.</option>
+			                    </select>
+			                </div>
+			                <div>
+			                    <ul class="inline">
+			                        <li style="width: 27%;">
+			                            <label>First Name *</label>
+			                            <input id="firstName" name="firstName" type="text" />
+			                        </li>
+			                        <li style="width: 27%;">
+			                            <label>Middle Name</label>
+			                            <input id="middleName" name="middleName" type="text" />
+			                        </li>
+			                        <li style="width: 27%;">
+			                            <label>Last Name *<label>
+			                            <input id="lastName" name="lastName" type="text" />
+			                        </li>
+			                        <li style="width: 10%;">
+			                            <label>Suffix</label>
+			                            <select id="suffix" name="suffix" style="width: 75px;">
+			                                <option>Jr.</option>
+			                                <option>Esq.</option>
+			                            </select>
+			                        </li>
+			                    </ul>
+			                </div>
+			                <div>
+			                    <ul class="inline">
+			                        <li>
+			                            Gender *<br />
+			                            <label class="radio inline">
+			                                <input id="gender_male" name="gender" type="radio" value="Male" />
+			                                Male
+			                            </label>
+			                        </li>
+			                        <li>
+			                            <label class="radio inline">
+			                                <input id="gender_female" name="gender" type="radio" value="Female" />
+			                                Female
+			                            </label>
+			                        </li>
+			                    </ul>
+			                </div>
+			                <div>
+			                    <label>Martial Status</label>
+			                    <select>
+			                        <option>Married</option>
+			                        <option>Single</option>
+			                    </select>
+			                </div>
+			                <div>
+			                    <label>Date of Birth *</label>
+			                    <input type="text" placeholder="__/__/____" />
+			                </div>
+			                <div class="text-right" style="border-top: dotted 1px #DFDFDF; padding: 5px;">
+			                    <button id="done" class="btn">Done</button>
+			                </div>
+			            </div>
+			        </div>
 			    </fieldset>
 		    </div>
 		</script>
