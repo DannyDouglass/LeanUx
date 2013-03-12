@@ -27,11 +27,11 @@ app.get('/index', routes.index);
 
 app.get('/addresses', address.findAll);
 
-app.get('/employeeprofiles', employeeProfile.getAll);
-app.get('/employeeprofiles/:id', employeeProfile.getById);
-app.post('/employeeprofiles', employeeProfile.post);
-app.put('/employeeprofiles/:id', employeeProfile.put);
-app.del('/employeeprofiles/:id', employeeProfile.remove);
+app.get('/newhire/employeeprofiles', employeeProfile.getAll);
+app.get('/newhire/employeeprofiles/:id', employeeProfile.getById);
+app.post('/newhire/employeeprofiles', employeeProfile.post);
+app.put('/newhire/employeeprofiles/:id', employeeProfile.put);
+app.del('/newhire/employeeprofiles/:id', employeeProfile.remove);
 
 db.connect();
 

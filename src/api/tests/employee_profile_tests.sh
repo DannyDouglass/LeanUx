@@ -15,7 +15,7 @@
 # get all
 curl -X GET \
      -v \
-     "http://localhost:3000/employeeprofiles/"
+     "http://localhost:3000/newhire/employeeprofiles/"
 
 # get by id
 curl -X GET \
