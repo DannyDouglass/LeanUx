@@ -9,7 +9,7 @@ define(
 
             regions: {
                 wizardProgress: "#wizard_progress",
-                wizardCurrent: "#wizard_current"
+                currentStep: "#wizard_current"
             }
         });
 
