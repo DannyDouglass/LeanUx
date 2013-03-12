@@ -80,11 +80,20 @@ Then create a virtual host in your local Apache instance by adding the following
     	</Location>
 	</VirtualHost>
 	
+If the file `/etc/apache2/users/{your_user_name_here}.conf` does not exist, create it. Add the directive below to it: **(Mountain Lion only?)**
+
+	<Directory "{PATH_TO_YOUR_LEANUX_CLONE}">
+    	Options All
+    	AllowOverride All
+    	Order allow,deny
+    	Allow from all
+	</Directory>
+	
 Then start Apache:
 
 	$ sudo apachectl start
 	
-**To launch Apache at startup:**
+**To launch Apache at startup: (Mountain Lion only?)**
 
 	sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
 	
