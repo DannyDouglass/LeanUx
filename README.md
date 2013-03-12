@@ -9,16 +9,13 @@ An expirement on implementing a new application architecture focused on flexibil
 
 After downloading the source, follow these instructions to get up and running locally:
 
-1. [Install Prerequisites](#prerequisites)
-2. [Execute commands to download dependencies in Web and API layers](#dependencies) 
-3. [Configure local sites](#configurelocalsites)
-4. [Running the API Node.js Server](#runningapiserver)
+1. [Install Prerequisites](##1-install-prerequisites)
+2. [Execute commands to download dependencies in Web and API layers](#2-download-web--api-dependencies) 
+3. [Configure local sites](#3-configure-local-sites)
+4. [Running the API Node.js Server](#4-running-the-api-server)
  
 ### 1. Install Prerequisites
 ----------------------------
-
-<a id="#prerequisites"></a>
-
 You can download these in a variety of ways, but the recommend path is provided below:
 
 **First Install** [Homebrew](https://github.com/mxcl/homebrew/wiki/Installation) and then run the following commands:
@@ -29,7 +26,6 @@ You can download these in a variety of ways, but the recommend path is provided 
 
 ### 2. Download Web & API Dependencies
 --------------------------------------
-<a id="#dependencies"></a>
 
 #### Web
 [Bower](https://github.com/twitter/bower) is used to manage the dependencies in the Web tier.  You can download all web dependencies by running the following commands (*from the root of the LeanUx/src directory*):
@@ -51,8 +47,6 @@ Read more about
 
 ### 3. Configure Local Sites
 ----------------------------
-
-<a id="#configurelocalsites"></a>
 Edit your hosts file:
 
 	$ sudo nano -w /etc/hosts
@@ -103,8 +97,6 @@ Also verify that you can access `http://leanux.local/api/employeeProfiles`. If y
 
 ### 4. Running the API Server
 -----------------------------
-
-<a id="#runningapiserver"></a>
 To launch the application:
 
     $ cd api/bin
@@ -116,7 +108,7 @@ it's current directory and resolve all paths relative to that location.
 The application should now be accessible via `http://localhost:3000`.
 
 ##### Or…Run the API w/ Supervisor
-Supervisor](https://github.com/isaacs/node-supervisor) is a handy command line utility that refreshes the application if any source files change. Normally you have to reboot your server if you change any code, but with supervisor, you'll get this out of the box. To install supervisor, execute the following:
+[Supervisor](https://github.com/isaacs/node-supervisor) is a handy command line utility that refreshes the application if any source files change. Normally you have to reboot your server if you change any code, but with supervisor, you'll get this out of the box. To install supervisor, execute the following:
 
     $ npm install supervisor -g
 
@@ -135,4 +127,5 @@ file changes in any folder under `api`. For example, `routes`, `models`, etc.
 ## More Information
 ***
 
-TODO
+* Web Tier Documentation (TODO)
+* API Tier Documentation (TODO)
