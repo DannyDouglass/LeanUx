@@ -14,6 +14,7 @@ app.configure(function() {
   app.use(express.compress());
   app.use(express.favicon());
   app.use(express.logger('dev'));
+  app.use(express.static(__dirname + '/public'));
   app.use(express.methodOverride());
   app.use(app.router);
 });
