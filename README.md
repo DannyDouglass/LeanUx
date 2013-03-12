@@ -8,7 +8,7 @@ An expirement on implementing a new application architecture focused on flexibil
 
 After downloading the source, follow these instructions to get up and running locally:
 
-1. [Install Prerequisites](##1-install-prerequisites)
+1. [Install Prerequisites](#1-install-prerequisites)
 2. [Download NPM Dependencies](#2-download-npm-dependencies) 
 3. [Running the API Node.js Server](#3-running-the-api-server)
 
