@@ -102,6 +102,52 @@
 			</td>
 		</script>
 
+		<script id="wizard_progress" type="text/template">
+			<p>WIZARD PROGRESS BAR</p>
+		</script>
+
+		<script id="new_hire_wizard" type="text/template">
+			<div>
+				<h3>Add a New Hire</h3>
+				<div id="wizard_progress">
+				</div>
+				<div class="clearfix" style="border-bottom: dotted 1px #DFDFDF;">
+				    <div class="pull-left">
+				        <h5>Please enter all the employee&apos;s profile information.</h5>
+				    </div>
+				    <div class="pull-right">
+				        * Required Field
+				    </div>
+				</div>
+				<div id="wizard_current">
+				</div>
+			</div>
+		</script>
+
+		<script type="text/template" id="employee_information">
+			<div>
+				<fieldset>
+			        <legend style="background-color: #DBDBDB; border-radius: 5px; margin-bottom: 0; padding: 5px;">
+			            Employee Information
+			        </legend>
+			        <div style="background-color: #F9F9F9; border: solid 1px #DFDFDF; padding: 10px;">
+			            <ul class="inline">
+			                <li style="width: 33%;">
+			                    <label>Social Security Number *</label>
+			                    <input id="ssn" name="ssn" type="text" value="" placeholder="___-__-____" />
+			                </li>
+			                <li style="width: 33%;">
+			                    <label>Date of Hire *</label>
+			                    <input id="dateOfHire" name="dateOfHire" type="text" placeholder="__/__/____" />
+			                </li>
+			                <li class="text-right" style="width: 29%;">
+			                    <button id="start_new_hire" style="margin-top: -15px;" class="btn">Start New Hire</button>
+			                </li>
+			            </ul>
+			    </fieldset>
+		    </div>
+		</script>
+
 		<script data-main="js/main.js" src="lib/requirejs/require.js"></script>
     	
     	<div id="page">

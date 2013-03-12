@@ -6,6 +6,9 @@
     "backbone-amd": null,
     "underscore-amd": null,
     "requirejs": null,
-    "requirejs-text": "~2.0.5"
+    "requirejs-text": "~2.0.5",
+    "backbone.marionette": "~1.0.0-rc6",
+    "backbone.babysitter": "~0.0.4",
+    "backbone.wreqr": "~0.1.1"
   }
 }
