@@ -26,6 +26,9 @@ fieldset { margin-bottom: 20px; width: 810px; }
 fieldset legend { font-size: 1.2em; background-color: #efefef; border-radius: 5px; margin-bottom: 0; padding: 2px 5px 2px 15px; color: #999; }
 fieldset legend.active { background-color: #ddd; font-weight: bold; font-size: 1.4em; color: #333; padding: 5px 15px 5px 15px; }
 
+.wizard-thumbnail { background-color: #fff; border: solid 1px #DFDFDF; padding: 3px; width: 65%; }
+.wizard-step-body { background-color: #F9F9F9; border: solid 1px #DFDFDF; border-top: 0px; padding: 10px; margin-left: 15px; width: 97%; }
+
 /* Styles added to compliment existing twitter bootstrap styles */
 .table-outlined { border: solid 1px #ddd; }
 .table-outlined thead { background-color: #ededed; }

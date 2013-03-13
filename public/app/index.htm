@@ -137,7 +137,7 @@
 			        <legend class="active">
 			            Employee Information
 			        </legend>
-			        <div style="background-color: #F9F9F9; border: solid 1px #DFDFDF; border-top: 0px; padding: 10px; margin-left: 15px; width: 97%;">
+			        <div class="wizard-step-body">
 			            <ul class="inline">
 			                <li style="width: 33%;">
 			                    <label>Social Security Number *</label>
@@ -232,6 +232,44 @@
 			        </legend>
 			    </fieldset>
 		    </div>
+		</script>
+
+		<script id="choose_benefits_template" type="text/template">
+			<div style="padding: 20px 8px 0px 5px">
+				<fieldset>
+					<legend>
+						<div class="clearfix">
+							<div class="pull-left">
+								401(k) Retirement Plan</legend>
+							</div>
+							<div class="pull-right" style="padding-right: 25px;">
+								<button class="btn">Enroll</button>
+							</div>
+						</div>
+					</legend>
+					<div class="wizard-step-body">
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Medical Benefits</legend>
+				</fieldset>
+
+				<fieldset>
+					<legend>Dental Benefits</legend>
+				</fieldset>
+			</div>
+		</script>
+
+		<script id="401k_plan_options_template" type="text/template">
+			<h5 class="muted">PLAN OPTIONS</h5>
+			<ul class="unstyled">
+			</ul>
+			<a href="#">Show Details</a>
+		</script>
+
+		<script id="401k_plan_item_template" type="text/template">
+			<strong><%= name %></strong>
 		</script>
 
 		<script data-main="js/main.js" src="lib/requirejs/require.js"></script>

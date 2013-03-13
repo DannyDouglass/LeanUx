@@ -1,6 +1,6 @@
 define(
-    ["jquery", "underscore", "backbone", "marionette", "models/newhiresmodel"], 
-    function($, _, Backbone, Marionette, NewHiresModel) {
+    ["jquery", "underscore", "backbone", "marionette", "models/newhiresmodel", "collections/four01kplancollection", "models/four01kplan"], 
+    function($, _, Backbone, Marionette, NewHiresModel, Four01kPlanCollection, Four01kPlan) {
 
         var wizard = {};
 
@@ -73,6 +73,29 @@ define(
                     }
                 });
             }*/
+        });
+
+        var four01kPlanItemView = Backbone.Marionette.ItemView.extend({
+            model: Four01kPlan,
+            tagName: "li",
+            template: "#401k_plan_item_template"
+        });
+
+        var four01kPlanCompositeView = Backbone.Marionette.CompositeView.extend({
+            itemView: four01kPlanItemView,
+            itemViewContainer: "ul",
+            template: "#401k_plan_options_template",
+            className: "wizard-thumbnail"
+        });
+
+        wizard.ChooseBenefitsView = Backbone.Marionette.Layout.extend({
+            template: "#choose_benefits_template",
+
+            regions: {
+                body: ".wizard-step-body"
+            },
+
+            Thumbnail: four01kPlanCompositeView
         });
 
         wizard.WizardProgressView = Backbone.Marionette.ItemView.extend({
