@@ -1,0 +1,7 @@
+[
+    {
+        name: "NRECA 401(k) Retirement Plan",
+        employerSharingRate: 3,
+        employerSharingMinimum: 3
+    }
+]
