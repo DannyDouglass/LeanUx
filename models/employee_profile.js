@@ -2,22 +2,23 @@ var db = require('../lib/db');
 var _ = require('underscore');
 
 var EmployeeProfileSchema = new db.Schema({
-  socialSecurityNumber : { type : String } ,
-  dateOfHire           : { type : Date   } ,
-  salutation           : { type : String } ,
-  firstName            : { type : String } ,
-  middleName           : { type : String } ,
-  lastName             : { type : String } ,
-  suffix               : { type : String } ,
-  maritalStatus        : { type : String } ,
-  dateOfBirth          : { type : Date   } ,
-  status               : { type : String } ,
-  statusLocation       : { type : String } , 
-  benefitOptions       : { four01k : {
-                              employeePercentage : { type: Number  },
-                              companyPercentage : { type: Number  }
-                            }
-                          }   
+  socialSecurityNumber :  { type : String } ,
+  dateOfHire           :  { type : Date   } ,
+  salutation           :  { type : String } ,
+  firstName            :  { type : String } ,
+  middleName           :  { type : String } ,
+  lastName             :  { type : String } ,
+  suffix               :  { type : String } ,
+  maritalStatus        :  { type : String } ,
+  dateOfBirth          :  { type : Date   } ,
+  status               :  { type : String } ,
+  statusLocation       :  { type : String } ,
+  benefitOptions       :  { "four01k" : 
+                              {
+                                "employeePercentage" : Number,
+                                "companyPercentage" : Number
+                              }
+                          }
 });
 
 var EmployeeProfile = db.mongoose.model('EmployeeProfile', EmployeeProfileSchema);
