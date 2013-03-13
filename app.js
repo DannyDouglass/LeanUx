@@ -40,7 +40,27 @@ http.createServer(app).listen(app.get('port'), function() {
   console.log("Express server listening on port " + app.get('port'));
 });
 
+var readLine = require ("readline");
+if (process.platform === "win32"){
+    var rl = readLine.createInterface ({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    rl.on ("SIGINT", function (){
+        process.emit ("SIGINT");
+    });
+
+}
+
+process.on ("SIGINT", function(){
+  db.disconnect();
+  process.exit ();
+});
+
+/*
 process.on('SIGINT', function() {
   db.disconnect();
   process.exit();
 });
+*/
