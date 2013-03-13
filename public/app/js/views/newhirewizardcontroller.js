@@ -5,39 +5,27 @@ define(
         var NewHireWizardController = Marionette.Controller.extend({
 
             initialize: function() {
+                this.rightSideBar = new RightSideBarView();
+                this.region = new wizard.NewHireWizardRegion();
+                this.layout = new wizard.NewHireWizardLayout();
 
+                this.region.show(this.layout);
+
+                this.layout.wizardProgress.show(new WizardProgressView());
             },
 
             start: function() {
-                var rightSideBar = new RightSideBarView();
-
-                var region = new wizard.NewHireWizardRegion();
-                var layout = new wizard.NewHireWizardLayout();
-                region.show(layout);
-
-                layout.wizardProgress.show(new WizardProgressView());
-                layout.currentStep.show(new wizard.EmployeeInformationView());
+                var employeeInformationView = new wizard.EmployeeInformationView();
+                
+                employeeInformationView.on("done", function() {
+                    this.benefitOptions();
+                }, this);
+                
+                this.layout.currentStep.show(employeeInformationView);
             },
 
             benefitOptions: function() {
-                var rightSideBar = new RightSideBarView();
-
-                var region = new wizard.NewHireWizardRegion();
-                var layout = new wizard.NewHireWizardLayout();
-                region.show(layout);
-
-                layout.wizardProgress.show(new WizardProgressView());
-
-                //var chooseBenefitsView = new wizard.ChooseBenefitsView();
-                /*chooseBenefitsView.on("fuck", function() {
-                    alert("FUCK")
-                });*/
-                layout.currentStep.show(new wizard.ChooseBenefitsView());
-
-                /*var collection = new Four01kPlanCollection();
-                collection.fetch();
-
-                chooseBenefitsView.body.show(new chooseBenefitsView.Thumbnail({ collection: collection }));*/
+                this.layout.currentStep.show(new wizard.ChooseBenefitsView());
             }
         });
 

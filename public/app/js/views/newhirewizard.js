@@ -21,7 +21,8 @@ define(
             template: "#employee_information_template",
 
             events: {
-                "click #start_new_hire": "startNewHire"
+                "click #start_new_hire": "startNewHire",
+                "click #done": "done"
             },
 
             initialize: function() {
@@ -44,7 +45,7 @@ define(
                 });
             },
 
-            /*done: function() {
+            done: function() {
                 var attr = {
                     salutation: this.$("#salutation").val(),
                     firstName: this.$("#firstName").val(),
@@ -64,15 +65,17 @@ define(
                     attr.gender = "Female";
                 }
 
+                var that = this;
+
                 this.model.save(attr, {
                     success: function() {
-                        console.log("SUCCESS");
+                        that.trigger("done");
                     },
                     error: function() {
-                        console.log("error");
+                        alert("Something went horribly wrong.");
                     }
                 });
-            }*/
+            }
         });
 
         var four01kPlanItemView = Backbone.Marionette.ItemView.extend({
@@ -88,15 +91,15 @@ define(
             className: "wizard-thumbnail"
         });
 
-        var monkey = Backbone.Marionette.ItemView.extend({
-            template: "#monkey",
+        var four01kPlanDetailsDisplay = Backbone.Marionette.ItemView.extend({
+            template: "#401k_plan_details_display_template",
             model: Four01kPlan,
             tagName: "li"
         });
 
-        var compositeMonkey = Backbone.Marionette.CompositeView.extend({
-            itemView: monkey,
-            template: "#composite_monkey",
+        var four01kPlanDetailsInput = Backbone.Marionette.CompositeView.extend({
+            itemView: four01kPlanDetailsDisplay,
+            template: "#401k_plan_details_input_template",
             itemViewContainer: "ul"
         });
 
@@ -117,7 +120,7 @@ define(
                 },
 
                 details: {
-                    View: compositeMonkey
+                    View: four01kPlanDetailsInput
                 }
             },
 
