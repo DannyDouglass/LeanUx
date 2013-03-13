@@ -1,5 +1,4 @@
 require.config({
-  nodeRequire: require,
   paths: {
     "jquery" : "../lib/jquery/jquery.min",
     "bootstrap" : "../lib-local/bootstrap/js/bootstrap.min",
