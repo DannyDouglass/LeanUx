@@ -12,7 +12,12 @@ var EmployeeProfileSchema = new db.Schema({
   maritalStatus        : { type : String } ,
   dateOfBirth          : { type : Date   } ,
   status               : { type : String } ,
-  statusLocation       : { type : String }
+  statusLocation       : { type : String } , 
+  benefitOptions       : { four01k : {
+                              employeePercentage : { type: Number  },
+                              companyPercentage : { type: Number  }
+                            }
+                          }   
 });
 
 var EmployeeProfile = db.mongoose.model('EmployeeProfile', EmployeeProfileSchema);
