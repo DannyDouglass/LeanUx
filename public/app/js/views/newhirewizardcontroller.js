@@ -1,5 +1,5 @@
 define(
-    ["jquery", "underscore", "backbone", "marionette", "views/newhirewizardprogressview", "views/newhirewizard", "views/rightsidebarview","collections/four01kplancollection", "models/newhiresmodel"],
+    ["jquery", "underscore", "backbone", "marionette", "views/newhirewizardprogressview", "views/newhirewizard", "views/rightsidebarview", "collections/four01kplancollection", "models/newhiresmodel"],
     function($, _, Backbone, Marionette, WizardProgressView, wizard, RightSideBarView, Four01kPlanCollection, NewHiresModel) {
 
         var NewHireWizardController = Marionette.Controller.extend({
