@@ -1,10 +1,12 @@
 define(
-    ["jquery", "underscore", "backbone", "marionette", "views/newhirewizardprogressview", "views/newhirewizard", "views/rightsidebarview","collections/four01kplancollection"],
-    function($, _, Backbone, Marionette, WizardProgressView, wizard, RightSideBarView, Four01kPlanCollection) {
+    ["jquery", "underscore", "backbone", "marionette", "views/newhirewizardprogressview", "views/newhirewizard", "views/rightsidebarview","collections/four01kplancollection", "models/newhiresmodel"],
+    function($, _, Backbone, Marionette, WizardProgressView, wizard, RightSideBarView, Four01kPlanCollection, NewHiresModel) {
 
         var NewHireWizardController = Marionette.Controller.extend({
 
             initialize: function() {
+                this.model = new NewHiresModel();
+
                 this.rightSideBar = new RightSideBarView();
                 this.region = new wizard.NewHireWizardRegion();
                 this.layout = new wizard.NewHireWizardLayout();
@@ -15,7 +17,7 @@ define(
             },
 
             start: function() {
-                var employeeInformationView = new wizard.EmployeeInformationView();
+                var employeeInformationView = new wizard.EmployeeInformationView({ model: this.model });
                 
                 employeeInformationView.on("done", function() {
                     this.benefitOptions();
@@ -25,7 +27,7 @@ define(
             },
 
             benefitOptions: function() {
-                this.layout.currentStep.show(new wizard.ChooseBenefitsView());
+                this.layout.currentStep.show(new wizard.ChooseBenefitsView({ model: this.model }));
             }
         });
 

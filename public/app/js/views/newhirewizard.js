@@ -2,10 +2,57 @@ define(
     ["jquery", "underscore", "backbone", "marionette", "models/newhiresmodel", "collections/four01kplancollection", "models/four01kplan"], 
     function($, _, Backbone, Marionette, NewHiresModel, Four01kPlanCollection, Four01kPlan) {
 
+        var FadeTransitionRegion = Backbone.Marionette.Region.extend({
+
+            show: function(view) {
+                this.ensureEl();
+                view.render();
+
+                this.close(function() {
+                    if (this.currentView && this.currentView  !== view) { return; }
+                    this.currentView = view;
+
+                    this.open(view, function() {
+                        if (view.onShow) { view.onShow(); }
+                        view.trigger("show");
+
+                        if (this.onShow) { this.onShow(view); }
+                        this.trigger("view:show", view);
+                    });
+                });
+            },
+
+            close: function(callback) {
+                var view = this.currentView;
+                delete this.currentView;
+
+                if (!view) {
+                    if (callback) { callback.call(this); }
+                    return;
+                }
+
+                var that = this;
+                view.$el.fadeOut(function() {
+                    if (view.close) { view.close(); }
+                    that.trigger("view:closed", view);
+                    if (callback) { callback.call(that); }
+                });
+            },
+
+            open: function(view, callback) {
+                var that = this;
+                this.$el.html(view.$el.hide());
+                view.$el.fadeIn(function() {
+                    callback.call(that);
+                });
+            }
+        });
+
         var wizard = {};
 
         wizard.NewHireWizardLayout = Backbone.Marionette.Layout.extend({
             template: "#new_hire_wizard_template",
+            regionType: FadeTransitionRegion,
 
             regions: {
                 wizardProgress: "#wizard_progress",
@@ -23,10 +70,6 @@ define(
             events: {
                 "click #start_new_hire": "startNewHire",
                 "click #done": "done"
-            },
-
-            initialize: function() {
-                this.model = new NewHiresModel();
             },
 
             startNewHire: function() {
@@ -105,6 +148,7 @@ define(
 
         wizard.ChooseBenefitsView = Backbone.Marionette.Layout.extend({
             template: "#choose_benefits_template",
+            regionType: FadeTransitionRegion,
 
             regions: {
                 body: ".wizard-step-body"
