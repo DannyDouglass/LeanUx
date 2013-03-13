@@ -5,11 +5,16 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
         defaults: {
             salutation: "",
             firstName: "",
+            middleName: "",
             lastName: "",
             suffix: "",
+            gender: "",
             dateOfHire: "",
+            dateOfBirth: "",
+            maritalStatus: "",
             status: "Not Completed",
-            statusLocation: ""
+            statusLocation: "",
+            socialSecurityNumber: ""
         }
 	});
 

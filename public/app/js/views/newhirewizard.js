@@ -64,12 +64,83 @@ define(
             el: "#leftSubContentColumn"
         });
 
-        wizard.EmployeeInformationView = Backbone.Marionette.ItemView.extend({
+        var EIDetail = Backbone.Marionette.ItemView.extend({
+            template: "#employee_information_details_template",
+            tagName: "div",
+
+            templateHelpers: {
+                formatDate: function(whichDate) {
+                    if (!this[whichDate]) { return ""; }
+
+                    var theDate = this[whichDate];
+                    var parts = /^(\d{4})-(\d{2})-(\d{2})/.exec(theDate);
+
+                    return parts[2] + "/" + parts[3] + "/" + parts[1];
+                }
+            }
+        })
+
+        var EIThumbnail = Backbone.Marionette.ItemView.extend({
+            template: "#employee_information_thumbnail",
+            tagName: "ul",
+            className: "inline",
+
+            templateHelpers: {
+                formatDate: function(whichDate) {
+                    if (!this[whichDate]) { return ""; }
+
+                    var theDate = this[whichDate];
+                    var parts = /^(\d{4})-(\d{2})-(\d{2})/.exec(theDate);
+
+                    return parts[2] + "/" + parts[3] + "/" + parts[1];
+                }
+            }
+        });
+
+        wizard.EmployeeInformationView = Backbone.Marionette.Layout.extend({
             template: "#employee_information_template",
+            regionType: FadeTransitionRegion,
+
+            regions: {
+                body: ".wizard-step-body"
+            },
+
+            states: {
+                thumbnailed: {
+                    View: EIThumbnail
+                },
+
+                details: {
+                    View: EIDetail
+                }
+            },
 
             events: {
                 "click #start_new_hire": "startNewHire",
                 "click #done": "done"
+            },
+
+            initialize: function() {
+                this.on("state:changed", this._stateChanged);
+
+                this._setCurrentState(this.model.isNew() ? this.states.thumbnailed : this.states.details);
+            },
+
+            _setCurrentState: function(state) {
+                this.currentState = state;
+                this.trigger("state:changed");
+            },
+
+            _stateChanged: function() {
+                this._showCurrentState();
+            },
+
+            _showCurrentState: function() {
+                this.body.show(new this.currentState.View({ model: this.model }));
+            },
+
+            onRender: function() {
+                this._showCurrentState();
             },
 
             startNewHire: function() {
@@ -78,9 +149,11 @@ define(
 
                 LeanUx.newHiresCollection.add(this.model);
 
+                var that = this;
                 this.model.save({ socialSecurityNumber: ssn, dateOfHire: dateOfHire }, {
                     success: function() {
-                        this.$("#new_hire_details").slideToggle();
+                        LeanUx.router.navigate("employeeProfile/" + that.model.id);
+                        that._setCurrentState(that.states.details);
                     },
                     error: function() {
                         console.log("error");

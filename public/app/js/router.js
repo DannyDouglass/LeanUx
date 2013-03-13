@@ -4,8 +4,10 @@ define(
 		var AppRouter = Backbone.Router.extend({
 			routes : { 
 				"" : "showNewHires",
-				"employeeProfile" : "showEmployeeProfile",
-				"chooseBenefits": "showBenefitOptions"
+				"employeeProfile": "showEmployeeProfile",
+				"employeeProfile/:id" : "showEmployeeProfile",
+				"chooseBenefits": "showBenefitOptions",
+				"chooseBenefits/:id": "showBenefitOptions"
 			},
 
 			initialize: function() {
@@ -24,12 +26,18 @@ define(
 				});
 			},
 
-			showEmployeeProfile: function() {
-				var controller = new NewHireWizardController();
+			showEmployeeProfile: function(id) {
+				var model;
+
+				if (id) {
+					model = LeanUx.newHiresCollection.get(id);
+				}
+
+				var controller = new NewHireWizardController({ model: model });
 				controller.start();
 			},
 
-			showBenefitOptions: function() {
+			showBenefitOptions: function(id) {
 				var controller = new NewHireWizardController();
 				controller.benefitOptions();
 			}

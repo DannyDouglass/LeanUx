@@ -78,14 +78,20 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 		},
 
 		events: {
-	        "click .deleteNewHire": "deleteNewHire"
+	        "click .deleteNewHire": "deleteNewHire",
+	        "click .continueNewHire": "continueNewHire"
 	    },
 
 	    deleteNewHire: function(ev) {
 	    	ev.preventDefault();
-	        var confirmed = confirm("Delete this item?");
-	        if (confirmed)
-	            this.model.destroy();
+	        
+	        if (confirm("Delete this item?")) { this.model.destroy(); }
+	    },
+
+	    continueNewHire: function(ev) {
+	    	ev.preventDefault();
+
+	    	LeanUx.router.navigate("employeeProfile/" + this.model.id, { trigger: true });
 	    }
 	});
 

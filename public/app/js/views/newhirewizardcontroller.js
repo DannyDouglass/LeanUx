@@ -4,8 +4,12 @@ define(
 
         var NewHireWizardController = Marionette.Controller.extend({
 
-            initialize: function() {
-                this.model = new NewHiresModel();
+            initialize: function(options) {
+                if (options.model) {
+                    this.model = options.model;
+                } else {
+                    this.model = new NewHiresModel();
+                }
 
                 this.rightSideBar = new RightSideBarView();
                 this.region = new wizard.NewHireWizardRegion();
@@ -20,6 +24,7 @@ define(
                 var employeeInformationView = new wizard.EmployeeInformationView({ model: this.model });
                 
                 employeeInformationView.on("done", function() {
+                    LeanUx.router.navigate("chooseBenefits/" + this.model.id);
                     this.benefitOptions();
                 }, this);
                 
