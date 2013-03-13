@@ -1,6 +1,7 @@
 var express = require('express'),
   routes = require('./routes'),
   address = require('./routes/address'),
+  Four01kplan = require("./routes/Four01kplan"),
   employeeProfile = require('./routes/employee_profile'),
   http = require('http'),
   path = require('path'),
@@ -27,6 +28,8 @@ app.get('/', routes.index);
 app.get('/index', routes.index);
 
 app.get('/addresses', address.findAll);
+
+app.get("/401kplans", Four01kplan.findAll);
 
 app.get('/newhire/employeeprofiles', employeeProfile.getAll);
 app.get('/newhire/employeeprofiles/:id', employeeProfile.getById);
