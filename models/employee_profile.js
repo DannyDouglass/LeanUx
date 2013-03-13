@@ -73,7 +73,7 @@ module.exports.remove = function(id, callback) {
 function sanitizeClientModel(model) {
   var sanitizedClientModel = _.pick(model, 'socialSecurityNumber', 'dateOfHire', 'salutation',
   'firstName', 'middleName', 'lastName', 'suffix', 'maritalStatus', 'dateOfBirth',
-  'status', 'statusLocation');
+  'status', 'statusLocation' );
 
   return sanitizedClientModel;
 }

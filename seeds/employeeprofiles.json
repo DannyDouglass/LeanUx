@@ -30,5 +30,10 @@
     benefitOptions: {
         four01k: { employeePercentage: ".00", companyPercentage: ".05"  }
     }                    
-  } 
+  },
+  { 
+    socialSecurityNumber: "000-00-0000" , dateOfHire: "03/01/2013"  , salutation: "Mr"             ,
+    firstName: "Missing"                 , lastName: "401k"          , suffix: ""                ,
+    maritalStatus: "Single"             , dateOfBirth: "09/13/1985" , status: "Not Completed"           , statusLocation: "1 of 5: New Hire Profile "
+  }  
 ]
