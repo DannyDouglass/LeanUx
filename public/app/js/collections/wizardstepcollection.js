@@ -2,24 +2,19 @@ define(["jquery", "underscore", "backbone", "models/newhirewizardstep"], functio
 
     var data = [{
         order: 1,
-        title: "New Hire Profile",
-        active: true
+        title: "New Hire Profile"
     }, {
         order: 2,
-        title: "Choose Benefits",
-        active: false
+        title: "Choose Benefits"
     }, {
         order: 3,
-        title: "Beneficiaries",
-        active: false
+        title: "Beneficiaries"
     }, {
         order: 4,
-        title: "Publications",
-        active: false
+        title: "Publications"
     }, {
         order: 5,
-        title: "Review & Complete",
-        active: false
+        title: "Review & Complete"
     }];
 
     var NewHireWizardStepsCollection = Backbone.Collection.extend({

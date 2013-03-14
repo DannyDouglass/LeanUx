@@ -17,22 +17,23 @@ define(
                 this.layout = new wizard.NewHireWizardLayout();
 
                 this.region.show(this.layout);
-
-                this.layout.wizardProgress.show(new WizardProgressView());
             },
 
             newHireProfile: function() {
                 var employeeInformationView = new wizard.EmployeeInformationView({ model: this.model });
+                this.layout.wizardProgress.show(new WizardProgressView({ step: 1 }));
                 
                 employeeInformationView.on("done", function() {
                     LeanUx.router.navigate("chooseBenefits/" + this.model.id);
                     this.benefitOptions();
                 }, this);
                 
+
                 this.layout.currentStep.show(employeeInformationView);
             },
 
             benefitOptions: function() {
+                this.layout.wizardProgress.show(new WizardProgressView({ step: 2 }));  
                 this.layout.currentStep.show(new wizard.ChooseBenefitsView({ model: this.model }));
             }
         });
