@@ -83,7 +83,7 @@ define(
                     return theDate;
                 }
             }
-        })
+        });
 
         var EIThumbnail = Backbone.Marionette.ItemView.extend({
             template: "#employee_information_thumbnail",
