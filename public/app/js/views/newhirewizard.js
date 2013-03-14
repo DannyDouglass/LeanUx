@@ -73,9 +73,14 @@ define(
                     if (!this[whichDate]) { return ""; }
 
                     var theDate = this[whichDate];
-                    var parts = /^(\d{4})-(\d{2})-(\d{2})/.exec(theDate);
+                    var match = theDate.match(/^(\d{4})-(\d{2})-(\d{2})/);
 
-                    return parts[2] + "/" + parts[3] + "/" + parts[1];
+                    if (match)
+                    {
+                        return match[2] + "/" + match[3] + "/" + match[1];
+                    }
+
+                    return theDate;
                 }
             }
         })
@@ -90,9 +95,14 @@ define(
                     if (!this[whichDate]) { return ""; }
 
                     var theDate = this[whichDate];
-                    var parts = /^(\d{4})-(\d{2})-(\d{2})/.exec(theDate);
+                    var match = theDate.match(/^(\d{4})-(\d{2})-(\d{2})/);
 
-                    return parts[2] + "/" + parts[3] + "/" + parts[1];
+                    if (match)
+                    {
+                        return match[2] + "/" + match[3] + "/" + match[1];
+                    }
+
+                    return theDate;
                 }
             }
         });

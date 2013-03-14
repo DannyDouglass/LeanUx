@@ -16,7 +16,6 @@ define(
                     var errorView = new ErrorView();
                 }
             });
-            
         };
 
         return { 
