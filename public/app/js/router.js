@@ -8,7 +8,9 @@ define(
 				"employeeProfile": "showEmployeeProfile",
 				"employeeProfile/:id" : "showEmployeeProfile",
 				"chooseBenefits": "showBenefitOptions",
-				"chooseBenefits/:id": "showBenefitOptions"
+				"chooseBenefits/:id": "showBenefitOptions",
+				"reviewNewHire" : "showReviewAndComplete",
+				"reviewNewHire/:id" : "showReviewAndComplete"
 			},
 
 			initialize: function() {
@@ -30,6 +32,11 @@ define(
 			showBenefitOptions: function(id) {
 				var controller = new NewHireWizardController();
 				controller.benefitOptions();
+			},
+
+			showReviewAndComplete: function(id){
+				var controller = new NewHireWizardController();
+				controller.reviewAndComplete();
 			}
 		});
 

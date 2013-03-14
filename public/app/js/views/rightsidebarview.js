@@ -9,6 +9,13 @@ define(['backbone', 'jquery', 'bootstrap'], function(Backbone, $, Bootstrap){
 		},
 		render: function(){
 			this.$el.html(this.template);
+		},
+		events: {
+			"click #viewAllNewHires" : "showNewHires"
+		},
+		showNewHires: function(ev){
+			ev.preventDefault();
+			LeanUx.router.navigate("", true);
 		}
 	});
 

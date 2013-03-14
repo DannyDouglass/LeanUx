@@ -35,6 +35,11 @@ define(
             benefitOptions: function() {
                 this.layout.wizardProgress.show(new WizardProgressView({ step: 2 }));  
                 this.layout.currentStep.show(new wizard.ChooseBenefitsView({ model: this.model }));
+            },
+
+            reviewAndComplete: function(){
+                this.layout.wizardProgress.show(new WizardProgressView({ step: 5 }));
+                this.layout.currentStep.show(new wizard.ReviewAndCompleteView({ model: this.model }));
             }
         });
 

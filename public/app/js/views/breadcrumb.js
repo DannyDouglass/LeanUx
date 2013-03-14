@@ -8,7 +8,9 @@ define(
 
 			initialize: function(){
 				LeanUx.router.on("route:showNewHires", this.renderNewHires, this);
-				LeanUx.router.on("route:showEmployeeProfile", this.renderEmployeeProfile, this);
+				LeanUx.router.on("route:showEmployeeProfile", this.renderAddNewHire, this);
+				LeanUx.router.on("route:showBenefitOptions", this.renderAddNewHire)
+				LeanUx.router.on("route:showReviewAndComplete", this.renderAddNewHire, this);
 			},
 
 			renderNewHires: function(){
@@ -18,7 +20,7 @@ define(
 				return this;
 			},
 
-			renderEmployeeProfile: function(){
+			renderAddNewHire: function(){
 				$(this.el).empty();
 				$(this.el).append(this.renderBaseBreadcrumb);
 				$(this.el).append("<li><a href=\"\">New Hire</a><span class=\"divider\">/</span></li>");  

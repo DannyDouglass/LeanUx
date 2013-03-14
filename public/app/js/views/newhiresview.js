@@ -32,6 +32,8 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 				.empty()
 				.append(_.template($("#newHireLandingHeader").html()))
 				.append(this.$el);
+
+			$("div#viewNewHiresHelper").hide();
 			return this;
 		},
 

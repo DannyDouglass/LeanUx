@@ -24,11 +24,18 @@
     	</script>
 		
 		<script id="rightSideBarTemplate" type="text/template">
+			<div id="viewNewHiresHelper" class="clearfix">
+				<a href="javascript:void(0);" id="viewAllNewHires">
+			    	<button class="btn btn-large" style="float: right; margin-top: 30px;">
+			        	<i class="icon-circle-arrow-left"></i> View All New Hires
+			    	</button>
+			    </a>
+		    </div>
 			<div id="needHelpWell" class="well well-small">
 				<h4>Need Help?</h4>
 				Phone: <strong>(123) 456-7890</strong><br />
 				7am - 7pm CST, Monday - Friday<br />
-				Or <a href="#">Contact Us via email</a>
+				Or <a href="javascript:void(0);">Contact Us via email</a>
 			</div>
 		</script>
 
@@ -119,9 +126,7 @@
 					</p>
 				</div>
 				<div class="clearfix" style="border-bottom: solid 1px #DFDFDF; padding: 10px 0;">
-				    <div class="pull-left" style="color: #666;">
-				        <strong>Please enter all the employee&apos;s profile information.</strong>
-				    </div>
+				    <div id="stepInstructionMessage" class="pull-left" style="color: #666; font-weight: bold;"></div>
 				    <div class="pull-right">
 				        * Required Field
 				    </div>
@@ -297,12 +302,12 @@
 		<script id="choose_benefits_template" type="text/template">
 			<div style="padding: 20px 8px 0px 5px">
 				<fieldset>
-					<legend class="active">
+					<legend id="PlanOptions_401kPlan">
 						<div class="clearfix">
 							<div class="pull-left">
 								401(k) Retirement Plan</legend>
 							</div>
-							<div class="pull-right" style="padding-right: 25px;">
+							<div id="enroll_401k" class="pull-right" style="padding-right: 25px;">
 								<button class="btn enroll">Enroll</button>
 							</div>
 						</div>
@@ -365,7 +370,12 @@
 					<tbody>
 						<tr>
 							<td style="border-top: dotted 1px #DFDFDF"><small>EMPLOYEE CONTRIBUTION</small></td>
-							<td style="border-top: dotted 1px #DFDFDF"><input type="text" size="3" placeholder="%" style="width: auto;" /></td>
+							<td style="border-top: dotted 1px #DFDFDF">
+								<div class="input-append">
+									<input type="text" size="3" placeholder="0" style="width: auto;" />
+									<span class="add-on">%</span>
+								</div>
+							</td>
 							<td style="border-top: dotted 1px #DFDFDF"><small><em>per paycheck</em></small></td>
 						</tr>
 						<tr>

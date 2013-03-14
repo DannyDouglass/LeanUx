@@ -133,6 +133,7 @@ define(
 
             initialize: function() {
                 this.on("state:changed", this._stateChanged);
+                $("#stepInstructionMessage").html("Please enter all the employee&apos;s profile information.");
 
                 this._setCurrentState(this.model.isNew() ? this.states.thumbnailed : this.states.details);
             },
@@ -262,7 +263,8 @@ define(
 
             initialize: function() {
                 this.on("state:changed", this._stateChanged);
-
+                $("#stepInstructionMessage").html("Set up which benefits the employee wishes to enroll in.");
+                
                 this.collection = new Four01kPlanCollection();
                 this.collection.fetch();
 
@@ -284,6 +286,43 @@ define(
 
             _showCurrentState: function() {
                 this.body.show(new this.currentState.View({ collection: this.collection }));
+                
+                if (this.currentState === this.states.details) {
+                    $("#enroll_401k").hide();
+                    $("#PlanOptions_401kPlan").addClass("active");                    
+                }
+            }
+        });
+
+        wizard.ReviewAndCompleteView = Backbone.Marionette.Layout.extend({
+            template: "#review_and_complete",
+            regionType: FadeTransitionRegion,
+
+            regions: {
+                body: ".wizard-step-body"
+            },
+
+            initialize: function(){
+                this.on("state:changed", this._stateChanged);
+                console.log(this.model);
+                //todo: set current state
+
+            },
+
+            onRender: function(){
+                this._showCurrentState();
+            },
+
+            _setCurrentState: function(state){
+                this.currentState = state;
+            },
+
+            _stateChanged: function(){
+                this._showCurrentState();
+            },
+
+            _showCurrentState: function(){
+                this.body.show(new this.currentState.View())
             }
         });
 
