@@ -95,6 +95,7 @@ define(
                     if (!this[whichDate]) { return ""; }
 
                     var theDate = this[whichDate];
+<<<<<<< HEAD
                     var match = theDate.match(/^(\d{4})-(\d{2})-(\d{2})/);
 
                     if (match)
@@ -103,6 +104,14 @@ define(
                     }
 
                     return theDate;
+=======
+                    return theDate;
+
+                    /* TODO: cleanly format date
+                    var parts = /^(\d{4})-(\d{2})-(\d{2})/.exec(theDate);
+                    return parts[2] + "/" + parts[3] + "/" + parts[1];
+                    */
+>>>>>>> commenting out format date bug; adding active state for step 2 401k header section
                 }
             }
         });
