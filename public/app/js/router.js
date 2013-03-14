@@ -1,6 +1,7 @@
 define(
 	['backbone', 'jquery', 'views/newhiresview', 'views/loadingview', 'views/newhirewizardcontroller', 'collections/newhirescollection', 'views/error'], 
 	function(Backbone, $, NewHiresView, LoadingView, NewHireWizardController, NewHiresCollection, ErrorView) {
+
 		var AppRouter = Backbone.Router.extend({
 			routes : { 
 				"" : "showNewHires",
@@ -15,26 +16,15 @@ define(
 
 			showNewHires: function() {
 				var loadingView = new LoadingView();
-				LeanUx.newHiresCollection = new NewHiresCollection();
-				LeanUx.newHiresCollection.fetch({
-					success: function(){
-						var newHiresView = new NewHiresView();
-					},
-					error: function(){
-						var errorView = new ErrorView();
-					}
-				});
+				var newHiresView = new NewHiresView();
 			},
 
 			showEmployeeProfile: function(id) {
 				var model;
-
-				if (id) {
-					model = LeanUx.newHiresCollection.get(id);
-				}
+				if (id) { model = LeanUx.newHiresCollection.get(id); }
 
 				var controller = new NewHireWizardController({ model: model });
-				controller.start();
+				controller.newHireProfile();
 			},
 
 			showBenefitOptions: function(id) {

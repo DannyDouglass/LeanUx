@@ -5,6 +5,7 @@ define(
         var NewHireWizardController = Marionette.Controller.extend({
 
             initialize: function(options) {
+
                 if (options.model) {
                     this.model = options.model;
                 } else {
@@ -20,7 +21,7 @@ define(
                 this.layout.wizardProgress.show(new WizardProgressView());
             },
 
-            start: function() {
+            newHireProfile: function() {
                 var employeeInformationView = new wizard.EmployeeInformationView({ model: this.model });
                 
                 employeeInformationView.on("done", function() {
