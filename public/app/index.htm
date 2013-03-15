@@ -395,12 +395,12 @@
 							<td><strong>Enter Amount:</strong></td>
 							<td>
 								<label class="radio">
-									<input name="contributionType" type="radio" />Percent
+									<input name="contributionType" type="radio" checked="checked" />Percent
 								</label>
 							</td>
 							<td>
 								<label class="radio">
-									<input name="contributionType" type="radio" />Dollar
+									<input name="contributionType" type="radio" disabled="disabled" />Dollar
 								</label>
 							</td>
 						</tr>
@@ -410,7 +410,11 @@
 							<td style="border-top: dotted 1px #DFDFDF"><small>EMPLOYEE CONTRIBUTION</small></td>
 							<td style="border-top: dotted 1px #DFDFDF">
 								<div class="input-append">
-									<input type="text" size="3" placeholder="0" style="width: auto;" />
+									<input id="employeeContribution" type="text" 
+                                           size="3" 
+                                           placeholder="0" 
+                                           style="width: auto;" 
+                                           value="<%= employeePercentage %>" />
 									<span class="add-on">%</span>
 								</div>
 							</td>
@@ -418,14 +422,14 @@
 						</tr>
 						<tr>
 							<td style="border-top: 0;"><small>EMPLOYER CONTRIBUTION</small></td>
-							<td style="border-top: 0;">0%</td>
+							<td style="border-top: 0;"><%= companyPercentage %>%</td>
 							<td style="border-top: 0;">&nbsp;</td>
 						</tr>
 					</tbody>
 					<tfoot>
 						<tr>
 							<td style="border-top: dotted 1px #DFDFDF"><small>TOTAL</small></td>
-							<td style="border-top: dotted 1px #DFDFDF"><strong>0%</strong></td>
+							<td style="border-top: dotted 1px #DFDFDF"><strong><%= totalPercentage %>%</strong></td>
 							<td style="border-top: dotted 1px #DFDFDF">&nbsp;</td>
 						</tr>
 					</tfoot>
@@ -433,7 +437,7 @@
 			</div>
 			<div class="text-right">
 				<button class="btn">Cancel</button>
-				<button class="btn btn-success">Done</button>
+				<button id="done_401k" class="btn btn-success">Done</button>
 			</div>
 		</script>
 

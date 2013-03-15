@@ -25,7 +25,32 @@ define(
         var four01kPlanDetailsInput = Marionette.CompositeView.extend({
             itemView: four01kPlanDetailsDisplay,
             template: "#401k_plan_details_input_template",
-            itemViewContainer: "ul"
+            itemViewContainer: "ul",
+
+            serializeData: function() {
+
+                var employeePercentage = this.model.get("employeePercentage");
+                if (employeePercentage) {
+                    employeePercentage = employeePercentage * 100;
+                }
+                else {
+                    employeePercentage = 0;
+                }
+
+                var companyPercentage = this.model.get("companyPercentage");
+                if (companyPercentage) {
+                    companyPercentage = companyPercentage * 100;
+                }
+                else {
+                    companyPercentage = 0;
+                }
+
+                return {
+                    employeePercentage: employeePercentage,
+                    companyPercentage: companyPercentage,
+                    totalPercentage: employeePercentage + companyPercentage
+                };
+            }
         });
 
         var ChooseBenefitsView = Marionette.Layout.extend({
@@ -37,7 +62,8 @@ define(
             },
 
             events: {
-                "click button.enroll": "enroll"
+                "click button.enroll": "enroll",
+                "click #done_401k": "done"
             },
 
             states: {
@@ -56,6 +82,20 @@ define(
                 } else {
                     this._setCurrentState(this.states.thumbnailed);
                 }
+            },
+
+            done: function() {
+                var employeeContrib = this.body.$el.find("#employeeContribution").val();
+                employeeContrib = parseInt(employeeContrib) / 100;
+
+                this.model.save({ employeePercentage: employeeContrib }, {
+                    success: function() {
+                        console.log("success");
+                    },
+                    error: function() {
+                        console.log("error");
+                    }
+                });
             },
 
             initialize: function() {
@@ -82,7 +122,7 @@ define(
             },
 
             _showCurrentState: function() {
-                this.body.show(new this.currentState.View({ collection: this.collection }));
+                this.body.show(new this.currentState.View({ collection: this.collection, model: this.model }));
                 
                 if (this.currentState === this.states.details) {
                     $("#enroll_401k").hide();

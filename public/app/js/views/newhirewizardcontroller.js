@@ -1,9 +1,9 @@
 define(
     ["marionette", "views/newhirewizardprogressview", "views/rightsidebarview", "models/newhiresmodel", "views/wizard/wizardlayout",
-    "views/wizard/employeeprofile", "views/wizard/choosebenefits", "views/wizard/reviewandcomplete"],
+    "views/wizard/employeeprofile", "views/wizard/choosebenefits", "views/wizard/reviewandcomplete", "models/four01koptions"],
 
     function(Marionette, WizardProgressView, RightSideBarView, NewHiresModel, WizardLayout, EmployeeInformationView, 
-        ChooseBenefitsView, ReviewAndCompleteView) {        
+        ChooseBenefitsView, ReviewAndCompleteView, Four01kOptions) {        
 
         var NewHireWizardRegion = Marionette.Region.extend({
             el: "#leftSubContentColumn"
@@ -39,8 +39,11 @@ define(
             },
 
             benefitOptions: function() {
-                this.layout.wizardProgress.show(new WizardProgressView({ step: 2 }));  
-                this.layout.currentStep.show(new ChooseBenefitsView({ model: this.model }));
+                var opt = new Four01kOptions({ id: this.model.id });
+                opt.fetch();
+
+                this.layout.wizardProgress.show(new WizardProgressView({ step: 2 })); 
+                this.layout.currentStep.show(new ChooseBenefitsView({ model: opt }));
             },
 
             reviewAndComplete: function(){

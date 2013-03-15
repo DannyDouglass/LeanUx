@@ -3,6 +3,7 @@ var express = require('express'),
   address = require('./routes/address'),
   Four01kplan = require("./routes/Four01kplan"),
   employeeProfile = require('./routes/employee_profile'),
+  four01k = require("./routes/401k"),
   http = require('http'),
   path = require('path'),
   db = require('./lib/db');
@@ -36,6 +37,9 @@ app.get('/newhire/employeeprofiles/:id', employeeProfile.getById);
 app.post('/newhire/employeeprofiles', employeeProfile.post);
 app.put('/newhire/employeeprofiles/:id', employeeProfile.put);
 app.del('/newhire/employeeprofiles/:id', employeeProfile.remove);
+
+app.get("/newhire/employeeprofiles/:id/401k", four01k.get);
+app.put("/newhire/employeeprofiles/:id/401k", four01k.put);
 
 db.connect();
 
