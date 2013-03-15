@@ -25,6 +25,7 @@ define(
 				var model;
 				if (id) { model = LeanUx.newHiresCollection.get(id); }
 
+				debugger;
 				var controller = new NewHireWizardController({ model: model });
 				controller.newHireProfile();
 			},

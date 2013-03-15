@@ -1,6 +1,13 @@
 define(
-    ["jquery", "underscore", "backbone", "marionette", "views/newhirewizardprogressview", "views/newhirewizard", "views/rightsidebarview", "collections/four01kplancollection", "models/newhiresmodel"],
-    function($, _, Backbone, Marionette, WizardProgressView, wizard, RightSideBarView, Four01kPlanCollection, NewHiresModel) {
+    ["marionette", "views/newhirewizardprogressview", "views/rightsidebarview", "models/newhiresmodel", "views/wizard/wizardlayout",
+    "views/wizard/employeeprofile", "views/wizard/choosebenefits", "views/wizard/reviewandcomplete"],
+
+    function(Marionette, WizardProgressView, RightSideBarView, NewHiresModel, WizardLayout, EmployeeInformationView, 
+        ChooseBenefitsView, ReviewAndCompleteView) {        
+
+        var NewHireWizardRegion = Marionette.Region.extend({
+            el: "#leftSubContentColumn"
+        });
 
         var NewHireWizardController = Marionette.Controller.extend({
 
@@ -13,33 +20,32 @@ define(
                 }
 
                 this.rightSideBar = new RightSideBarView();
-                this.region = new wizard.NewHireWizardRegion();
-                this.layout = new wizard.NewHireWizardLayout();
+                this.region = new NewHireWizardRegion();
+                this.layout = new WizardLayout();
 
                 this.region.show(this.layout);
             },
 
             newHireProfile: function() {
-                var employeeInformationView = new wizard.EmployeeInformationView({ model: this.model });
+                var employeeInformationView = new EmployeeInformationView({ model: this.model });
                 this.layout.wizardProgress.show(new WizardProgressView({ step: 1 }));
                 
                 employeeInformationView.on("done", function() {
                     LeanUx.router.navigate("chooseBenefits/" + this.model.id);
                     this.benefitOptions();
-                }, this);
-                
+                }, this);                
 
                 this.layout.currentStep.show(employeeInformationView);
             },
 
             benefitOptions: function() {
                 this.layout.wizardProgress.show(new WizardProgressView({ step: 2 }));  
-                this.layout.currentStep.show(new wizard.ChooseBenefitsView({ model: this.model }));
+                this.layout.currentStep.show(new ChooseBenefitsView({ model: this.model }));
             },
 
             reviewAndComplete: function(){
                 this.layout.wizardProgress.show(new WizardProgressView({ step: 5 }));
-                this.layout.currentStep.show(new wizard.ReviewAndCompleteView({ model: this.model }));
+                this.layout.currentStep.show(new ReviewAndCompleteView({ model: this.model }));
             }
         });
 
