@@ -195,7 +195,7 @@
 			<ul class="inline">
                 <li style="width: 33%;">
                     <label>Social Security Number *</label>
-                    <strong><%= socialSecurityNumber %></strong>
+                    <strong><%= formatSSN(socialSecurityNumber) %></strong>
                 </li>
                 <li style="width: 33%;">
                     <label>Date of Hire *</label>
@@ -448,6 +448,114 @@
 				<button id="done_401k" class="btn btn-success">Done</button>
 			</div>
 		</script>
+
+        <script id="review_and_complete" type="text/template">
+            <div class="wizard-step-body" style="background-color: #FFFFFF; border: 0; margin: 0; padding: 0;">
+                <div class="summary new-hire-summary"></div>
+                <div class="summary benefits-summary"></div>
+                <div class="actions" style="margin-top: 10px;">
+                    <div class="pull-left">
+                        <a class="btn btn-link" href="javascript:void(0);">Previous Step</a>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-success">Complete New Hire Entry</button>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+        <script id="new_hire_profile_summary" type="text/template">
+            <div class="summary-header-container clearfix">
+                <div class="summary-header pull-left">New Hire Profile</div>
+                <div class="pull-right">
+                    <small><a href="javascript:void(0);">Go Back and Edit</a></small>
+                </div>
+            </div>
+            <div class="summary-body clearfix">
+                <div class="pull-left">
+                    <h5>Personal Information
+                    <dl class="dl-horizontal" style="padding-left: 20px;">
+                        <dt>Social Security Number</dt>
+                        <dd><%= socialSecurityNumber %></dd>
+                        <dt>Date of Hire</dt>
+                        <dd><%= dateOfHire %></dd>
+                        <dt>Subgroup ID</dt>
+                        <dd>1234567890</dd>
+                        <dt>First Name</dt>
+                        <dd><%= firstName %></dd>
+                        <dt>Middle Name</dt>
+                        <dd><%= middleName %></dd>
+                        <dt>Last Name</dt>
+                        <dd><%= lastName %></dd>
+                        <dt>Gender</dt>
+                        <dd><%= gender %></dd>
+                        <dt>Marital Status</dt>
+                        <dd><%= maritalStatus %></dd>
+                    </dl>
+                </div>
+                <div class="pull-right" style="width: 50%;">
+                    <h5>Employment Information</h5>
+                    <dl class="dl-horizontal" style="padding-left: 20px;">
+                        <dt>Employment Status</dt>
+                        <dd>Lorem</dd>
+                        <dt>Employment Reason</dt>
+                        <dd>Ipsum</dd>
+                        <dt>Latest Date of Hire</dt>
+                        <dd>Dolor</dd>
+                        <dt>Type of Employee</dt>
+                        <dd>Sit</dd>
+                        <dt>Job Status</dt>
+                        <dd>Amet</dd>
+                        <dt>Job Code</dt>
+                        <dd>Consectetur</dd>
+                        <dt>Union Member?</dt>
+                        <dd>Adipiscing</dd>
+                        <dt>Outside Employee?</dt>
+                        <dd>Elit</dd>
+                        <dt>Annual Base Salary</dt>
+                        <dd>Quisque</dd>
+                        <dt>Payroll Frequency</dt>
+                        <dd>Diam</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="summary-body clearfix">
+                <div class="pull-left">
+                    <h5>Contact</h5>
+                    <dl class="dl-horizontal" style="padding-left: 20px;">
+                        <dt>Address</dt>
+                        <dd>Enim</dd>
+                        <dt>City</dt>
+                        <dd>Rutrum</dd>
+                        <dt>State</dt>
+                        <dd>Bibendum</dd>
+                        <dt>ZIP Code</dt>
+                        <dd>Tincidunt</dd>
+                        <dt>Country</dt>
+                        <dd>Vitae</dd>
+                        <dt>Primary Phone Number</dt>
+                        <dd>Imperdiet</dd>
+                        <dt>Email Address</dt>
+                        <dd>Quis </dd>
+                    </dl>
+                </div>
+                <div class="pull-right" style="width: 50%;">
+                    <h5>Dependents</h5>
+                    <em>None entered</em>
+                </div>
+            </div>
+        </script>
+
+        <script id="benefits_summary" type="text/template">
+            <div class="summary-header-container clearfix">
+                <div class="summary-header pull-left">Benefits</div>
+                <div class="pull-right">
+                    <small><a href="javascript:void(0);">Go Back and Edit</a></small>
+                </div>
+            </div>
+            <div class="summary-body">
+            </div>
+        </script>
 
 		<script data-main="js/main.js" src="lib/requirejs/require.js"></script>
     	

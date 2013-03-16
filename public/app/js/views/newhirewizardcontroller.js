@@ -43,10 +43,16 @@ define(
                 opt.fetch();
 
                 this.layout.wizardProgress.show(new WizardProgressView({ step: 2 })); 
-                this.layout.currentStep.show(new ChooseBenefitsView({ model: opt }));
+
+                var chooseBenefitsView = new ChooseBenefitsView({ model: opt });
+                chooseBenefitsView.on("done", function() {
+                    LeanUx.router.navigate("reviewNewHire/" + this.model.id);
+                    this.reviewAndComplete();
+                }, this);
+                this.layout.currentStep.show(chooseBenefitsView);
             },
 
-            reviewAndComplete: function(){
+            reviewAndComplete: function() {
                 this.layout.wizardProgress.show(new WizardProgressView({ step: 5 }));
                 this.layout.currentStep.show(new ReviewAndCompleteView({ model: this.model }));
             }

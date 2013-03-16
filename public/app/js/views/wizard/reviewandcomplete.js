@@ -1,34 +1,37 @@
 define(["jquery", "marionette", "views/fadetransitionregion"], function($, Marionette, FadeTransitionRegion) {
 
+    var BenefitsSummary = Marionette.ItemView.extend({
+
+        template: "#benefits_summary"
+    });
+
+    var NewHireProfileSummary = Marionette.ItemView.extend({
+
+        template: "#new_hire_profile_summary"
+    });
+
     var ReviewAndCompleteView = Backbone.Marionette.Layout.extend({
         
         template: "#review_and_complete",
         regionType: FadeTransitionRegion,
 
         regions: {
-            body: ".wizard-step-body"
+            newHireSummary: ".new-hire-summary",
+            benefitsSummary: ".benefits-summary"
         },
 
-        initialize: function(){
-            this.on("state:changed", this._stateChanged);
+        initialize: function() {
+        },
+
+        onRender: function() {
+
             console.log(this.model);
-            //todo: set current state
-        },
+            
+            $("#stepInstructionMessage")
+                .html("Please review all information about the employee, then confirm to complete this new hire.");
 
-        onRender: function(){
-            this._showCurrentState();
-        },
-
-        _setCurrentState: function(state){
-            this.currentState = state;
-        },
-
-        _stateChanged: function(){
-            this._showCurrentState();
-        },
-
-        _showCurrentState: function(){
-            this.body.show(new this.currentState.View())
+            this.newHireSummary.show(new NewHireProfileSummary({ model: this.model }));
+            this.benefitsSummary.show(new BenefitsSummary({ model: this.model }));
         }
     });
 

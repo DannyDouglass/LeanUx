@@ -91,9 +91,11 @@ define(
                 employeeContrib = parseInt(employeeContrib) / 100;
                 companyContrib = parseInt(companyContrib) / 100;
 
+                var that = this;
+
                 this.model.save({ employeePercentage: employeeContrib, companyPercentage: companyContrib }, {
                     success: function() {
-                        console.log("success");
+                        that.trigger("done");
                     },
                     error: function() {
                         console.log("error");

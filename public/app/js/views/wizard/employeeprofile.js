@@ -9,6 +9,8 @@ define(["marionette", "views/fadetransitionregion"], function(Marionette, FadeTr
             formatDate: function(whichDate) {
                 if (!this[whichDate]) { return ""; }
 
+                console.log(this[whichDate]);
+
                 var theDate = this[whichDate];
                 var match = theDate.match(/^(\d{4})-(\d{2})-(\d{2})/);
 
@@ -18,6 +20,16 @@ define(["marionette", "views/fadetransitionregion"], function(Marionette, FadeTr
                 }
 
                 return theDate;
+            },
+
+            formatSSN: function(ssn) {
+                var match = ssn.match(/^(?:\d{3})-(?:\d{2})-(\d{4})/);
+
+                if (match) {
+                    return "xxx-xx-" + match[1];
+                }
+
+                return ssn;
             }
         }
     });

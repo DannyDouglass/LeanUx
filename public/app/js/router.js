@@ -30,12 +30,18 @@ define(
 			},
 
 			showBenefitOptions: function(id) {
-				var controller = new NewHireWizardController();
+				var model;
+				if (id) { model = LeanUx.newHiresCollection.get(id); }
+
+				var controller = new NewHireWizardController({ model: model });
 				controller.benefitOptions();
 			},
 
-			showReviewAndComplete: function(id){
-				var controller = new NewHireWizardController();
+			showReviewAndComplete: function(id) {
+				var model;
+				if (id) { model = LeanUx.newHiresCollection.get(id); }
+
+				var controller = new NewHireWizardController({ model: model });
 				controller.reviewAndComplete();
 			}
 		});
