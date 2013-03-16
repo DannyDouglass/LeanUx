@@ -410,7 +410,9 @@
 							<td style="border-top: dotted 1px #DFDFDF"><small>EMPLOYEE CONTRIBUTION</small></td>
 							<td style="border-top: dotted 1px #DFDFDF">
 								<div class="input-append">
-									<input id="employeeContribution" type="text" 
+									<input id="employeePercentage" 
+                                           name="employeePercentage"
+                                           type="text" 
                                            size="3" 
                                            placeholder="0" 
                                            style="width: auto;" 
@@ -422,7 +424,13 @@
 						</tr>
 						<tr>
 							<td style="border-top: 0;"><small>EMPLOYER CONTRIBUTION</small></td>
-							<td style="border-top: 0;"><%= companyPercentage %>%</td>
+							<td style="border-top: 0;">
+                                <%= companyPercentage %>%
+                                <input type="hidden" 
+                                       id="companyPercentage" 
+                                       name="companyPercentage" 
+                                       value="<%= companyPercentage %>" />
+                            </td>
 							<td style="border-top: 0;">&nbsp;</td>
 						</tr>
 					</tbody>

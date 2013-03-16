@@ -85,10 +85,13 @@ define(
             },
 
             done: function() {
-                var employeeContrib = this.body.$el.find("#employeeContribution").val();
-                employeeContrib = parseInt(employeeContrib) / 100;
+                var employeeContrib = this.body.$el.find("#employeePercentage").val();
+                var companyContrib = this.body.$el.find("#companyPercentage").val();
 
-                this.model.save({ employeePercentage: employeeContrib }, {
+                employeeContrib = parseInt(employeeContrib) / 100;
+                companyContrib = parseInt(companyContrib) / 100;
+
+                this.model.save({ employeePercentage: employeeContrib, companyPercentage: companyContrib }, {
                     success: function() {
                         console.log("success");
                     },
