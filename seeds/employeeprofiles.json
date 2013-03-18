@@ -1,54 +1,53 @@
 [
   { 
-    socialSecurityNumber: "000-11-2121" , dateOfHire: "02/02/2013"  , salutation: "Mr"             ,
-    firstName: "John"                   , lastName: "Employee"         , suffix: ""                ,
-    maritalStatus: "Single"             , dateOfBirth: "01/01/1980" , status: "Complete"           , statusLocation: null, 
+    socialSecurityNumber: "000-11-2121", dateOfHire: "02/02/2013", salutation: "Mr",
+    firstName: "John", lastName: "Employee", suffix: "", gender: "Male", maritalStatus: "Single", dateOfBirth: "01/01/1980", status: "Complete", statusLocation: null, 
     benefitOptions: {
-        four01k: { employeePercentage: ".03", companyPercentage: ".04"  }
+        four01k: { employeePercentage: ".03", companyPercentage: ".04" }
     },
     summaryFields: {
-      subgroupId: "01-00091-001", employementStatus: "Active", employmentReason: "", typeOfEmployee: "Full-Time", jobStatus: "Active", jobCode: "Employee", unionMember: "No", outsideEmployee: "No", annualBaseSalary: "$56,000", payrollFrequency: "Bi-Weekly", retirementSecurityEligible: "Yes"
+      subgroupId: "01-00091-001", employmentStatus: "Active", employmentReason: "", typeOfEmployee: "Full-Time", jobStatus: "Active", jobCode: "Employee", unionMember: "No", outsideEmployee: "No", annualBaseSalary: "$56,000", payrollFrequency: "Bi-Weekly", retirementSecurityEligible: "Yes"
     }                  
   },
   { 
-    socialSecurityNumber: "000-22-3456" , dateOfHire: "01/28/2013"  , salutation: "Mr"             ,
-    firstName: "Robert"               , lastName: "Lineman"        , suffix: null                 ,
-    maritalStatus: "Married"            , dateOfBirth: "01/01/1970" , status: "Not Completed"      , statusLocation: "3 of 5: Beneficiaries",
+    socialSecurityNumber: "000-22-3456" , dateOfHire: "01/28/2013", salutation: "Mr",
+    firstName: "Robert", lastName: "Lineman", suffix: null,
+    gender: "Male", maritalStatus: "Married", dateOfBirth: "01/01/1970", status: "Not Completed", statusLocation: "3 of 5: Beneficiaries",
     benefitOptions: {
-        four01k: { employeePercentage: ".01", companyPercentage: ".03"  }
+        four01k: { employeePercentage: ".01", companyPercentage: ".03" }
     },
     summaryFields: {
-      subgroupId: "01-00091-001", employementStatus: "Active", employmentReason: "", typeOfEmployee: "Full-Time", jobStatus: "Active", jobCode: "Employee", unionMember: "No", outsideEmployee: "No", annualBaseSalary: "$56,000", payrollFrequency: "Bi-Weekly", retirementSecurityEligible: "Yes"
+      subgroupId: "01-00091-001", employmentStatus: "Active", employmentReason: "", typeOfEmployee: "Full-Time", jobStatus: "Active", jobCode: "Employee", unionMember: "No", outsideEmployee: "No", annualBaseSalary: "$56,000", payrollFrequency: "Bi-Weekly", retirementSecurityEligible: "Yes"
     }
   } ,
   { 
-    socialSecurityNumber: "000-33-1111" , dateOfHire: "01/25/2013"  , salutation: "Mrs"             ,
-    firstName: "Jane"                 , lastName: "Smith"          , suffix: null                 ,
-    maritalStatus: "Single"             , dateOfBirth: "03/11/1991" , status: "Pending Completion" , statusLocation: null,
+    socialSecurityNumber: "000-33-1111", dateOfHire: "01/25/2013", salutation: "Mrs",
+    firstName: "Jane", lastName: "Smith", suffix: null,
+    gender: "Female", maritalStatus: "Single", dateOfBirth: "03/11/1991", status: "Pending Completion", statusLocation: null,
     benefitOptions: {
-        four01k: { employeePercentage: ".03", companyPercentage: ".03"  }
+        four01k: { employeePercentage: ".03", companyPercentage: ".03" }
     },
     summaryFields: {
-      subgroupId: "01-00091-001", employementStatus: "Active", employmentReason: "", typeOfEmployee: "Full-Time", jobStatus: "Active", jobCode: "Employee", unionMember: "No", outsideEmployee: "No", annualBaseSalary: "$56,000", payrollFrequency: "Bi-Weekly", retirementSecurityEligible: "Yes"
+      subgroupId: "01-00091-001", employmentStatus: "Active", employmentReason: "", typeOfEmployee: "Full-Time", jobStatus: "Active", jobCode: "Employee", unionMember: "No", outsideEmployee: "No", annualBaseSalary: "$56,000", payrollFrequency: "Bi-Weekly", retirementSecurityEligible: "Yes"
     }                    
   } ,
   { 
-    socialSecurityNumber: "000-44-8907" , dateOfHire: "01/18/2013"  , salutation: "Mr"             ,
-    firstName: "Katie"                 , lastName: "McDonal"          , suffix: "Sr."                ,
-    maritalStatus: "Single"             , dateOfBirth: "09/13/1985" , status: "Complete"           , statusLocation: null,
+    socialSecurityNumber: "000-44-8907", dateOfHire: "01/18/2013", salutation: "Mr",
+    firstName: "Katie", lastName: "McDonald", suffix: "Sr.",
+    gender: "Female", maritalStatus: "Single", dateOfBirth: "09/13/1985", status: "Complete", statusLocation: null,
     benefitOptions: {
-        four01k: { employeePercentage: ".00", companyPercentage: ".05"  }
+        four01k: { employeePercentage: ".00", companyPercentage: ".05" }
     },
     summaryFields: {
-      subgroupId: "01-00091-001", employementStatus: "Active", employmentReason: "", typeOfEmployee: "Full-Time", jobStatus: "Active", jobCode: "Employee", unionMember: "No", outsideEmployee: "No", annualBaseSalary: "$56,000", payrollFrequency: "Bi-Weekly", retirementSecurityEligible: "Yes"
+      subgroupId: "01-00091-001", employmentStatus: "Active", employmentReason: "", typeOfEmployee: "Full-Time", jobStatus: "Active", jobCode: "Employee", unionMember: "No", outsideEmployee: "No", annualBaseSalary: "$56,000", payrollFrequency: "Bi-Weekly", retirementSecurityEligible: "Yes"
     }                    
   },
   { 
-    socialSecurityNumber: "000-00-0000" , dateOfHire: "03/01/2013"  , salutation: "Mr"             ,
-    firstName: "Missing"                 , lastName: "401k"          , suffix: ""                ,
-    maritalStatus: "Single"             , dateOfBirth: "09/13/1985" , status: "Not Completed"           , statusLocation: "1 of 5: New Hire Profile ",
+    socialSecurityNumber: "000-00-0000", dateOfHire: "03/01/2013", salutation: "Mr",
+    firstName: "Missing", lastName: "401k", suffix: "",
+    gender: "Male", maritalStatus: "Single", dateOfBirth: "09/13/1985", status: "Not Completed", statusLocation: "1 of 5: New Hire Profile ",
     summaryFields: {
-      subgroupId: "01-00091-001", employementStatus: "Active", employmentReason: "", typeOfEmployee: "Full-Time", jobStatus: "Active", jobCode: "Employee", unionMember: "No", outsideEmployee: "No", annualBaseSalary: "$56,000", payrollFrequency: "Bi-Weekly", retirementSecurityEligible: "Yes"
+      subgroupId: "01-00091-001", employmentStatus: "Active", employmentReason: "", typeOfEmployee: "Full-Time", jobStatus: "Active", jobCode: "Employee", unionMember: "No", outsideEmployee: "No", annualBaseSalary: "$56,000", payrollFrequency: "Bi-Weekly", retirementSecurityEligible: "Yes"
     }
   }
 ]
