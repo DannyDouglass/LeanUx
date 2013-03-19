@@ -56,7 +56,7 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 		viewHelpers: {
 			formatSSN: function() {
 				var lastFour = /\d{3}-\d{2}-(\d{4})/.exec(this.socialSecurityNumber)[1];
-				return "xxx-xx-" + lastFour;
+				return "XXX-XX-" + lastFour;
 			},
 
 			formatDate: function(whichDate) {

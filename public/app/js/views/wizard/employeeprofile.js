@@ -26,7 +26,7 @@ define(["marionette", "views/fadetransitionregion"], function(Marionette, FadeTr
                 var match = ssn.match(/^(?:\d{3})-(?:\d{2})-(\d{4})/);
 
                 if (match) {
-                    return "xxx-xx-" + match[1];
+                    return "XXX-XX-" + match[1];
                 }
 
                 return ssn;

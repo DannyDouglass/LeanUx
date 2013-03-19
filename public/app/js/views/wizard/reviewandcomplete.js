@@ -1,12 +1,12 @@
 define(["jquery", "marionette", "views/fadetransitionregion"], function($, Marionette, FadeTransitionRegion) {
 
     var BenefitsSummary = Marionette.ItemView.extend({
-
+        
         template: "#benefits_summary"
     });
 
     var NewHireProfileSummary = Marionette.ItemView.extend({
-
+        
         template: "#new_hire_profile_summary"
     });
 

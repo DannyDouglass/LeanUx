@@ -1,6 +1,6 @@
 define(
-    ['jquery', 'underscore', 'backbone', 'router', 'collections/newhirescollection', 'views/breadcrumb'], 
-    function($, _, Backbone, Router, NewHiresCollection, BreadcrumbView) {
+    ['jquery', 'underscore', 'backbone', 'router', 'collections/newhirescollection', 'views/breadcrumb', 'views/error'], 
+    function($, _, Backbone, Router, NewHiresCollection, BreadcrumbView, ErrorView) {
 
         var initialize = function() {
 
