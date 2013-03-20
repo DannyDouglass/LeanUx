@@ -16,7 +16,7 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
             statusLocation: "",
             socialSecurityNumber: "",
             lastSaved: ""
-        }, 
+        },
 
         save: function(attributes, options) {
             attributes || (attributes = {});
