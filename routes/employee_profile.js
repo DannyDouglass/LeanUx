@@ -14,8 +14,8 @@ exports.getById = function(req, res) {
   EmployeeProfile.findById(req.params.id, function(err, employeeProfile) {
     if (err) res.send(500);
     if (!employeeProfile) res.send(404);
-    
-    res.json(flattenEmployeeProfile(employeeProfile));
+    res.json(employeeProfile);
+    //res.json(flattenEmployeeProfile(employeeProfile));
   });
 };
 

@@ -16,6 +16,12 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
             statusLocation: "",
             socialSecurityNumber: "",
             lastSaved: ""
+        },
+
+        save: function(attributes, options) {
+            attributes || (attributes = {});
+            attributes['lastSaved'] = new Date();
+            Backbone.Model.prototype.save.call(this, attributes, options);
         }
 	});
 

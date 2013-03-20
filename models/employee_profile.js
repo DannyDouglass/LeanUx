@@ -13,6 +13,7 @@ var EmployeeProfileSchema = new db.Schema({
   dateOfBirth          :  { type : Date   } ,
   status               :  { type : String } ,
   statusLocation       :  { type : String } ,
+  lastSaved            :  { type: Date },
   benefitOptions       :  { "four01k" : 
                               {
                                 "employeePercentage" : Number,
@@ -73,8 +74,8 @@ module.exports.remove = function(id, callback) {
 // white-list expected incoming attributes to prevent mass assignment.
 function sanitizeClientModel(model) {
   var sanitizedClientModel = _.pick(model, 'socialSecurityNumber', 'dateOfHire', 'salutation',
-  'firstName', 'middleName', 'lastName', 'suffix', 'maritalStatus', 'dateOfBirth',
-  'status', 'statusLocation' );
+  'firstName', 'middleName', 'lastName', 'lastSaved', 'suffix', 'maritalStatus', 'dateOfBirth',
+  'status', 'statusLocation');
 
   return sanitizedClientModel;
 }
