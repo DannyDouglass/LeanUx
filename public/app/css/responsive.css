@@ -1,0 +1,7 @@
+@media (min-width: 768px) and (max-width: 979px) {
+    #page { width: 768px; }
+    .table { width: auto; }
+    /*#rightSubContentColumn { clear: both; }*/
+    #mainNavigation { position: relative }
+    p.pull-right { position: absolute; top 2px; right: 10px; }
+}
