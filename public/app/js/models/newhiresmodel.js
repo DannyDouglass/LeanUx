@@ -14,7 +14,8 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
             maritalStatus: "",
             status: "Not Completed",
             statusLocation: "",
-            socialSecurityNumber: ""
+            socialSecurityNumber: "",
+            lastSaved: ""
         }
 	});
 
