@@ -1,39 +1,53 @@
-define(["jquery", "marionette", "views/fadetransitionregion"], function($, Marionette, FadeTransitionRegion) {
+define(["jquery", "marionette", "views/fadetransitionregion", "views/commontemplatehelpers"], 
 
-    var BenefitsSummary = Marionette.ItemView.extend({
-        
-        template: "#benefits_summary"
-    });
+    function($, Marionette, FadeTransitionRegion, templateHelpers) {
 
-    var NewHireProfileSummary = Marionette.ItemView.extend({
-        
-        template: "#new_hire_profile_summary"
-    });
-
-    var ReviewAndCompleteView = Backbone.Marionette.Layout.extend({
-        
-        template: "#review_and_complete",
-        regionType: FadeTransitionRegion,
-
-        regions: {
-            newHireSummary: ".new-hire-summary",
-            benefitsSummary: ".benefits-summary"
-        },
-
-        initialize: function() {
-        },
-
-        onRender: function() {
-
-            console.log(this.model);
+        var BenefitsSummary = Marionette.ItemView.extend({
             
-            $("#stepInstructionMessage")
-                .html("Please review all information about the employee, then confirm to complete this new hire.");
+            template: "#benefits_summary",
 
-            this.newHireSummary.show(new NewHireProfileSummary({ model: this.model }));
-            this.benefitsSummary.show(new BenefitsSummary({ model: this.model }));
-        }
-    });
+            templateHelpers: function() {
+                return {
+                    chooseBenefitsURL: "#chooseBenefits/" + this.model.id
+                };
+            }
+        });
 
-    return ReviewAndCompleteView;
-});
+        var NewHireProfileSummary = Marionette.ItemView.extend({
+            
+            template: "#new_hire_profile_summary",
+
+            templateHelpers: function() {
+                return {
+                    dateOfHire: templateHelpers.formatDate(this.model.get("dateOfHire")),
+                    employeeProfileURL: "#employeeProfile/" + this.model.id
+                };
+            }
+        });
+
+        var ReviewAndCompleteView = Backbone.Marionette.Layout.extend({
+            
+            template: "#review_and_complete",
+            regionType: FadeTransitionRegion,
+
+            regions: {
+                newHireSummary: ".new-hire-summary",
+                benefitsSummary: ".benefits-summary"
+            },
+
+            initialize: function() {
+            },
+
+            onRender: function() {
+
+                $("#stepInstructionMessage")
+                    .html("Please review all information about the employee, then confirm to complete this new hire.");
+
+                this.newHireSummary.show(new NewHireProfileSummary({ model: this.model }));
+                this.benefitsSummary.show(new BenefitsSummary({ model: this.model }));
+            }
+        });
+
+        return ReviewAndCompleteView;
+    }
+);

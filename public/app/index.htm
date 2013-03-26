@@ -84,7 +84,7 @@
 				<% } %>
 			</td>
 			<td><%= formatSSN() %></td>
-			<td><%= formatDate("dateOfHire") %></td>
+			<td><%= dateOfHire %></td>
 			<td>
 				<% if (status === "Not Completed") { %>
 					<strong><em><%= status %></em></strong>
@@ -478,7 +478,7 @@
             <div class="summary-header-container clearfix">
                 <div class="summary-header pull-left">New Hire Profile</div>
                 <div class="pull-right">
-                    <small><a href="javascript:void(0);">Go Back and Edit</a></small>
+                    <small><a href="<%= employeeProfileURL %>">Go Back and Edit</a></small>
                 </div>
             </div>
             <div class="summary-body clearfix">
@@ -490,7 +490,7 @@
                         <dt>Date of Hire</dt>
                         <dd><%= dateOfHire %>&nbsp;</dd>
                         <dt>Subgroup ID</dt>
-                        <dd><%= summaryFields.subgroupId %>&nbsp;</dd>
+                        <dd>01-00091-001</dd>
                         <dt>First Name</dt>
                         <dd><%= firstName %>&nbsp;</dd>
                         <dt>Middle Name</dt>
@@ -507,25 +507,25 @@
                     <h5>Employment Information</h5>
                     <dl class="dl-horizontal" style="padding-left: 20px;">
                         <dt>Employment Status</dt>
-                        <dd><%= summaryFields.employmentStatus %>&nbsp;</dd>
+                        <dd>Active</dd>
                         <dt>Employment Reason</dt>
-                        <dd><%= summaryFields.employmentReason %>&nbsp;</dd>
+                        <dd>&nbsp;</dd>
                         <dt>Latest Date of Hire</dt>
                         <dd><%= dateOfHire %>&nbsp;</dd>
                         <dt>Type of Employee</dt>
-                        <dd><%= summaryFields.typeOfEmployee %>&nbsp;</dd>
+                        <dd>Full Time</dd>
                         <dt>Job Status</dt>
-                        <dd><%= summaryFields.jobStatus %>&nbsp;</dd>
+                        <dd>Active</dd>
                         <dt>Job Code</dt>
-                        <dd><%= summaryFields.jobCode %>&nbsp;</dd>
+                        <dd>Employee</dd>
                         <dt>Union Member?</dt>
-                        <dd><%= summaryFields.unionMember %>&nbsp;</dd>
+                        <dd>No</dd>
                         <dt>Outside Employee?</dt>
-                        <dd><%= summaryFields.outsideEmployee %>&nbsp;</dd>
+                        <dd>No</dd>
                         <dt>Annual Base Salary</dt>
-                        <dd><%= summaryFields.annualBaseSalary %>&nbsp;</dd>
+                        <dd>$56,000</dd>
                         <dt>Payroll Frequency</dt>
-                        <dd><%= summaryFields.payrollFrequency %>&nbsp;</dd>
+                        <dd>Bi-Weekly</dd>
                     </dl>
                 </div>
             </div>
@@ -560,7 +560,7 @@
             <div class="summary-header-container clearfix">
                 <div class="summary-header pull-left">Benefits</div>
                 <div class="pull-right">
-                    <small><a href="javascript:void(0);">Go Back and Edit</a></small>
+                    <small><a href="<%= chooseBenefitsURL %>">Go Back and Edit</a></small>
                 </div>
             </div>
             <div class="summary-body">
