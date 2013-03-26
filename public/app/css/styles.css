@@ -1,38 +1,34 @@
-body { width: 100%; padding-bottom: 40px; background: url('../images/navbar-bg.png') repeat-x; }
-#page { width: 1120px; margin: 0 auto; text-align: left; margin-right: }
-header { width: 100%; margin-bottom: 20px; padding: 0 30px; }
-hr { width: 100%; color: #ddd; margin: 5px 0; border-top: solid 1px #ddd; }
+body { width: 100%; padding-bottom: 40px; }
+#page { width: 1200px; margin: 0 auto; text-align: left; }
+header { width: 100%; text-align: center; margin-bottom: 20px; }
 div#loading { margin: 20px 10px; font-size: 1.4em; }
 div#loading img { height: 25px; width: 25px; }
 div#errorMessage { margin-top: 50px; }
-div#mainNavigation { margin-right: 0; }
-div#contentContainer { margin: 0 35px 0 30px; }
+div#contentContainer { margin: 0 20px;  }
 	ul#secondaryNavigation { margin-bottom: 0px; }
-	div#contentArea { background-color: #dae0e8; border: solid 1px #ddd; height: auto; border-top: none; border-bottom: none; padding: 10px 10px 40px 10px; margin-right: 2px }
+	div#contentArea { border: solid 1px #ddd; height: auto; border-top: none; border-bottom: none; padding: 10px 10px 40px 10px; }
 		.breadcrumb { margin-bottom: 0px; }
-		div#leftSubContentColumn { float: left; width: 800px; margin: 0 10px; }
+		div#leftSubContentColumn { float: left; width: 850px; margin: 0 10px; }
 		div#leftSubContentColumn  h3 { /* margin-bottom: 10px; */ }
 			table#recentNewHires { width: 100%; }
 			table#recentNewHires thead { font-weight: bold; }
 			table#recentNewHires tbody tr.notComplete, table#recentNewHires tbody tr td.pending { font-style: italic; }
 			table#recentNewHires tbody tr td.strong, table#recentNewHires tbody tr td.notComplete { font-weight: bold; }
-		div#rightSubContentColumn { float: right; width: 200px; margin: 85px  0 0; }
-			div#savedProgressInfoWell { font-size: .9em; }
+		div#rightSubContentColumn { float: right; width: 240px; margin: 85px  0 0; }
 			div#viewNewHiresHelper { margin-bottom: 20px; }
 			div#viewNewHiresHelper a button { width: 100%; }
-			div#needHelpText { margin-left: 10px; }
-footer { text-align: center; margin: 0 30px; }
+footer { text-align: center; margin: 0 20px 0 20px; }
 	div#footerLinksTop { background-color: #f5f5f5; padding: 15px 0; border: solid 1px #ddd; border-top: none; }
 	div#footerLinksTop a, #footerLinksBottom a { padding: 0 25px; }
 	ul#footerLogos { list-style-type: none; margin-top: 20px; }
 		ul#footerLogos li { display: inline; margin: 20px; }
 	div#footerLinksBottom { margin-top: 20px; }
 
-fieldset { margin-bottom: 20px; width: 98%; }
+fieldset { margin-bottom: 20px; width: 810px; }
 fieldset legend { font-size: 1.2em; background-color: #efefef; border-radius: 5px; margin-bottom: 0; padding: 2px 0 2px 15px; color: #999; }
 fieldset legend.active { background-color: #ddd; font-weight: bold; font-size: 1.4em; color: #333; padding: 5px 0 5px 15px; }
 
-.wizard-step-body, .wizard-step-body-static { background-color: #F9F9F9; border: solid 1px #DFDFDF; border-top: 0px; padding: 10px; margin-left: 8px; width: 97%; }
+.wizard-step-body, .wizard-step-body-static { background-color: #F9F9F9; border: solid 1px #DFDFDF; border-top: 0px; padding: 10px; margin-left: 15px; width: 97%; }
 .wizard-thumbnail, .wizard-thumbnail-static { background-color: #fff; border: solid 1px #DFDFDF; padding: 3px 5px 10px 10px; width: 65%; }
 .wizard-thumbnail ul li, .wizard-thumbnail-static ul li { font-weight: bold; color: #666; }
 
@@ -40,9 +36,21 @@ fieldset legend.active { background-color: #ddd; font-weight: bold; font-size: 1
 .wizard-step-body dt { font-weight: normal; }
 .wizard-step-body dd { font-weight: bold; }
 
-.wizard-step-body .summary { background-color: #F9F9F9; border: solid 1px #DFDFDF; margin-top: 10px; }
-.summary-header-container { background-color: #DDD; padding: 10px; }
-.summary-header { font-size: 1.4em; font-weight: bold; }
+.wizard-step-body .summary {
+	background-color: #F9F9F9;
+	border: solid 1px #DFDFDF;
+	margin-top: 10px;
+}
+
+.summary-header-container {
+	background-color: #DDD;
+	padding: 10px;
+}
+
+.summary-header {
+	font-size: 1.4em;
+	font-weight: bold;
+}
 .summary-body { padding: 10px; }
 
 /* Styles added to compliment existing twitter bootstrap styles */
@@ -75,14 +83,3 @@ fieldset legend.active { background-color: #ddd; font-weight: bold; font-size: 1
 	   -o-transition: width 0.6s ease;
       transition: width 0.6s ease;
 }
-
-/* OVERRIDE Bootstrap Styles for custom look */
-.nav-tabs { border-bottom: none }
-.navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
-.navbar .nav, .navbar .nav > li { float:none; display:inline-block; *display:inline; *zoom:1; vertical-align: top; text-align: left; }
-.navbar-inner { -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; border: 0; text-transform: uppercase; font-size: .85em; text-align: center; }
-.nav-tabs>li>a { border: 0; color: #fff; background-color: #838c98; height: 30px; text-transform: uppercase; font-size: .9em; padding: 20px 19.3px 8px 19.3px; }
-.nav-tabs>.active>a, .nav-tabs>.active>a:hover {  color: #3f4a57; background-color: #dae0e8; }
-.nav-tabs>li>a:hover { color: #fff; background-color: #3f4a57; }
-.nav-tabs .open .dropdown-toggle, .nav-pills .open .dropdown-toggle, .nav>li.dropdown.open.active>a:hover, .nav>li.dropdown.open.active>a:focus { background-color: #3f4a57; color: #fff; }
-

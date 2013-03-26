@@ -25,6 +25,8 @@ define(["jquery", "marionette", "views/fadetransitionregion"], function($, Mario
 
         onRender: function() {
 
+            console.log(this.model);
+            
             $("#stepInstructionMessage")
                 .html("Please review all information about the employee, then confirm to complete this new hire.");
 
