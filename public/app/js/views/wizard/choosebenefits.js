@@ -93,7 +93,7 @@ define(
 
                 var that = this;
 
-                this.model.save({ employeePercentage: employeeContrib, companyPercentage: companyContrib, lastSaved: getDate() }, {
+                this.model.save({ employeePercentage: employeeContrib, companyPercentage: companyContrib, lastSaved: new Date() }, {
                     success: function() {
                         that.trigger("done");
                     },
