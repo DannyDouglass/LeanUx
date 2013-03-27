@@ -1,10 +1,10 @@
-define(["jquery", "marionette", "views/fadetransitionregion", "views/commontemplatehelpers"], 
+define(["jquery", "marionette", "views/fadetransitionregion", "views/commontemplatehelpers", "tpl!templates/benefits.summary.html"], 
 
-    function($, Marionette, FadeTransitionRegion, templateHelpers) {
+    function($, Marionette, FadeTransitionRegion, templateHelpers, benefitsSummaryTmpl) {
 
         var BenefitsSummary = Marionette.ItemView.extend({
             
-            template: "#benefits_summary",
+            template: benefitsSummaryTmpl,
 
             templateHelpers: function() {
                 return {

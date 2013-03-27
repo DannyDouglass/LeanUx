@@ -1,23 +1,15 @@
 require.config({
   paths: {
-    "jquery" : "../lib/jquery/jquery.min",
-    "bootstrap" : "../lib-local/bootstrap/js/bootstrap.min",
-    "underscore" : "../lib/underscore-amd/underscore-min",
+    "jquery" : "../lib/jquery/jquery",
+    "bootstrap" : "../lib-local/bootstrap-amd/main",
+    "underscore" : "../lib/lodash/dist/lodash",
     "backbone" : "../lib/backbone-amd/backbone-min",
-    "marionette": "../lib/backbone.marionette/lib/backbone.marionette.min",
-    "backbone.babysitter": "../lib/backbone.babysitter/lib/backbone.babysitter",
-    "backbone.wreqr": "../lib/backbone.wreqr/lib/backbone.wreqr",
-    "text": "../lib/requirejs-text/text"
-  },
-  shim: { 
-  	"bootstrap" : {
-  		deps: ["jquery"],
-  		exports: "$.fn.dropdown"
-  	},
-    "marionette": {
-      deps: ["jquery", "underscore", "backbone"],
-      exports: "Marionette"
-    }
+    "marionette": "../lib/backbone.marionette/lib/core/amd/backbone.marionette",
+    "backbone.babysitter": "../lib/backbone.babysitter/lib/amd/backbone.babysitter",
+    "backbone.wreqr": "../lib/backbone.wreqr/lib/amd/backbone.wreqr",
+    "text": "../lib/requirejs-text/text",
+    "tpl": "../lib/requirejs-tpl/tpl",
+    "templates": "templates"
   }
 });
 
