@@ -10,6 +10,22 @@ define(["jquery", "marionette", "views/fadetransitionregion", "views/commontempl
                 return {
                     chooseBenefitsURL: "#chooseBenefits/" + this.model.id
                 };
+            },
+
+            serializeData: function() {
+                var opt = this.model.get("benefitOptions").four01k
+                if (!opt) { return {}; }
+
+                var ep = opt.employeePercentage;
+                var cp = opt.companyPercentage;
+
+                if (ep) { ep = "" + (ep * 100) + "%"; }
+                if (cp) { cp = "" + (cp * 100) + "%"; }
+
+                return {
+                    employeePercentage: ep,
+                    companyPercentage: cp
+                };
             }
         });
 
