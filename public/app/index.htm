@@ -7,9 +7,11 @@
 	    <meta name="description" content="">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <link href="lib-local/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
 	    <link href="css/styles.css" rel="stylesheet" media="screen">
         <link href="css/responsive.css" rel="stylesheet">
-        <link href="lib-local/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
     </head>
 
     <body>
@@ -29,7 +31,7 @@
 			<div id="viewNewHiresHelper" class="clearfix">
 				<a href="javascript:void(0);" id="viewAllNewHires">
 			    	<button class="btn btn-large" style="float: right; margin-top: 30px;">
-			        	<i class="icon-circle-arrow-left"></i> View All New Hires
+			        	View All New Hires
 			    	</button>
 			    </a>
 		    </div>
@@ -43,10 +45,14 @@
 
 		<script id="newHireLandingHeader" type="text/template">
 			<div class="clearfix" style="margin: 0 0 10px 0">
-			    <h3 style="float: left;">New Hire</h3>
-			    <a href="#employeeProfile">
-			    	<button id="addNewHire" class="btn btn-large" style="float: right; margin-top: 30px;">
-			        	<i class="icon-plus-sign"></i> Add a New Hire
+			    <h1>New Hire</h1>
+			    <hr style="border-bottom: 1px solid #eee; width: 100%; margin-top: 10px;" />
+			    <div class="pull-left" style="font-size: 1.15em; color: #666; margin-top: 5px;">
+			    	Select a started Employee New Hire or begin a New Hire
+			    </div>
+			    <a href="#employeeProfile" class="pull-right" style="margin-top: 10px;">
+			    	<button id="addNewHire" class="btn btn-large">
+			        	Add a New Hire
 			    	</button>
 			    </a>
 			</div>
@@ -576,10 +582,10 @@
 				<ul class="nav">
 					<li class="active"><a href="#">&nbsp;&nbsp;&nbsp;<strong>ADMINISTRATION</strong>&nbsp;&nbsp;&nbsp;</a></li>
 					<li><a href="#"><strong>PERSONAL</strong></a></li>
-					<li style="width: 60px;">&nbsp;</li>
+					<li style="width: 40px;">&nbsp;</li>
 					<li class="divider-vertical" style="margin: 0; padding: 0px;"></li>
 					<li class="dropdown">
-	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Library <b class="caret"></b></a>
+	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Library<b class="caret"></b></a>
                 		<ul class="dropdown-menu">
 							<li><a href="#">Video</a></li>
 							<li><a href="#">Photos</a></li>
@@ -590,7 +596,7 @@
 					</li>
 					<li class="divider-vertical" style="margin: 0; padding: 0px;"></li>
 					<li class="dropdown">
-	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">News <b class="caret"></b></a>
+	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">News<b class="caret"></b></a>
                 		<ul class="dropdown-menu">
 							<li><a href="#">Coop News</a></li>
 							<li><a href="#">Daily News Briefing</a></li>
@@ -601,7 +607,7 @@
 					<li><a href="#">Conferences & Education</a></li>
 					<li class="divider-vertical" style="margin: 0; padding: 0px;"></li>
 					<li class="dropdown">
-	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Community & Membership <b class="caret"></b></a>
+	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Community & Membership<b class="caret"></b></a>
                 		<ul class="dropdown-menu">
 							<li><a href="#">My Course Record</a></li>
 							<li><a href="#">My List Servs</a></li>
@@ -610,7 +616,7 @@
 					</li>
 					<li class="divider-vertical" style="margin: 0; padding: 0px;"></li>
 					<li class="dropdown">
-	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">My Profile <b class="caret"></b></a>
+	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">My Profile<b class="caret"></b></a>
                 		<ul class="dropdown-menu">
 							<li><a href="#">Update Contact Info</a></li>
 							<li><a href="#">Change Password</a></li>
@@ -624,15 +630,12 @@
 				</ul>
 			</div>
 			</div>
-			<header>
-				<div style="margin-left: 10px;"><img src="images/cb-theme-1/coop-logo.png" /></div>
-			</header>
-			
-			<div id="contentContainer">
-				<!--
-				<ul id="secondaryNavigation" class="nav nav-tabs">
+			<header class="clearfix">
+				<div class="pull-left" style="margin-left: 10px;"><img src="images/cb-theme-1/coop-logo.png" /></div>
+				<div class="pull-right" style="margin:  35px 50px 0 0;">
+					<ul id="secondaryNavigation" class="nav nav-tabs">
 	            	<li class="dropdown">
-	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Co-op Retirement <b class="caret"></b></a>
+	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Co-op Retirement<b class="caret"></b></a>
                 		<ul class="dropdown-menu">
 							<li><a href="#">401 (k) Pension Plan Administration</a></li>
 							<li><a href="#">401 (k) Pension Plan Contributions</a></li>
@@ -641,7 +644,7 @@
 		                </ul>
 					</li>
 	            	<li class="dropdown">
-	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Co-op Insurance <b class="caret"></b></a>
+	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Co-op Insurance<b class="caret"></b></a>
                 		<ul class="dropdown-menu">
 							<li><a href="#">My Co-op's Insurance Plans</a></li>
 							<li><a href="#">Tax-Advantaged Side Accounts</a></li>
@@ -650,7 +653,7 @@
 		                </ul>
 					</li>
 					<li class="dropdown">
-	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Salary & Payroll <b class="caret"></b></a>
+	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Salary & Payroll<b class="caret"></b></a>
                 		<ul class="dropdown-menu">
 							<li><a href="#">November 15 Base Salaries</a></li>
 							<li><a href="#">W-2 Salaries</a></li>
@@ -658,7 +661,7 @@
 		                </ul>
 					</li>
 					<li class="dropdown active">
-	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee Administration <b class="caret"></b></a>
+	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee Administration<b class="caret"></b></a>
                 		<ul class="dropdown-menu">
 							<li><a href="#">New Hire/Re-Hire</a></li>
 							<li><a href="#">Internal Transfer</a></li>
@@ -667,7 +670,7 @@
 		                </ul>
 					</li>
 					<li class="dropdown">
-	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Reports <b class="caret"></b></a>
+	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Reports<b class="caret"></b></a>
                 		<ul class="dropdown-menu">
 							<li><a href="#">RS Plan Contributions</a></li>
 							<li><a href="#">401 (k) Plan Contributions</a></li>
@@ -676,7 +679,7 @@
 		                </ul>
 					</li>
 					<li class="dropdown">
-	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Help & Resources <b class="caret"></b></a>
+	            		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Help & Resources<b class="caret"></b></a>
                 		<ul class="dropdown-menu">
 							<li><a href="#">Quick Reference Guide for BAs</a></li>
 							<li><a href="#">Quick Roadmap for BAs</a></li>
@@ -684,9 +687,12 @@
 		                </ul>
 					</li>
 	            </ul>
-	            -->
+				</div>
+			</header>
+			
+			<div id="contentContainer">
 	            <div id="contentArea" class="clearfix">
-            		<hr style="border-bottom: 5px solid #e7ebed; width: 100%; margin-top: 20px;" />
+            		<hr style="border-bottom: 5px solid #eee; width: 100%; margin-top: 20px;" />
             		<ul id="breadcrumb" class="breadcrumb"></ul>
 				    <div id="leftSubContentColumn"></div>
 					<div id="rightSubContentColumn"></div>
