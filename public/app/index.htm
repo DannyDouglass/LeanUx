@@ -460,11 +460,121 @@
 				</table>
 			</div>
 			<div class="text-right">
-				<button class="btn">Cancel</button>
+				<button class="btn cancel">Cancel</button>
 				<button id="done_401k" class="btn btn-success">Done</button>
 			</div>
 		</script>
 
+        <script id="review_and_complete" type="text/template">
+            <div class="wizard-step-body" style="background-color: #FFFFFF; border: 0; margin: 0; padding: 0;">
+                <div class="summary new-hire-summary"></div>
+                <div class="summary benefits-summary"></div>
+                <div class="actions" style="margin-top: 10px;">
+                    <div class="pull-left">
+                        <a class="btn btn-link" href="javascript:void(0);">Previous Step</a>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-success">Complete New Hire Entry</button>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+        <script id="new_hire_profile_summary" type="text/template">
+            <div class="summary-header-container clearfix">
+                <div class="summary-header pull-left">New Hire Profile</div>
+                <div class="pull-right">
+                    <small><a href="<%= employeeProfileURL %>">Go Back and Edit</a></small>
+                </div>
+            </div>
+            <div class="summary-body clearfix">
+                <div class="pull-left">
+                    <h5>Personal Information
+                    <dl class="dl-horizontal" style="padding-left: 20px;">
+                        <dt>Social Security Number</dt>
+                        <dd><%= socialSecurityNumber %></dd>
+                        <dt>Date of Hire</dt>
+                        <dd><%= dateOfHire %>&nbsp;</dd>
+                        <dt>Subgroup ID</dt>
+                        <dd>01-00091-001</dd>
+                        <dt>First Name</dt>
+                        <dd><%= firstName %>&nbsp;</dd>
+                        <dt>Middle Name</dt>
+                        <dd><%= middleName %>&nbsp;</dd>
+                        <dt>Last Name</dt>
+                        <dd><%= lastName %>&nbsp;</dd>
+                        <dt>Gender</dt>
+                        <dd><%= gender %>&nbsp;</dd>
+                        <dt>Marital Status</dt>
+                        <dd><%= maritalStatus %>&nbsp;</dd>
+                    </dl>
+                </div>
+                <div class="pull-right" style="width: 50%;">
+                    <h5>Employment Information</h5>
+                    <dl class="dl-horizontal" style="padding-left: 20px;">
+                        <dt>Employment Status</dt>
+                        <dd>Active</dd>
+                        <dt>Employment Reason</dt>
+                        <dd>&nbsp;</dd>
+                        <dt>Latest Date of Hire</dt>
+                        <dd><%= dateOfHire %>&nbsp;</dd>
+                        <dt>Type of Employee</dt>
+                        <dd>Full Time</dd>
+                        <dt>Job Status</dt>
+                        <dd>Active</dd>
+                        <dt>Job Code</dt>
+                        <dd>Employee</dd>
+                        <dt>Union Member?</dt>
+                        <dd>No</dd>
+                        <dt>Outside Employee?</dt>
+                        <dd>No</dd>
+                        <dt>Annual Base Salary</dt>
+                        <dd>$56,000</dd>
+                        <dt>Payroll Frequency</dt>
+                        <dd>Bi-Weekly</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="summary-body clearfix">
+                <div class="pull-left">
+                    <h5>Contact</h5>
+                    <dl class="dl-horizontal" style="padding-left: 20px;">
+                        <dt>Address</dt>
+                        <dd>4301 Wilson Boulevard</dd>
+                        <dt>City</dt>
+                        <dd>Arlington</dd>
+                        <dt>State</dt>
+                        <dd>Virginia</dd>
+                        <dt>ZIP Code</dt>
+                        <dd>22203</dd>
+                        <dt>Country</dt>
+                        <dd>United States</dd>
+                        <dt>Primary Phone Number</dt>
+                        <dd>123-456-7890</dd>
+                        <dt>Email Address</dt>
+                        <dd>employeeEmail@nreca.coop</dd>
+                    </dl>
+                </div>
+                <div class="pull-right" style="width: 50%;">
+                    <h5>Dependents</h5>
+                    <em>None entered</em>
+                </div>
+            </div>
+        </script>
+
+        <script id="benefits_summary" type="text/template">
+            <div class="summary-header-container clearfix">
+                <div class="summary-header pull-left">Benefits</div>
+                <div class="pull-right">
+                    <small><a href="<%= chooseBenefitsURL %>">Go Back and Edit</a></small>
+                </div>
+            </div>
+            <div class="summary-body">
+            </div>
+        </script>
+
+		<script data-main="js/main.js" src="lib/requirejs/require.js"></script>
+    	
     	<div id="page">
     		<div id="mainNavigation" class="navbar">
 				<div class="navbar-inner">
@@ -608,7 +718,5 @@
 	            	<a href="#">Terms of Use</a>
             </footer>
 		</div>
-
-        <script data-main="js/main.js" src="lib/requirejs/require.js"></script>
     </body>
 </html>

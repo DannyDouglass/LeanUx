@@ -63,7 +63,8 @@ define(
 
             events: {
                 "click button.enroll": "enroll",
-                "click #done_401k": "done"
+                "click #done_401k": "done",
+                "click button.cancel": "cancel"
             },
 
             states: {
@@ -103,10 +104,14 @@ define(
                 });
             },
 
+            cancel: function(){
+                this._setCurrentState(this.states.thumbnailed);
+            },
+
             initialize: function() {
                 this.on("state:changed", this._stateChanged);
                 $("#stepInstructionMessage").html("Set up which benefits the employee wishes to enroll in.");
-                
+
                 this.collection = new Four01kPlanCollection();
                 this.collection.fetch();
 
@@ -128,10 +133,14 @@ define(
 
             _showCurrentState: function() {
                 this.body.show(new this.currentState.View({ collection: this.collection, model: this.model }));
-                
+
                 if (this.currentState === this.states.details) {
                     $("#enroll_401k").hide();
-                    $("#PlanOptions_401kPlan").addClass("active");                    
+                    $("#PlanOptions_401kPlan").addClass("active");
+                }
+                else if (this.currentState === this.states.thumbnailed) {
+                    $("#enroll_401k").show();
+                    $("#PlanOptions_401kPlan").removeClass("active");
                 }
             }
         });
