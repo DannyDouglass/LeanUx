@@ -1,10 +1,10 @@
 define(
-    ["jquery", "underscore", "backbone", "marionette", "collections/wizardstepcollection"], 
-    function($, _, Backbone, Marionette, NewHireWizardStepsCollection) {
+    ["jquery", "underscore", "backbone", "marionette", "collections/wizardstepcollection", 'tpl!templates/wizard.progress.html', 'tpl!templates/wizard.progress.item.html'], 
+    function($, _, Backbone, Marionette, NewHireWizardStepsCollection, wizardProgressTmpl, wizardProgressItemTmpl) {
 
     var WizardProgressItemView = Backbone.Marionette.ItemView.extend({
         tagName: "div",
-        template: "#wizard_progress_item_template",
+        template: wizardProgressItemTmpl,
 
         initialize: function() {
             this.$el.empty();
@@ -24,7 +24,7 @@ define(
     var WizardProgressView = Backbone.Marionette.CollectionView.extend({
         tagName: "div",
         className: "progress",
-        template: "#wizard_progress_template",
+        template: wizardProgressTmpl,
         itemView: WizardProgressItemView,
 
         initialize: function() {

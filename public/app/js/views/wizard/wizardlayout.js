@@ -1,8 +1,8 @@
-define(["marionette", "views/fadetransitionregion"], function(Marionette, FadeTransitionRegion) {
+define(["marionette", "views/fadetransitionregion", 'tpl!templates/wizard.newhire.html'], function(Marionette, FadeTransitionRegion, wizardNewHireTmpl) {
 
     var WizardLayout = Backbone.Marionette.Layout.extend({
 
-        template: "#new_hire_wizard_template",
+        template: wizardNewHireTmpl,
         regionType: FadeTransitionRegion,
 
         regions: {
