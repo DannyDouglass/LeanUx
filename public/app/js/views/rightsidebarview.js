@@ -1,7 +1,7 @@
-define(['backbone', 'jquery', 'bootstrap'], function(Backbone, $, Bootstrap){
+define(['backbone', 'jquery', 'bootstrap', 'tpl!templates/right.sidebar.html'], function(Backbone, $, Bootstrap, rightSidebar){
 	var RightSideBarView = Backbone.View.extend({
 		el: "#rightSubContentColumn",
-		template: _.template($("#rightSideBarTemplate").html()),
+		template: rightSidebar,
 
 		initialize: function(){
 			this.$el.empty();
