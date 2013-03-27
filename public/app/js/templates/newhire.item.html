@@ -1,0 +1,36 @@
+<td class="strong">
+    <% if (status !== "Complete") { %>
+        <strong><em><%= firstName %> <%= lastName %></em></strong>
+    <% } else { %>
+        <a href="#">
+            <%= firstName %>
+            <%= lastName %>
+        </a>
+    <% } %>
+</td>
+<td><%= formatSSN() %></td>
+<td><%= dateOfHire %></td>
+<td>
+    <% if (status === "Not Completed") { %>
+        <strong><em><%= status %></em></strong>
+    <% } else if (status === "Pending Completion") { %>
+        <em><%= status %></em>
+    <% } else { %>
+        <%= status %>
+    <% } %>
+    <% if (status === "Not Completed") { %>
+        <div>
+            <small><%= statusLocation %></small>
+        </div>
+    <% } %>
+</td>
+<td>
+    <% if (status === "Not Completed") { %>
+        <button class="btn btn-danger deleteNewHire"  data-id="<%= _id %>">Delete</button>
+    <% } %>
+</td>
+<td>
+    <% if (status === "Not Completed") { %>
+        <button class="btn continueNewHire" data-id="<%= _id %>">Continue</button>
+    <% } %>
+</td>
