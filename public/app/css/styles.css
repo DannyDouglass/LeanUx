@@ -25,13 +25,13 @@ footer { text-align: center; margin: 0 20px 0 20px; }
 		ul#footerLogos li { display: inline; margin: 20px; }
 	div#footerLinksBottom { margin-top: 20px; }
 
-fieldset { margin-bottom: 20px; width: 810px; }
-fieldset legend { font-size: 1.2em; background-color: #efefef; border-radius: 5px; margin-bottom: 0; padding: 2px 0 2px 15px; color: #999; }
-fieldset legend.active { background-color: #ddd; font-weight: bold; font-size: 1.4em; color: #333; padding: 5px 0 5px 15px; }
+fieldset { margin: 20px 0; width: 100%; }
+fieldset legend { height: 46px; line-height: 46px; background: url('../images/cb-theme-1/stripedHeader.png') repeat-x; width: 100%; font-weight: 700; font-size: 1.2em; margin-bottom: 0px; border: solid 0px #eee; border-top: solid 4px #009933; border-bottom: none; }
+fieldset > legend h4 { padding-left: 15px; }
+/*fieldset legend.active { background-color: #ddd; font-weight: bold; font-size: 1.4em; color: #333; padding: 5px 0 5px 15px; }*/
 
-legend.stripedHeader { height: 46px; line-height: 46px; background: url('../images/cb-theme-1/stripedHeader.png') repeat-x; width: 100%; border-top: solid 4px #009933; padding-left: 15px; font-weight: 700; font-size: 1.2em; }
-
-.wizard-step-body, .wizard-step-body-static { background-color: #F9F9F9; border: solid 1px #DFDFDF; border-top: 0px; padding: 10px; margin-left: 15px; width: 97%; }
+.wizard-step-body, .wizard-step-body-static { background-color: #f4f6f7; width: 100%; border: solid 0px #eee; border-top: none; }
+.wizard-step-body > div, .wizard-step-body-static > div { padding: 15px 15px; }
 .wizard-thumbnail, .wizard-thumbnail-static { background-color: #fff; border: solid 1px #DFDFDF; padding: 3px 5px 10px 10px; width: 65%; }
 .wizard-thumbnail ul li, .wizard-thumbnail-static ul li { font-weight: bold; color: #666; }
 
