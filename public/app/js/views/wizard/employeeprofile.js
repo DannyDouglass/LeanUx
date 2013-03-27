@@ -1,8 +1,8 @@
-define(["marionette", "views/fadetransitionregion"], function(Marionette, FadeTransitionRegion) {
+define(["marionette", "views/fadetransitionregion", 'tpl!templates/employee.info.details.html', 'tpl!templates/employee.info.thumb.html', 'tpl!templates/employee.info.html'], function(Marionette, FadeTransitionRegion, employeeInfoDetailsTmpl, employeeInfoThumbTmpl, employeeInfoTmpl) {
 
     var EIDetail = Marionette.ItemView.extend({
 
-        template: "#employee_information_details_template",
+        template: employeeInfoDetailsTmpl,
         tagName: "div",
 
         templateHelpers: {
@@ -33,7 +33,7 @@ define(["marionette", "views/fadetransitionregion"], function(Marionette, FadeTr
 
     var EIThumbnail = Marionette.ItemView.extend({
 
-        template: "#employee_information_thumbnail",
+        template: employeeInfoThumbTmpl,
         tagName: "ul",
         className: "inline",
 
@@ -56,7 +56,7 @@ define(["marionette", "views/fadetransitionregion"], function(Marionette, FadeTr
     });
 
     var EmployeeInformationView = Marionette.Layout.extend({
-        template: "#employee_information_template",
+        template: employeeInfoTmpl,
         regionType: FadeTransitionRegion,
 
         regions: {

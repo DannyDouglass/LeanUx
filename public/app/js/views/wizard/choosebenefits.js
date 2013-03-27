@@ -1,30 +1,30 @@
 define(
-    ["jquery", "marionette", "views/fadetransitionregion", "models/four01kplan", "collections/four01kplancollection"],
+    ["jquery", "marionette", "views/fadetransitionregion", "models/four01kplan", "collections/four01kplancollection", 'tpl!templates/401k.plan.details.display.html', 'tpl!templates/401k.plan.details.input.html', 'tpl!templates/401k.plan.item.html', 'tpl!templates/401k.plan.options.html', 'tpl!templates/benefits.choose.html'],
 
-    function($, Marionette, FadeTransitionRegion, Four01kPlan, Four01kPlanCollection) {
+    function($, Marionette, FadeTransitionRegion, Four01kPlan, Four01kPlanCollection, Four01kDetailsDisplayTmpl,  Four01kDetailsInputTmpl, Four01kItemTmpl, Four01kOptionsTmpl, benefitsChooseTmpl) {
 
         var four01kPlanItemView = Marionette.ItemView.extend({
             model: Four01kPlan,
             tagName: "li",
-            template: "#401k_plan_item_template"
+            template: Four01kItemTmpl
         });
 
         var four01kPlanCompositeView = Marionette.CompositeView.extend({
             itemView: four01kPlanItemView,
             itemViewContainer: "ul",
-            template: "#401k_plan_options_template",
+            template: Four01kOptionsTmpl,
             className: "wizard-thumbnail"
         });
 
         var four01kPlanDetailsDisplay = Marionette.ItemView.extend({
-            template: "#401k_plan_details_display_template",
+            template: Four01kDetailsDisplayTmpl,
             model: Four01kPlan,
             tagName: "li"
         });
 
         var four01kPlanDetailsInput = Marionette.CompositeView.extend({
             itemView: four01kPlanDetailsDisplay,
-            template: "#401k_plan_details_input_template",
+            template: Four01kDetailsInputTmpl,
             itemViewContainer: "ul",
 
             serializeData: function() {
@@ -54,7 +54,7 @@ define(
         });
 
         var ChooseBenefitsView = Marionette.Layout.extend({
-            template: "#choose_benefits_template",
+            template: benefitsChooseTmpl,
             regionType: FadeTransitionRegion,
 
             regions: {
