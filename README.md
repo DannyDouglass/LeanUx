@@ -2,6 +2,8 @@
 
 An expirement on implementing a new application architecture focused on flexibility, performance, and ability to deliver to multiple devices/platforms.
 
+[![Build Status](https://travis-ci.org/DannyDouglass/LeanUx.png?branch=master)](https://travis-ci.org/DannyDouglass/LeanUx)
+
 ## Getting Started
 
 **Note**: Only Mac-based setup documented at this time
