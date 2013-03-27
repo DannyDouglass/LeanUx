@@ -1,6 +1,6 @@
-define(["jquery", "marionette", "views/fadetransitionregion", "views/commontemplatehelpers", "tpl!templates/benefits.summary.html"], 
+define(["jquery", "marionette", "views/fadetransitionregion", "views/commontemplatehelpers", "tpl!templates/benefits.summary.html", "tpl!templates/new.hire.profile.summary.html", "tpl!templates/review.complete.html"], 
 
-    function($, Marionette, FadeTransitionRegion, templateHelpers, benefitsSummaryTmpl) {
+    function($, Marionette, FadeTransitionRegion, templateHelpers, benefitsSummaryTmpl, newHireProfileSummaryTmpl, reviewCompleteTmpl) {
 
         var BenefitsSummary = Marionette.ItemView.extend({
             
@@ -15,7 +15,7 @@ define(["jquery", "marionette", "views/fadetransitionregion", "views/commontempl
 
         var NewHireProfileSummary = Marionette.ItemView.extend({
             
-            template: "#new_hire_profile_summary",
+            template: newHireProfileSummaryTmpl,
 
             templateHelpers: function() {
                 return {
@@ -27,7 +27,7 @@ define(["jquery", "marionette", "views/fadetransitionregion", "views/commontempl
 
         var ReviewAndCompleteView = Backbone.Marionette.Layout.extend({
             
-            template: "#review_and_complete",
+            template: reviewCompleteTmpl,
             regionType: FadeTransitionRegion,
 
             regions: {
