@@ -1,5 +1,5 @@
-define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rightsidebarview', 'collections/newhirescollection'], 
-	function(Backbone, $, _, Bootstrap, Router, RightSideBarView, NewHiresCollection){
+define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rightsidebarview', 'collections/newhirescollection', 'tpl!templates/newhire.landing.header.html', 'tpl!templates/newhire.table.header.html', 'tpl!templates/newhire.item.html'], 
+	function(Backbone, $, _, Bootstrap, Router, RightSideBarView, NewHiresCollection, NewHireLandingHead, NewHireTableHead, newHireItemTmpl){
 
 	var NewHiresView = Backbone.View.extend({
 		tagName: "table",
@@ -26,11 +26,11 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 
 			var rightSideBarView = new RightSideBarView();
 
-			this.$el.append(_.template($("#newHireTableHeader").html()));
+			this.$el.append(NewHireTableHead);
 			this.$el.append(rows);
 			$("#leftSubContentColumn")
 				.empty()
-				.append(_.template($("#newHireLandingHeader").html()))
+				.append(NewHireLandingHead)
 				.append(this.$el);
 
 			$("div#viewNewHiresHelper").hide();
@@ -51,7 +51,7 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 
 	var NewHiresItemView = Backbone.View.extend({
 		tagName: "tr",
-		template: _.template($("#NewHiresItemTemplate").html()),
+		template: newHireItemTmpl,
 
 		viewHelpers: {
 			formatSSN: function() {

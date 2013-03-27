@@ -1,8 +1,9 @@
-define(['backbone', 'jquery', 'bootstrap'], function(Backbone, $, Bootstrap){
+define(['backbone', 'jquery', 'bootstrap', 'tpl!templates/error.html'], 
+	function(Backbone, $, Bootstrap, errorTmpl){
 	var ErrorView = Backbone.View.extend({
 		el: "#leftSubContentColumn",
-		template: _.template($("#errorTemplate").html()),
-
+		//template: _.template($("#errorTemplate").html()),
+		template: errorTmpl,
 		initialize: function(){
 			this.render();
 		},

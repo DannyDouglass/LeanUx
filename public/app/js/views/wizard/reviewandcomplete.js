@@ -1,4 +1,4 @@
-define(["jquery", "marionette", "views/fadetransitionregion", "views/commontemplatehelpers", "tpl!templates/benefits.summary.html", "tpl!templates/new.hire.profile.summary.html", "tpl!templates/review.complete.html"], 
+define(["jquery", "marionette", "views/fadetransitionregion", "views/commontemplatehelpers", "tpl!templates/benefits.summary.html", "tpl!templates/newhire.profile.summary.html", "tpl!templates/review.complete.html"], 
 
     function($, Marionette, FadeTransitionRegion, templateHelpers, benefitsSummaryTmpl, newHireProfileSummaryTmpl, reviewCompleteTmpl) {
 
