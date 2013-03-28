@@ -35,7 +35,6 @@ fieldset > legend h4 { padding-left: 15px; }
 div.legendBody { padding: 15px 15px; }
 div.legendSpacer { height: 2px; border-top: solid 1px #dfdfdf; background-color: #fff }
 div.legendFooter { background-color: #e2e7e8; height: 60px; line-height: 60px; padding: 0 20px;}
-/*fieldset legend.active { background-color: #ddd; font-weight: bold; font-size: 1.4em; color: #333; padding: 5px 0 5px 15px; }*/
 
 .wizard-step-body, .wizard-step-body-static { background-color: #f4f6f7; width: 100%; border: solid 0px #eee; border-top: none; }
 .wizard-step-body > *, .wizard-step-body-static > * {  }
@@ -46,10 +45,12 @@ div.legendFooter { background-color: #e2e7e8; height: 60px; line-height: 60px; p
 .wizard-step-body dt { font-weight: normal; }
 .wizard-step-body dd { font-weight: bold; }
 
-.wizard-step-body .summary { background-color: #F9F9F9; border: solid 1px #DFDFDF; margin-top: 10px; }
-.summary-header-container { background-color: #DDD; padding: 10px; }
-.summary-header { font-size: 1.4em; font-weight: bold; }
-.summary-body { padding: 10px; }
+.summary-header-container { margin-top: 20px; -moz-box-shadow: 0px 3px 10px 1px #eee; -webkit-box-shadow: 0px 3px 10px 1px #eee; box-shadow: 0px 3px 10px 1px #ccc; }
+.summary-header { height: 46px; line-height: 46px; background: url('../images/cb-theme-1/stripedHeader.png') repeat-x; width: 100%; font-weight: 700; font-size: 1.2em; margin-bottom: 0px; border: solid 0px #eee; border-top: solid 4px #009933; border-bottom: none; }
+.summary-header h4 { padding-left: 15px; }
+.summary-header div.goBackAndEditLink { padding-right: 15px; font-weight: 300; }
+.summary-body { padding: 10px 20px; border: solid 1px #eee; border-top: none; background-color: #f4f6f7; }
+.summary-body h5 { color: #666; font-weight: 600; }
 
 /* Styles added to compliment existing twitter bootstrap styles */
 .table-outlined { border: solid 1px #ddd; }
@@ -61,7 +62,9 @@ div.legendFooter { background-color: #e2e7e8; height: 60px; line-height: 60px; p
 .progress-bar .bar-inactive { color: #DFDFDF; }
 .progress-bar .bar-inactive .step-number { background-color: #DFDFDF; }
 .well-square { background-color: #f4f6f7; padding: 5px 10px 5px 10px; margin-top: 20px; }
-
+.btn { text-transform: uppercase; padding-right: 16px; padding-left: 16px; font-size: .9em; font-weight: 600; }
+.btn-succes { background-color: #16a54a; }
+.btn-small { font-weight: 600; font-size: .8em; color: #333; }
 /* OVERRIDE Bootstrap Styles for custom look */
 
 /* from element fonts */
