@@ -2,7 +2,7 @@ define(["jquery", "underscore", "backbone", "models/newhirewizardstep"], functio
 
     var data = [{
         order: 1,
-        title: "New Hire Profile"
+        title: "About Employee"
     }, {
         order: 2,
         title: "Choose Benefits"

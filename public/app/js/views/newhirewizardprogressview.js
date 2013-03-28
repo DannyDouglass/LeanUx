@@ -8,7 +8,7 @@ define(
 
         initialize: function() {
             this.$el.empty();
-            this.$el.css({ width: "20%" });
+            this.$el.css({ width: "20%", cssFloat: "left" });
 
             var order = this.model.get("order");
 
@@ -17,13 +17,13 @@ define(
             else if( this.model.get("order") == LeanUx.currentWizardStep )
                 this.$el.addClass("active bar bar-info");
             else
-                this.$el.addClass("bar-inactive"); 
+                this.$el.addClass("bar-inactive");
         }
     });
 
     var WizardProgressView = Backbone.Marionette.CollectionView.extend({
         tagName: "div",
-        className: "progress",
+        className: "progress-bar clearfix",
         template: wizardProgressTmpl,
         itemView: WizardProgressItemView,
 
