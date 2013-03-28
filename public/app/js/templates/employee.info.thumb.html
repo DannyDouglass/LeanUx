@@ -1,5 +1,5 @@
 <ul class="inline">
-    <li style="width: 33%;">
+    <li style="margin-right: 50px;">
         <label>Social Security Number *</label>
         <input id="socialSecurityNumber" 
                name="socialSecurityNumber" 
@@ -7,7 +7,7 @@
                value="<%= socialSecurityNumber %>" 
                placeholder="___-__-____" />
     </li>
-    <li style="width: 33%;">
+    <li>
         <label>Date of Hire *</label>
         <input id="dateOfHire" 
                name="dateOfHire" 
@@ -15,9 +15,8 @@
                placeholder="__/__/____" 
                value="<%= formatDate('dateOfHire') %>" />
     </li>
-    <li class="text-right" style="width: 29%;">
-        <button id="start_new_hire" 
-                style="margin-top: -15px;" 
+    <li class="pull-right" style="margin-top: 24px;">
+        <button id="start_new_hire"  
                 class="btn">Start New Hire</button>
     </li>
 </ul>
