@@ -12,10 +12,12 @@ div#contentContainer { margin: 0 20px; padding: 0 15px 0 0;  }
 		.breadcrumb { margin-bottom: 0px; }
 		div#leftSubContentColumn { float: left; width: 750px; margin: 0; }
 		div#leftSubContentColumn  h3 { /* margin-bottom: 10px; */ }
-			table#recentNewHires { width: 100%; }
-			table#recentNewHires thead { font-weight: bold; }
+			div#stepInstructionMessage { font-size: 1.15em; color: #666; margin-top: 5px; }
+			table#recentNewHires { width: 100%; border: solid 1px #eee; border-top: none; -moz-box-shadow: 0px 5px 10px 1px #eee; -webkit-box-shadow: 0px 5px 10px 1px #eee; box-shadow: 0px 5px 10px 1px #ccc; }
+			table#recentNewHires thead { font-weight: 700; height: 46px; line-height: 46px; background: url('../images/cb-theme-1/stripedHeader.png') repeat-x; width: 100%; font-weight: 700; font-size: 1.1em; margin-bottom: 0px; border-top: solid 4px #009933; border-bottom: none; }
 			table#recentNewHires tbody tr.notComplete, table#recentNewHires tbody tr td.pending { font-style: italic; }
-			table#recentNewHires tbody tr td.strong, table#recentNewHires tbody tr td.notComplete { font-weight: bold; }
+			table#recentNewHires tbody tr td.strong, table#recentNewHires tbody tr td.notComplete { font-weight: 600; }
+			table#recentNewHires tbody tr td { border: none; border-bottom: solid 1px #eee; padding: 10px 10px; }
 		div#rightSubContentColumn { float: right; width: 250px; margin: 50px  0 0; }
 			div#needHelpWell { margin-top: 20px; }
 footer { margin: 20px 0 0 0; height: 60px; width: 100%; line-height: 60px; background: -webkit-linear-gradient(top, #00a356, #009c50); -webkit-box-shadow: 0px 0px 10px 1px #eee; box-shadow: 0px 3px 10px 2px #ccc; }
@@ -27,7 +29,7 @@ footer { margin: 20px 0 0 0; height: 60px; width: 100%; line-height: 60px; backg
 	div#footerLinksBottom a { color: #00a356; padding: 0 10px; font-weight: 600; }
 	span.grayDivider { color: #ccc; font-weight: 300; }
 
-fieldset { margin: 20px 0; width: 100%; -moz-box-shadow: 0px 0px 10px 1px #eee; -webkit-box-shadow: 0px 0px 10px 1px #eee; box-shadow: 0px 0px 10px 1px #ccc; }
+fieldset { margin: 20px 0; width: 100%; -moz-box-shadow: 0px 3px 10px 1px #eee; -webkit-box-shadow: 0px 3px 10px 1px #eee; box-shadow: 0px 3px 10px 1px #ccc; }
 fieldset legend { height: 46px; line-height: 46px; background: url('../images/cb-theme-1/stripedHeader.png') repeat-x; width: 100%; font-weight: 700; font-size: 1.2em; margin-bottom: 0px; border: solid 0px #eee; border-top: solid 4px #009933; border-bottom: none; }
 fieldset > legend h4 { padding-left: 15px; }
 div.legendBody { padding: 15px 15px; }
@@ -53,7 +55,7 @@ div.legendFooter { background-color: #e2e7e8; height: 60px; line-height: 60px; p
 .table-outlined { border: solid 1px #ddd; }
 .table-outlined thead { background-color: #ededed; }
 .breadcrumb li { color: #666; }
-.progress-bar { border-bottom: solid 1px #DFDFDF; border-top: solid 1px #DFDFDF; padding: 25px 0 25px 0; }
+.progress-bar { border-bottom: solid 2px #eee; border-top: solid 2px #eee; padding: 25px 0 25px 0; }
 .step-number { background-color: #F29133; border-radius: 50%; color: #FFFFFF; float: left; height: 30px; line-height: 30px; text-align: center; width: 30px; }
 .progress-bar .active .step-name { color: #F29133; }
 .progress-bar .bar-inactive { color: #DFDFDF; }

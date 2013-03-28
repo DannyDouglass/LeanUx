@@ -1,9 +1,9 @@
-define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rightsidebarview', 'collections/newhirescollection', 'tpl!templates/newhire.landing.header.html', 'tpl!templates/newhire.table.header.html', 'tpl!templates/newhire.item.html'], 
-	function(Backbone, $, _, Bootstrap, Router, RightSideBarView, NewHiresCollection, NewHireLandingHead, NewHireTableHead, newHireItemTmpl){
+define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rightsidebarview', 'collections/newhirescollection', 'tpl!templates/newhire.landing.header.html', 'tpl!templates/newhire.table.header.html', 'tpl!templates/newhire.item.html', 'tpl!templates/newhire.landing.table.html'], 
+	function(Backbone, $, _, Bootstrap, Router, RightSideBarView, NewHiresCollection, NewHireLandingHead, NewHireTableHead, newHireItemTmpl, newHireTable){
 
 	var NewHiresView = Backbone.View.extend({
 		tagName: "table",
-		className: "table table-striped table-outlined",
+		className: "table table-striped",
 
 		initialize: function(){
 			this.collection = LeanUx.newHiresCollection;
@@ -14,7 +14,8 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 		render: function(){
 
 			this.$el.empty();
-			
+			this.$el.attr('id', 'recentNewHires');
+
 			var self = this;
 			var rows = [];
 
