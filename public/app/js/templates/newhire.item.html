@@ -9,7 +9,7 @@
     <% } %>
 </td>
 <td><%= formatSSN() %></td>
-<td><%= dateOfHire %></td>
+<td><%= formatDate("dateOfHire") %></td>
 <td>
     <% if (status === "Not Completed") { %>
         <strong><em><%= status %></em></strong>
