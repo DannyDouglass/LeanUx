@@ -1,5 +1,5 @@
-body { width: 100%; padding-bottom: 40px; background: url('../images/cb-theme-1/nav-bg.png') repeat-x; font-family: 'Open Sans', sans-serif; }
-#page { width: 1100px; margin: 0 auto; text-align: left; }
+body { width: 100%; background: url('../images/cb-theme-1/nav-bg.png') repeat-x; font-family: 'Open Sans', sans-serif; }
+#page { width: 1100px; padding-bottom: 60px; margin: 0 auto; text-align: left; }
 header { width: 100%; text-align: left; margin: 0 20px; }
 hr { padding: 0px; margin: 10px 0; }
 div#mainNavigation { margin-bottom: 10px; }
@@ -18,12 +18,14 @@ div#contentContainer { margin: 0 20px; padding: 0 15px 0 0;  }
 			table#recentNewHires tbody tr td.strong, table#recentNewHires tbody tr td.notComplete { font-weight: bold; }
 		div#rightSubContentColumn { float: right; width: 250px; margin: 50px  0 0; }
 			div#needHelpWell { margin-top: 20px; }
-footer { text-align: center; margin: 0 20px 0 20px; }
-	div#footerLinksTop { background-color: #f5f5f5; padding: 15px 0; border: solid 1px #ddd; border-top: none; }
-	div#footerLinksTop a, #footerLinksBottom a { padding: 0 25px; }
-	ul#footerLogos { list-style-type: none; margin-top: 20px; }
-		ul#footerLogos li { display: inline; margin: 20px; }
-	div#footerLinksBottom { margin-top: 20px; }
+footer { margin: 20px 0 0 0; height: 60px; width: 100%; line-height: 60px; background: -webkit-linear-gradient(top, #00a356, #009c50); -webkit-box-shadow: 0px 0px 10px 1px #eee; box-shadow: 0px 3px 10px 2px #ccc; }
+	div#footerLinksTop { text-align: center; }
+	div#footerLinksTop a, #footerLinksBottom a { padding: 0 25px; color: #fff; font-weight: 700; font-size: .7em; }
+	ul#footerLogos { list-style-type: none; margin: 20px 0 0 40px; }
+		ul#footerLogos li { display: inline; margin: 10px; }
+	div#footerLinksBottom { line-height: 100px; margin-right: 50px; }
+	div#footerLinksBottom a { color: #00a356; padding: 0 10px; font-weight: 600; }
+	span.grayDivider { color: #ccc; font-weight: 300; }
 
 fieldset { margin: 20px 0; width: 100%; -moz-box-shadow: 0px 0px 10px 1px #eee; -webkit-box-shadow: 0px 0px 10px 1px #eee; box-shadow: 0px 0px 10px 1px #ccc; }
 fieldset legend { height: 46px; line-height: 46px; background: url('../images/cb-theme-1/stripedHeader.png') repeat-x; width: 100%; font-weight: 700; font-size: 1.2em; margin-bottom: 0px; border: solid 0px #eee; border-top: solid 4px #009933; border-bottom: none; }
@@ -35,7 +37,7 @@ div.legendFooter { background-color: #e2e7e8; height: 60px; line-height: 60px; p
 
 .wizard-step-body, .wizard-step-body-static { background-color: #f4f6f7; width: 100%; border: solid 0px #eee; border-top: none; }
 .wizard-step-body > *, .wizard-step-body-static > * {  }
-.wizard-thumbnail, .wizard-thumbnail-static { background-color: #fff; border: solid 1px #DFDFDF; padding: 3px 5px 10px 10px; width: 65%; }
+.wizard-thumbnail, .wizard-thumbnail-static { padding: 3px 5px 10px 15px; }
 .wizard-thumbnail ul li, .wizard-thumbnail-static ul li { font-weight: bold; color: #666; }
 
 .wizard-step-body dl { padding-left: 20px; }
