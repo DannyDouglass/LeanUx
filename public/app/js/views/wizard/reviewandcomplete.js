@@ -57,7 +57,7 @@ define(["jquery", "marionette", "views/fadetransitionregion", "views/commontempl
             onRender: function() {
 
                 $("#stepInstructionMessage")
-                    .html("Please review all information about the employee, then confirm to complete this new hire.");
+                    .html("Please review all information about the employee, then confirm to complete.");
 
                 this.newHireSummary.show(new NewHireProfileSummary({ model: this.model }));
                 this.benefitsSummary.show(new BenefitsSummary({ model: this.model }));
