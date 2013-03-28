@@ -1,7 +1,10 @@
 define(
-    ["jquery", "marionette", "views/fadetransitionregion", "models/four01kplan", "collections/four01kplancollection", 'tpl!templates/401k.plan.details.display.html', 'tpl!templates/401k.plan.details.input.html', 'tpl!templates/401k.plan.item.html', 'tpl!templates/401k.plan.options.html', 'tpl!templates/benefits.choose.html'],
+    ["jquery", "marionette", "views/fadetransitionregion", "models/four01kplan", "collections/four01kplancollection",
+        'tpl!templates/401k.plan.details.display.html', 'tpl!templates/401k.plan.details.input.html', 'tpl!templates/401k.plan.item.html',
+        'tpl!templates/401k.plan.options.html', 'tpl!templates/401k.plan.summary.display.html', 'tpl!templates/benefits.choose.html'],
 
-    function($, Marionette, FadeTransitionRegion, Four01kPlan, Four01kPlanCollection, Four01kDetailsDisplayTmpl,  Four01kDetailsInputTmpl, Four01kItemTmpl, Four01kOptionsTmpl, benefitsChooseTmpl) {
+    function($, Marionette, FadeTransitionRegion, Four01kPlan, Four01kPlanCollection, Four01kDetailsDisplayTmpl,
+             Four01kDetailsInputTmpl, Four01kItemTmpl, Four01kOptionsTmpl, Four01kSummaryDisplayTmpl, benefitsChooseTmpl) {
 
         var four01kPlanItemView = Marionette.ItemView.extend({
             model: Four01kPlan,
@@ -21,6 +24,12 @@ define(
             model: Four01kPlan,
             tagName: "li"
         });
+
+        var four01kPlanSummaryDisplay = Marionette.ItemView.extend({
+            tagName: "ul",
+            template: Four01kSummaryDisplayTmpl,
+            model: Four01kPlan,
+        })
 
         var four01kPlanDetailsInput = Marionette.CompositeView.extend({
             itemView: four01kPlanDetailsDisplay,
@@ -74,6 +83,10 @@ define(
 
                 details: {
                     View: four01kPlanDetailsInput
+                },
+
+                summary: {
+                    View: four01kPlanSummaryDisplay
                 }
             },
 

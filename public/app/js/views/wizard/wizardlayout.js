@@ -7,7 +7,8 @@ define(["marionette", "views/fadetransitionregion", 'tpl!templates/wizard.newhir
 
         regions: {
             wizardProgress: "#wizard_progress",
-            currentStep: "#wizard_current"
+            currentStep: "#wizard_current",
+            nextPrevious: "#wizard_next_previous"
         }
     });
 

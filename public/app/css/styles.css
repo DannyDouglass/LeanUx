@@ -39,7 +39,9 @@ fieldset > legend h4 { padding-left: 15px; }
 .wizard-step-body dt { font-weight: normal; }
 .wizard-step-body dd { font-weight: bold; }
 
-.wizard-step-body .summary { background-color: #F9F9F9; border: solid 1px #DFDFDF; margin-top: 10px; }
+.wizard-step-body .summary { background-color: #F9F9F9; border: solid 1px #DFDFDF; margin-bottom: 15px; }
+.new-hire-summary { margin-top: 10px; }
+
 .summary-header-container { background-color: #DDD; padding: 10px; }
 .summary-header { font-size: 1.4em; font-weight: bold; }
 .summary-body { padding: 10px; }
@@ -102,3 +104,6 @@ input, button, select, textarea { font-family: 'Open Sans', sans-serif; }
 .nav-tabs>li>a:hover { color: #fff; background-color: #3f4a57; }
 .nav-tabs .open .dropdown-toggle, .nav-pills .open .dropdown-toggle, .nav>li.dropdown.open.active>a:hover, .nav>li.dropdown.open.active>a:focus { background-color: #3f4a57; color: #fff; }
 */
+
+#btn-next-complete { margin-right: 18px; }
+#wizard_next_previous .pull-left, #wizard_next_previous .pull-right { margin-bottom: 15px; }

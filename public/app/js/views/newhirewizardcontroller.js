@@ -1,9 +1,10 @@
 define(
-    ["marionette", "views/newhirewizardprogressview", "views/rightsidebarview", "models/newhiresmodel", "views/wizard/wizardlayout",
-    "views/wizard/employeeprofile", "views/wizard/choosebenefits", "views/wizard/reviewandcomplete", "models/four01koptions"],
+    ["marionette", "views/newhirewizardprogressview", "views/newhirenextpreviousview", "views/rightsidebarview", "models/newhiresmodel",
+        "views/wizard/wizardlayout", "views/wizard/employeeprofile", "views/wizard/choosebenefits", "views/wizard/reviewandcomplete",
+        "models/four01koptions"],
 
-    function(Marionette, WizardProgressView, RightSideBarView, NewHiresModel, WizardLayout, EmployeeInformationView, 
-        ChooseBenefitsView, ReviewAndCompleteView, Four01kOptions) {        
+    function(Marionette, WizardProgressView, WizardNextPreviousView, RightSideBarView, NewHiresModel,
+             WizardLayout, EmployeeInformationView, ChooseBenefitsView, ReviewAndCompleteView, Four01kOptions) {
 
         var NewHireWizardRegion = Marionette.Region.extend({
             el: "#leftSubContentColumn"
@@ -28,12 +29,14 @@ define(
 
             newHireProfile: function() {
                 var employeeInformationView = new EmployeeInformationView({ model: this.model });
+
                 this.layout.wizardProgress.show(new WizardProgressView({ step: 1 }));
-                
+                this.layout.nextPrevious.show(new WizardNextPreviousView({step: 1}));
+
                 employeeInformationView.on("done", function() {
                     LeanUx.router.navigate("chooseBenefits/" + this.model.id);
                     this.benefitOptions();
-                }, this);                
+                }, this);
 
                 this.layout.currentStep.show(employeeInformationView);
             },
@@ -42,18 +45,23 @@ define(
                 var opt = new Four01kOptions({ id: this.model.id });
                 opt.fetch();
 
-                this.layout.wizardProgress.show(new WizardProgressView({ step: 2 })); 
+                this.layout.wizardProgress.show(new WizardProgressView({ step: 2 }));
+                this.layout.nextPrevious.show(new WizardNextPreviousView({step: 2}));
 
                 var chooseBenefitsView = new ChooseBenefitsView({ model: opt });
+
                 chooseBenefitsView.on("done", function() {
                     LeanUx.router.navigate("reviewNewHire/" + this.model.id);
                     this.reviewAndComplete();
                 }, this);
+
                 this.layout.currentStep.show(chooseBenefitsView);
             },
 
             reviewAndComplete: function() {
                 this.layout.wizardProgress.show(new WizardProgressView({ step: 5 }));
+                this.layout.nextPrevious.show(new WizardNextPreviousView({step: 5}));
+
                 this.layout.currentStep.show(new ReviewAndCompleteView({ model: this.model }));
             }
         });
