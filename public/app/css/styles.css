@@ -102,5 +102,5 @@ input, button, select, textarea { font-family: 'Open Sans', sans-serif; }
 .nav-tabs .open .dropdown-toggle, .nav-pills .open .dropdown-toggle, .nav>li.dropdown.open.active>a:hover, .nav>li.dropdown.open.active>a:focus { background-color: #3f4a57; color: #fff; }
 */
 
-#btn-next-complete { margin-right: 18px; }
+#btn-next-done { margin-right: 18px; }
 #wizard_next_previous .pull-left, #wizard_next_previous .pull-right { margin-bottom: 15px; }
