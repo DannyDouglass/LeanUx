@@ -48,32 +48,11 @@ fieldset > legend h4 { padding-left: 15px; }
 .table-outlined { border: solid 1px #ddd; }
 .table-outlined thead { background-color: #ededed; }
 .breadcrumb li { color: #666; }
-.progress div { width: 20%; }
-.progress .bar-inactive {
-	float: left;
-	height: 100%;
-	font-size: 12px;
-	color: #888;
-	text-align: center;
-	background-color: #eee;
-	background-image: -moz-linear-gradient(top, #eee, #efefef);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eee), to(#efefef));
-	background-image: -webkit-linear-gradient(top, #eee, #efefef);
-	background-image: -o-linear-gradient(top, #eee, #efefef);
-	background-image: linear-gradient(to bottom, #eee, #efefef);
-	background-repeat: repeat-x;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff149bdf', endColorstr='#ff0480be', GradientType=0);
-	-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-	 -moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-	      box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-	-webkit-box-sizing: border-box;
-	 -moz-box-sizing: border-box;
-	      box-sizing: border-box;
-	-webkit-transition: width 0.6s ease;
-	 -moz-transition: width 0.6s ease;
-	   -o-transition: width 0.6s ease;
-      transition: width 0.6s ease;
-}
+.progress-bar { border-bottom: solid 1px #DFDFDF; border-top: solid 1px #DFDFDF; padding: 25px 0 25px 0; }
+.step-number { background-color: #F29133; border-radius: 50%; color: #FFFFFF; float: left; height: 30px; line-height: 30px; text-align: center; width: 30px; }
+.progress-bar .active .step-name { color: #F29133; }
+.progress-bar .bar-inactive { color: #DFDFDF; }
+.progress-bar .bar-inactive .step-number { background-color: #DFDFDF; }
 .well-square { background-color: #f4f6f7; padding: 5px 10px 5px 10px; margin-top: 20px; }
 
 /* OVERRIDE Bootstrap Styles for custom look */
