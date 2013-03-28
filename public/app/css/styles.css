@@ -20,7 +20,7 @@ div#contentContainer { margin: 0 20px; padding: 0 15px 0 0;  }
 			table#recentNewHires tbody tr td { border: none; border-bottom: solid 1px #eee; padding: 10px 10px; }
 		div#rightSubContentColumn { float: right; width: 250px; margin: 50px  0 0; }
 			div#needHelpWell { margin-top: 20px; }
-footer { margin: 20px 0 0 0; height: 60px; width: 100%; line-height: 60px; background: -webkit-linear-gradient(top, #00a356, #009c50); -webkit-box-shadow: 0px 0px 10px 1px #eee; box-shadow: 0px 3px 10px 2px #ccc; }
+footer { margin: 40px 0 0 0; height: 60px; width: 100%; line-height: 60px; background: -webkit-linear-gradient(top, #00a356, #009c50); -webkit-box-shadow: 0px 0px 10px 1px #eee; box-shadow: 0px 3px 10px 2px #ccc; }
 	div#footerLinksTop { text-align: center; }
 	div#footerLinksTop a, #footerLinksBottom a { padding: 0 25px; color: #fff; font-weight: 700; font-size: .7em; }
 	ul#footerLogos { list-style-type: none; margin: 20px 0 0 40px; }
