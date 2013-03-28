@@ -9,7 +9,7 @@ define(
 			initialize: function(){
 				LeanUx.router.on("route:showNewHires", this.renderNewHires, this);
 				LeanUx.router.on("route:showEmployeeProfile", this.renderAddNewHire, this);
-				LeanUx.router.on("route:showBenefitOptions", this.renderAddNewHire)
+				LeanUx.router.on("route:showBenefitOptions", this.renderAddNewHire, this)
 				LeanUx.router.on("route:showReviewAndComplete", this.renderAddNewHire, this);
 			},
 
@@ -24,7 +24,7 @@ define(
 				$(this.el).empty();
 				$(this.el).append(this.renderBaseBreadcrumb);
 				$(this.el).append("<li><a href=\"\">New Hire</a><span class=\"divider\">></span></li>");  
-				$(this.el).append("<li>Add New Hire</li>")
+				$(this.el).append("<li>Add New Hire / Rehire</li>")
 				return this;
 			},
 
