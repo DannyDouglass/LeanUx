@@ -47,13 +47,14 @@ div.legendFooter { background-color: #e2e7e8; height: 60px; line-height: 60px; p
 .wizard-step-body dt { font-weight: normal; }
 .wizard-step-body dd { font-weight: bold; }
 
-.summary-header-container { margin-top: 20px; -moz-box-shadow: 0px 3px 10px 1px #eee; -webkit-box-shadow: 0px 3px 10px 1px #eee; box-shadow: 0px 3px 10px 1px #eee; }
+.summary-header-container { -moz-box-shadow: 0px 3px 10px 1px #eee; -webkit-box-shadow: 0px 3px 10px 1px #eee; box-shadow: 0px 3px 10px 1px #eee; }
 .summary-header { height: 46px; line-height: 46px; background: url('../images/cb-theme-1/stripedHeader.png') repeat-x; width: 100%; font-weight: 700; font-size: 1.2em; margin-bottom: 0px; border: solid 0px #eee; border-top: solid 4px #009933; border-bottom: none; }
 .summary-header h4 { padding-left: 15px; }
 .summary-header div.goBackAndEditLink { padding-right: 15px; font-weight: 300; }
 .summary-body { padding: 10px 20px; border: solid 1px #eee; border-top: none; background-color: #f4f6f7; }
 .summary-body h5 { color: #666; font-weight: 600; }
-
+.summary { margin-top: 20px; }
+.actions { margin: 20px 0 0 0; }
 .wizard-step-body .summary { background-color: #F9F9F9; border: solid 1px #DFDFDF; margin-bottom: 15px; }
 .new-hire-summary { margin-top: 8px; }
 
@@ -102,5 +103,3 @@ input, button, select, textarea { font-family: 'Open Sans', sans-serif; }
 .nav-tabs .open .dropdown-toggle, .nav-pills .open .dropdown-toggle, .nav>li.dropdown.open.active>a:hover, .nav>li.dropdown.open.active>a:focus { background-color: #3f4a57; color: #fff; }
 */
 
-#btn-next-done { margin-right: 18px; }
-#wizard_next_previous .pull-left, #wizard_next_previous .pull-right { margin-bottom: 15px; }
