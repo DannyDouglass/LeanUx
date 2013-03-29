@@ -107,7 +107,7 @@ define(
             },
 
             cancel: function(){
-                this._setCurrentState(this.model.isNew() ? this.states.thumbnailed : this.states.summary);
+                this.setState();
             },
 
             initialize: function() {
@@ -115,12 +115,17 @@ define(
 
                 this.on("state:changed", this._stateChanged);
 
+                this.enrolled = this.model.get("employeePercentage") && this.model.get("companyPercentage");
                 this.collection = new Four01kPlanCollection();
                 this.collection.fetch();
             },
 
+            setState: function() {
+                this._setCurrentState(this.enrolled ? this.states.summary: this.states.thumbnailed);
+            },
+
             onRender: function() {
-                this._setCurrentState(this.model.isNew() ? this.states.thumbnailed : this.states.summary);
+                this.setState();
             },
 
             _setCurrentState: function(state) {

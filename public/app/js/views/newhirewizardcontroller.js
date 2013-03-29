@@ -53,18 +53,24 @@ define(
 
             benefitOptions: function() {
                 var opt = new Four01kOptions({ id: this.model.id });
-                opt.fetch();
 
-                var nextPreviousButtonview = new WizardNextPreviousView({ step: 2 });
-                var chooseBenefitsView = new ChooseBenefitsView({ model: opt });
+                opt.fetch({
+                    success: (function() {
+                        var nextPreviousButtonview = new WizardNextPreviousView({ step: 2 });
+                        var chooseBenefitsView = new ChooseBenefitsView({ model: opt });
 
-                chooseBenefitsView.on("done", this.reviewNewHire, this);
-                nextPreviousButtonview.on("step:previous", this.employeeProfile, this);
-                nextPreviousButtonview.on("step:next", this.reviewNewHire, this);
+                        chooseBenefitsView.on("done", this.reviewNewHire, this);
+                        nextPreviousButtonview.on("step:previous", this.employeeProfile, this);
+                        nextPreviousButtonview.on("step:next", this.reviewNewHire, this);
 
-                this.layout.wizardProgress.show(new WizardProgressView({ step: 2 }));
-                this.layout.nextPrevious.show(nextPreviousButtonview);
-                this.layout.currentStep.show(chooseBenefitsView);
+                        this.layout.wizardProgress.show(new WizardProgressView({ step: 2 }));
+                        this.layout.nextPrevious.show(nextPreviousButtonview);
+                        this.layout.currentStep.show(chooseBenefitsView);
+                    }).bind(this),
+                    error: function() {
+                        alert("Something went horribly wrong.");
+                    }
+                });
             },
 
             reviewAndComplete: function() {
