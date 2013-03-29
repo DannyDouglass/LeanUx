@@ -17,7 +17,6 @@ _.extend(Marionette.TemplateCache, {
   // retrieves the cached version, or loads it
   // from the DOM.
   get: function(templateId){
-    var that = this;
     var cachedTemplate = this.templateCaches[templateId];
 
     if (!cachedTemplate){
@@ -37,7 +36,7 @@ _.extend(Marionette.TemplateCache, {
   // `clear("#t1", "#t2", "...")`
   clear: function(){
     var i;
-    var args = Array.prototype.slice.apply(arguments);
+    var args = slice(arguments);
     var length = args.length;
 
     if (length > 0){
@@ -57,8 +56,6 @@ _.extend(Marionette.TemplateCache.prototype, {
 
   // Internal method to load the template
   load: function(){
-    var that = this;
-
     // Guard clause to prevent loading this template more than once
     if (this.compiledTemplate){
       return this.compiledTemplate;
@@ -77,13 +74,10 @@ _.extend(Marionette.TemplateCache.prototype, {
   // using a template-loader plugin as described here: 
   // https://github.com/marionettejs/backbone.marionette/wiki/Using-marionette-with-requirejs
   loadTemplate: function(templateId){
-    var template = $(templateId).html();
+    var template = Marionette.$(templateId).html();
 
     if (!template || template.length === 0){
-      var msg = "Could not find template: '" + templateId + "'";
-      var err = new Error(msg);
-      err.name = "NoTemplateError";
-      throw err;
+      throwError("Could not find template: '" + templateId + "'", "NoTemplateError");
     }
 
     return template;

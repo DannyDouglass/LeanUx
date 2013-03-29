@@ -12,8 +12,7 @@ Marionette.CollectionView = Marionette.View.extend({
   constructor: function(options){
     this._initChildViewStorage();
 
-    var args = Array.prototype.slice.apply(arguments);
-    Marionette.View.prototype.constructor.apply(this, args);
+    Marionette.View.prototype.constructor.apply(this, slice(arguments));
 
     this._initialEvents();
   },
@@ -87,12 +86,11 @@ Marionette.CollectionView = Marionette.View.extend({
   // Internal method to loop through each item in the
   // collection view and show it
   showCollection: function(){
-    var that = this;
     var ItemView;
     this.collection.each(function(item, index){
-      ItemView = that.getItemView(item);
-      that.addItemView(item, ItemView, index);
-    });
+      ItemView = this.getItemView(item);
+      this.addItemView(item, ItemView, index);
+    }, this);
   },
 
   // Internal method to show an empty view in place of
@@ -125,9 +123,7 @@ Marionette.CollectionView = Marionette.View.extend({
     var itemView = Marionette.getOption(this, "itemView");
 
     if (!itemView){
-      var err = new Error("An `itemView` must be specified");
-      err.name = "NoItemViewError";
-      throw err;
+      throwError("An `itemView` must be specified", "NoItemViewError");
     }
 
     return itemView;
@@ -136,12 +132,10 @@ Marionette.CollectionView = Marionette.View.extend({
   // Render the child item's view and add it to the
   // HTML for the collection view.
   addItemView: function(item, ItemView, index){
-    var that = this;
-
     // get the itemViewOptions if any were specified
     var itemViewOptions = Marionette.getOption(this, "itemViewOptions");
     if (_.isFunction(itemViewOptions)){
-      itemViewOptions = itemViewOptions.call(this, item);
+      itemViewOptions = itemViewOptions.call(this, item, index);
     }
 
     // build the view 
@@ -178,7 +172,7 @@ Marionette.CollectionView = Marionette.View.extend({
     // Forward all child item view events through the parent,
     // prepending "itemview:" to the event name
     this.listenTo(view, "all", function(){
-      var args = slice.call(arguments);
+      var args = slice(arguments);
       args[0] = prefix + ":" + args[0];
       args.splice(1, 0, view);
 
@@ -195,8 +189,7 @@ Marionette.CollectionView = Marionette.View.extend({
   // Build an `itemView` for every model in the collection.
   buildItemView: function(item, ItemViewType, itemViewOptions){
     var options = _.extend({model: item}, itemViewOptions);
-    var view = new ItemViewType(options);
-    return view;
+    return new ItemViewType(options);
   },
 
   // get the child view by item it holds, and remove it
@@ -214,9 +207,9 @@ Marionette.CollectionView = Marionette.View.extend({
     if (view){
       this.stopListening(view);
 
-      if (view.close){
-        view.close();
-      }
+      // call 'close' or 'remove', depending on which is found
+      if (view.close) { view.close(); }
+      else if (view.remove) { view.remove(); }
 
       this.children.remove(view);
     }
@@ -255,8 +248,7 @@ Marionette.CollectionView = Marionette.View.extend({
     this.closeChildren();
     this.triggerMethod("collection:closed");
 
-    var args = Array.prototype.slice.apply(arguments);
-    Marionette.View.prototype.close.apply(this, args);
+    Marionette.View.prototype.close.apply(this, slice(arguments));
   },
 
   // Close the child views that this collection view

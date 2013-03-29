@@ -6,6 +6,7 @@ define(['backbone', 'jquery', 'bootstrap', 'tpl!templates/right.sidebar.html'], 
 		initialize: function(){
 			this.$el.empty();
 			this.render();
+			console.log(this.model);
 		},
 		render: function(){
 			this.$el.html(this.template);

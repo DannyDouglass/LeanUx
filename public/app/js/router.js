@@ -30,7 +30,6 @@ define(
 			},
 
 			showBenefitOptions: function(id) {
-				console.log('showBenefitOptions fired');
 				var model;
 				if (id) { model = LeanUx.newHiresCollection.get(id); }
 

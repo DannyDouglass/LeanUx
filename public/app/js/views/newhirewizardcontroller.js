@@ -20,7 +20,7 @@ define(
                     this.model = new NewHiresModel();
                 }
 
-                this.rightSideBar = new RightSideBarView();
+                this.rightSideBar = new RightSideBarView({ model: this.model });
                 this.region = new NewHireWizardRegion();
                 this.layout = new WizardLayout();
 

@@ -1,3 +1,40 @@
+## Upgrade to v1.0.0
+
+In addition to the following notes, please see previous upgrade guide entries and the 
+[changelog](https://github.com/marionettejs/backbone.marionette/blob/master/changelog.md).
+
+### Backbone 1.0 and Underscore 1.4.4
+
+Marionette v1.0 is built and test with Backbone v1.0 and Underscore v1.4.4. You should be
+able to use Backbone v0.9.9 or v0.9.10 with Marionette 1.0, but there is no
+guarantee that everything will work as expected. Older versions of
+Backbone are not supported at all.
+
+### Wreqr v0.2.0
+
+This update renames the `addHandler` methods to `setHandler` to help
+set the expectation that there is a single handler for any given
+command or request/response handler. When updating to Wreqr v0.2.0,
+you will need to change all calls to `addHandler` to `setHandler`. For
+more information on other changes in Wreqr, see the
+[Wreqr changelog](https://github.com/marionettejs/backbone.wreqr/blob/master/CHANGELOG.md).
+
+### Grunt v0.4
+
+Grunt v0.4 has a significantly different architecture than previous versions. If
+you are building Marionette and/or running the specs from your local computer, you
+will need to update to the latest version of Grunt v0.4 to do so. 
+
+See the
+[getting started guide for Grunt](http://gruntjs.com/getting-started).
+
+Once you have done that, you should be able to run Grunt to get things rolling.
+
+### Marionette.createObject
+
+This method has been removed. It was never used by Marionette directly,
+and you should replace it's use with a proper polyfill such as Modernizr.
+
 ## Upgrade to v1.0.0-rc4
 
 RC4 is mostly bug fixes and zombie killing. There are a few
