@@ -29,10 +29,8 @@ define(
         onRender: function(){
             if (this.step == this.firstStep)
                 this.ui.previousButton.hide();
-            else if (this.step == this.lastStep) {
-                this.ui.nextOrDoneButton.addClass('btn-large');
+            else if (this.step == this.lastStep)
                 this.ui.nextOrDoneButton.text('Complete New Hire Entry');
-            }
         },
 
         nextOrDone: function(){
