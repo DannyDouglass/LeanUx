@@ -6,10 +6,8 @@ define(["jquery", "marionette", "views/fadetransitionregion", "views/commontempl
             
             template: benefitsSummaryTmpl,
 
-            templateHelpers: function() {
-                return {
-                    chooseBenefitsURL: "#chooseBenefits/" + this.model.id
-                };
+            events: {
+                "click .goBackAndEditLink": "goBackAndEdit"
             },
 
             serializeData: function() {
@@ -26,6 +24,10 @@ define(["jquery", "marionette", "views/fadetransitionregion", "views/commontempl
                     employeePercentage: ep,
                     companyPercentage: cp
                 };
+            },
+
+            goBackAndEdit: function() {
+                LeanUx.router.navigate("chooseBenefits/" + this.model.id, { trigger: true });
             }
         });
 
@@ -33,11 +35,18 @@ define(["jquery", "marionette", "views/fadetransitionregion", "views/commontempl
             
             template: newHireProfileSummaryTmpl,
 
+            events: {
+                "click .goBackAndEditLink button": "goBackAndEdit"
+            },
+
             templateHelpers: function() {
                 return {
-                    dateOfHire: templateHelpers.formatDate(this.model.get("dateOfHire")),
-                    employeeProfileURL: "#employeeProfile/" + this.model.id
+                    dateOfHire: templateHelpers.formatDate(this.model.get("dateOfHire"))
                 };
+            },
+
+            goBackAndEdit: function() {
+                LeanUx.router.navigate("employeeProfile/" + this.model.id, { trigger: true });
             }
         });
 
