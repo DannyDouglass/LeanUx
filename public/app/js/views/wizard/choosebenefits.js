@@ -98,6 +98,8 @@ define(
 
                 this.model.save({ employeePercentage: employeeContrib, companyPercentage: companyContrib, lastSaved: new Date() }, {
                     success: function() {
+                        that.enrolled = true;
+                        that.setState();
                     },
                     error: function() {
                         console.log("error");
@@ -114,7 +116,10 @@ define(
 
                 this.on("state:changed", this._stateChanged);
 
-                this.enrolled = this.model.get("employeePercentage") && this.model.get("companyPercentage");
+                var employeePercentage = this.model.get("employeePercentage");
+                var companyPercentage = this.model.get("companyPercentage");
+
+                this.enrolled = employeePercentage >= 0 && companyPercentage >= 0;
                 this.collection = new Four01kPlanCollection();
                 this.collection.fetch();
             },
