@@ -7,12 +7,9 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 
 		initialize: function(){
 			this.collection = LeanUx.newHiresCollection;
-			this.collection.bind("reset", this.render, this);
-        	this.collection.bind("remove", this.render, this);
         	this.render();
 		},
-		render: function(){
-
+		render: function() {
 			this.$el.empty();
 			this.$el.attr('id', 'recentNewHires');
 
@@ -88,7 +85,13 @@ define(['backbone', 'jquery', 'underscore', 'bootstrap', '../router', 'views/rig
 	    deleteNewHire: function(ev) {
 	    	ev.preventDefault();
 	        
-	        if (confirm("Delete this item?")) { this.model.destroy(); }
+	        if (confirm("Delete this item?")) {
+	        	var self = this;
+	        	self.model.destroy();
+	        	self.$el.fadeOut(function() {
+	        		self.$el.remove();
+	        	})
+	        }
 	    },
 
 	    continueNewHire: function(ev) {
