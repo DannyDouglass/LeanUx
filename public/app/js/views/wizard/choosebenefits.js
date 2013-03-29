@@ -42,9 +42,9 @@ define(
         });
 
         var four01kPlanSummaryDisplay = Marionette.ItemView.extend({
-            tagName: "ul",
+            tagName: "div",
+            className: "four01k-summary-display",
             template: Four01kSummaryDisplayTmpl,
-            model: Four01kPlan,
             serializeData: serialize401kData
         });
 
@@ -111,8 +111,9 @@ define(
             },
 
             initialize: function() {
-                this.on("state:changed", this._stateChanged);
                 $("#stepInstructionMessage").html("Set up which benefits the employee wishes to enroll in.");
+
+                this.on("state:changed", this._stateChanged);
 
                 this.collection = new Four01kPlanCollection();
                 this.collection.fetch();

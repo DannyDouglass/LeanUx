@@ -41,7 +41,7 @@ div.legendFooter { background-color: #e2e7e8; height: 60px; line-height: 60px; p
 .wizard-step-body, .wizard-step-body-static { background-color: #f4f6f7; width: 100%; border: solid 0px #eee; border-top: none; }
 .wizard-step-body > *, .wizard-step-body-static > * {  }
 .wizard-thumbnail, .wizard-thumbnail-static { padding: 3px 5px 10px 15px; }
-.wizard-thumbnail ul li, .wizard-thumbnail-static ul li { font-weight: bold; color: #666; }
+.wizard-thumbnail ul li, .wizard-thumbnail-static ul li, .four01k-summary-display .strong { font-weight: bold; color: #666; }
 
 .wizard-step-body dl { padding-left: 20px; }
 .wizard-step-body dt { font-weight: normal; }
@@ -103,3 +103,7 @@ input, button, select, textarea { font-family: 'Open Sans', sans-serif; }
 .nav-tabs .open .dropdown-toggle, .nav-pills .open .dropdown-toggle, .nav>li.dropdown.open.active>a:hover, .nav>li.dropdown.open.active>a:focus { background-color: #3f4a57; color: #fff; }
 */
 
+.four01k-summary-display { height: 80px; position: relative; }
+.four01k-summary-display div { position: absolute; top: 32%; }
+.four01k-summary-display span { display: inline-block; }
+.four01k-summary-display .percentage { margin-left: 25px; }
