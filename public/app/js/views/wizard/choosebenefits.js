@@ -98,7 +98,6 @@ define(
 
                 this.model.save({ employeePercentage: employeeContrib, companyPercentage: companyContrib, lastSaved: new Date() }, {
                     success: function() {
-
                     },
                     error: function() {
                         console.log("error");

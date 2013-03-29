@@ -1,4 +1,5 @@
-define(["marionette", "views/fadetransitionregion", 'tpl!templates/employee.info.details.html', 'tpl!templates/employee.info.thumb.html', 'tpl!templates/employee.info.html'], function(Marionette, FadeTransitionRegion, employeeInfoDetailsTmpl, employeeInfoThumbTmpl, employeeInfoTmpl) {
+define(["marionette", "views/fadetransitionregion", 'tpl!templates/employee.info.details.html', 'tpl!templates/employee.info.thumb.html', 'tpl!templates/employee.info.html', 'views/rightsidebarview'], 
+    function(Marionette, FadeTransitionRegion, employeeInfoDetailsTmpl, employeeInfoThumbTmpl, employeeInfoTmpl, RightSideBarView) {
 
     var EIDetail = Marionette.ItemView.extend({
 
@@ -113,6 +114,7 @@ define(["marionette", "views/fadetransitionregion", 'tpl!templates/employee.info
                 success: function() {
                     LeanUx.router.navigate("employeeProfile/" + that.model.id);
                     that._setCurrentState(that.states.details);
+                    this.rightSideBar = new RightSideBarView({ model: that.model });
                 },
                 error: function() {
                     console.log("error");

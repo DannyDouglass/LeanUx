@@ -27,7 +27,6 @@ define(['backbone', 'jquery', 'bootstrap', 'tpl!templates/right.sidebar.html', '
 			this.render();
 		},
 
-
 		render: function(){
 			if(this.model){
 				this.model = this.model.toJSON();
