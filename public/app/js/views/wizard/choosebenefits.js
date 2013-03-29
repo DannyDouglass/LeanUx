@@ -64,7 +64,7 @@ define(
             },
 
             events: {
-                "click button.enroll": "enroll",
+                "click #enroll_401k .btn": "enroll",
                 "click #done_401k": "done",
                 "click button.cancel": "cancel"
             },
