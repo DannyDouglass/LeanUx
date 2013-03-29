@@ -59,7 +59,6 @@ define(
                         var nextPreviousButtonview = new WizardNextPreviousView({ step: 2 });
                         var chooseBenefitsView = new ChooseBenefitsView({ model: opt });
 
-                        chooseBenefitsView.on("done", this.reviewNewHire, this);
                         nextPreviousButtonview.on("step:previous", this.employeeProfile, this);
                         nextPreviousButtonview.on("step:next", this.reviewNewHire, this);
 
