@@ -18,9 +18,10 @@ div#contentContainer { margin: 0 20px; padding: 0 15px 0 0;  }
 			table#recentNewHires tbody tr.notComplete, table#recentNewHires tbody tr td.pending { font-style: italic; }
 			table#recentNewHires tbody tr td.strong, table#recentNewHires tbody tr td.notComplete { font-weight: 600; }
 			table#recentNewHires tbody tr td { border: none; border-bottom: solid 1px #eee; padding: 10px 10px; }
-		div#rightSubContentColumn { float: right; width: 250px; margin: 50px  0 0; }
-			div#lastSavedWell { margin-top: 20px; padding: 10px 15px 15px 15px;  background-color: #f4f6f7; }
-			div#lastSavedWell div { margin-bottom: 10px; }
+		div#rightSubContentColumn { float: right; width: 250px; margin: 50px 0 0 0; }
+			div#lastSavedWell { border-top: 2px solid #eee; width: 100%; margin-top: 10px; margin-bottom: 20px; }
+				div#lastSavedDetails { margin: 20px 0; background-color: #f4f6f7; padding: 10px 15px 15px 15px; }
+
 			div#needHelpWell { margin-top: 15px; }
 footer { margin: 40px 0 0 0; height: 60px; width: 100%; line-height: 60px; background: -webkit-linear-gradient(top, #00a356, #009c50); -webkit-box-shadow: 0px 3px 10px 1px #ddd; box-shadow: 0px 3px 10px 2px #ddd; }
 	div#footerLinksTop { text-align: center; }

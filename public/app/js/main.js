@@ -9,7 +9,8 @@ require.config({
     "backbone.wreqr": "../lib/backbone.wreqr/lib/amd/backbone.wreqr",
     "text": "../lib/requirejs-text/text",
     "tpl": "../lib/requirejs-tpl/tpl",
-    "templates": "templates"
+    "templates": "templates",
+    "moment" : "../lib/moment/moment"
   }
 });
 
