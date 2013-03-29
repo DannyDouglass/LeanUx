@@ -1,9 +1,9 @@
 define(
-	['backbone', 'jquery', 'views/newhiresview', 'views/loadingview', 'views/newhirewizardcontroller', 'collections/newhirescollection', 'views/error'], 
+	['backbone', 'jquery', 'views/newhiresview', 'views/loadingview', 'views/newhirewizardcontroller', 'collections/newhirescollection', 'views/error'],
 	function(Backbone, $, NewHiresView, LoadingView, NewHireWizardController, NewHiresCollection, ErrorView) {
 
 		var AppRouter = Backbone.Router.extend({
-			routes : { 
+			routes : {
 				"" : "showNewHires",
 				"employeeProfile": "showEmployeeProfile",
 				"employeeProfile/:id" : "showEmployeeProfile",

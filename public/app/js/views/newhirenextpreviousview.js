@@ -36,7 +36,7 @@ define(
         },
 
         nextOrDone: function(){
-            if (this.step == lastStep)
+            if (this.step == this.lastStep)
                 this.trigger("step:done");
             else
                 this.trigger("step:next");
