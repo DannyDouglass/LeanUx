@@ -62,7 +62,8 @@ div.legendFooter { background-color: #e2e7e8; height: 60px; line-height: 60px; p
 .table-outlined { border: solid 1px #ddd; }
 .breadcrumb li { color: #666; }
 .progress-bar { border-bottom: solid 2px #eee; border-top: solid 2px #eee; padding: 25px 0 25px 0; }
-.step-number { background-color: #F29133; border-radius: 50%; color: #FFFFFF; float: left; height: 30px; line-height: 30px; text-align: center; width: 30px; }
+.step-number, .enrolled { background-color: #F29133; border-radius: 50%; color: #FFFFFF; height: 30px; line-height: 30px; text-align: center; width: 30px; }
+.step-number { float: left; }
 .step-number i { display: none; }
 .progress-bar .active .step-name { color: #F29133; }
 .progress-bar .bar-inactive { color: #DFDFDF; }
@@ -103,7 +104,11 @@ input, button, select, textarea { font-family: 'Open Sans', sans-serif; }
 .nav-tabs .open .dropdown-toggle, .nav-pills .open .dropdown-toggle, .nav>li.dropdown.open.active>a:hover, .nav>li.dropdown.open.active>a:focus { background-color: #3f4a57; color: #fff; }
 */
 
-.four01k-summary-display { height: 80px; position: relative; }
-.four01k-summary-display div { position: absolute; top: 32%; }
+.four01k-summary-display { height: 80px; }
 .four01k-summary-display span { display: inline-block; }
 .four01k-summary-display .percentage { margin-left: 25px; }
+.four01k-summary-display .status { padding-right: 10px; color: #F29133; font-style: italic; }
+.four01k-summary-display .status, .four01k-summary-display .percentage { padding-top: 25px; }
+
+.four01k-summary-display .enrolled { margin-right: 15px; margin-top: 20px; }
+.four01k-summary-display .enrolled .icon-ok { text-indent: -9999px; }
