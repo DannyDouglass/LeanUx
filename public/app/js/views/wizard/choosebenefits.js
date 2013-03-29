@@ -6,6 +6,22 @@ define(
     function($, Marionette, FadeTransitionRegion, Four01kPlan, Four01kPlanCollection, Four01kDetailsDisplayTmpl,
              Four01kDetailsInputTmpl, Four01kItemTmpl, Four01kOptionsTmpl, Four01kSummaryDisplayTmpl, benefitsChooseTmpl) {
 
+         var serialize401kData = function() {
+            var employeePercentage = this.model.get("employeePercentage");
+
+            employeePercentage = employeePercentage ? employeePercentage * 100 : 0;
+
+            var companyPercentage = this.model.get("companyPercentage");
+
+            companyPercentage = companyPercentage ? companyPercentage * 100 : 0;
+
+            return {
+                employeePercentage: employeePercentage,
+                companyPercentage: companyPercentage,
+                totalPercentage: employeePercentage + companyPercentage
+            };
+        };
+
         var four01kPlanItemView = Marionette.ItemView.extend({
             model: Four01kPlan,
             tagName: "li",
@@ -29,37 +45,14 @@ define(
             tagName: "ul",
             template: Four01kSummaryDisplayTmpl,
             model: Four01kPlan,
-        })
+            serializeData: serialize401kData
+        });
 
         var four01kPlanDetailsInput = Marionette.CompositeView.extend({
             itemView: four01kPlanDetailsDisplay,
             template: Four01kDetailsInputTmpl,
             itemViewContainer: "ul",
-
-            serializeData: function() {
-
-                var employeePercentage = this.model.get("employeePercentage");
-                if (employeePercentage) {
-                    employeePercentage = employeePercentage * 100;
-                }
-                else {
-                    employeePercentage = 0;
-                }
-
-                var companyPercentage = this.model.get("companyPercentage");
-                if (companyPercentage) {
-                    companyPercentage = companyPercentage * 100;
-                }
-                else {
-                    companyPercentage = 0;
-                }
-
-                return {
-                    employeePercentage: employeePercentage,
-                    companyPercentage: companyPercentage,
-                    totalPercentage: employeePercentage + companyPercentage
-                };
-            }
+            serializeData: serialize401kData
         });
 
         var ChooseBenefitsView = Marionette.Layout.extend({
@@ -78,7 +71,7 @@ define(
 
             states: {
                 thumbnailed: {
-                    View: four01kPlanCompositeView,
+                    View: four01kPlanCompositeView
                 },
 
                 details: {
@@ -91,11 +84,7 @@ define(
             },
 
             enroll: function() {
-                if (this.currentState === this.states.thumbnailed) {
-                    this._setCurrentState(this.states.details);
-                } else {
-                    this._setCurrentState(this.states.thumbnailed);
-                }
+                this._setCurrentState(this.states.details);
             },
 
             done: function() {
@@ -118,7 +107,7 @@ define(
             },
 
             cancel: function(){
-                this._setCurrentState(this.states.thumbnailed);
+                this._setCurrentState(this.model.isNew() ? this.states.thumbnailed : this.states.summary);
             },
 
             initialize: function() {
@@ -127,12 +116,10 @@ define(
 
                 this.collection = new Four01kPlanCollection();
                 this.collection.fetch();
-
-                this._setCurrentState(this.states.thumbnailed);
             },
 
             onRender: function() {
-                this._showCurrentState();
+                this._setCurrentState(this.model.isNew() ? this.states.thumbnailed : this.states.summary);
             },
 
             _setCurrentState: function(state) {
@@ -148,12 +135,14 @@ define(
                 this.body.show(new this.currentState.View({ collection: this.collection, model: this.model }));
 
                 if (this.currentState === this.states.details) {
-                    $("#enroll_401k").hide();
-                    $("#PlanOptions_401kPlan").addClass("active");
+                    this.$el.find("#enroll_401k").hide();
+                    this.$el.find("#PlanOptions_401kPlan").addClass("active");
                 }
-                else if (this.currentState === this.states.thumbnailed) {
-                    $("#enroll_401k").show();
-                    $("#PlanOptions_401kPlan").removeClass("active");
+                else if (this.currentState === this.states.thumbnailed || this.currentState === this.states.summary) {
+                    this.$el.find("#enroll_401k").show();
+                    this.$el.find("#PlanOptions_401kPlan").removeClass("active");
+
+                    this.$el.find("#enroll_401k .btn").text(this.currentState === this.states.summary ? 'Edit' : 'Enroll');
                 }
             }
         });

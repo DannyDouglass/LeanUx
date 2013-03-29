@@ -28,7 +28,7 @@ define(
             },
 
             employeeProfile: function(){
-                LeanUx.router.navigate("employeeProfile/" + this.model.id, {trigger: true});
+                LeanUx.router.navigate("employeeProfile/" + this.model.id, { trigger: true});
             },
 
             chooseBenefits: function(){
