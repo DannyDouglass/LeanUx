@@ -93,6 +93,8 @@ input, button, select, textarea { font-family: 'Open Sans', sans-serif; }
 /* secondary navigation */
 .nav-tabs>li>a, .nav-pills>li>a { padding-left: 5px; padding-right: 5px; font-size: 1.1em; color: #555; font-weight: 600; }
 .nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus { color: #16a54a; border: none; }
+.nav-tabs .open .dropdown-toggle, .nav-pills .open .dropdown-toggle, .nav>li.dropdown.open.active>a:hover, .nav>li.dropdown.open.active>a:focus { background-color: #16a54a; }
+ul#secondaryNavigation > li > ul { margin-top: -2px; border-top: solid 4px #00a356; background-color: #f4f6f7; }
 
 /* breadcrumb */
 .breadcrumb { background-color: #fff; padding: 0px; margin-bottom: 10px; }

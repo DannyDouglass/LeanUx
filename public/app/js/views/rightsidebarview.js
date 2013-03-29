@@ -34,13 +34,16 @@ define(['backbone', 'jquery', 'bootstrap', 'tpl!templates/right.sidebar.html', '
 			}
 			this.$el.html(this.template(this.model));
 		},
+		
 		events: {
-			"click #viewAllNewHires" : "showNewHires"
+			"click #saveAndReturn" : "showNewHires"
 		},
+		
 		showNewHires: function(ev){
 			ev.preventDefault();
 			LeanUx.router.navigate("", true);
-		}
+		},
+
 	});
 
 	return RightSideBarView;
