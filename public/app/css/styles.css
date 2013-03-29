@@ -71,7 +71,7 @@ div.legendFooter { background-color: #e2e7e8; height: 60px; line-height: 60px; p
 
 .progress-bar .bar-success .step-number { color: #F29133; }
 .progress-bar .bar-success .step-number span { display: none; }
-.progress-bar .bar-success .step-number i { display: block; margin: 0 auto; margin-top: 30%; }
+.progress-bar .bar-success .step-number i, .enrolled i { display: block; margin: 0 auto; margin-top: 30%; }
 .well-square { background-color: #f4f6f7; padding: 5px 10px 5px 10px; margin-top: 20px; }
 .btn { color: #00a356; text-transform: uppercase; padding-right: 16px; padding-left: 16px; font-size: .9em; font-weight: 600; }
 .btn-danger { color: #fff; }
