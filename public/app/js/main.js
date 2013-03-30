@@ -11,7 +11,7 @@ require.config({
     "tpl": "../lib/requirejs-tpl/tpl",
     "templates": "templates",
     "moment" : "../lib/moment/moment",
-    "iosfix": "../lib-local/ios-orientationfix"
+    "iosfix": "../lib-local/ios-orientationfix/ios-orientationchange-fix"
   }
 });
 
@@ -19,7 +19,7 @@ require(['jquery', 'bootstrap', 'underscore', 'backbone', 'app'], function($, Bo
 { 
     var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
     if (iOS) {
-        require('iosfix');
+        require(['iosfix']);
     }
     App.initialize();
 });
