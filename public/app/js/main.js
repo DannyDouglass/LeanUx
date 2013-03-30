@@ -10,12 +10,17 @@ require.config({
     "text": "../lib/requirejs-text/text",
     "tpl": "../lib/requirejs-tpl/tpl",
     "templates": "templates",
-    "moment" : "../lib/moment/moment"
+    "moment" : "../lib/moment/moment",
+    "iosfix": "../lib-local/ios-orientationfix"
   }
 });
 
 require(['jquery', 'bootstrap', 'underscore', 'backbone', 'app'], function($, Bootstrap, _, Backbone, App)
 { 
+    var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
+    if (iOS) {
+        require('iosfix');
+    }
     App.initialize();
 });
 
