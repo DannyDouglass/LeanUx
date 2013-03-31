@@ -1,7 +1,7 @@
-body { width: 100%; background: url('../images/cb-theme-1/nav-bg.png') repeat-x; font-family: 'Open Sans', sans-serif; padding-bottom: 60px; }
+body { background: url('../images/cb-theme-1/nav-bg.png') repeat-x; font-family: 'Open Sans', sans-serif; padding-bottom: 60px; }
 #page { max-width: 1100px; margin: 0 auto; text-align: left; }
-header { width: 100%; text-align: left; margin: 0 20px; }
-#mainHead {max-width: 1100px; margin-left: 0px; padding-left: 20px;}
+header { text-align: left; margin: 0 20px; }
+#mainHead { width: 98%;max-width: 1100px; margin-left: 0px; padding-left: 2%;}
 #secondaryNavContainer { margin-top: 35px; margin-left:2%;}
 hr { padding: 0px; margin: 10px 0; }
 
@@ -13,7 +13,7 @@ div#contentContainer { margin: 0 20px; padding: 0 15px 0 0;  }
 ul#secondaryNavigation { margin-bottom: 0px; }
 div#contentArea { border: solid 0px #ddd; height: auto; border-top: none; border-bottom: none; /*padding: 10px 10px 40px 10px;*/ }
 .breadcrumb { margin-bottom: 0px; }
-div#leftSubContentColumn { float: left; width: 750px; margin: 0; }
+div#leftSubContentColumn { float: left; margin: 0; }
 div#leftSubContentColumn  h3 { /* margin-bottom: 10px; */ }
 div#stepInstructionMessage { font-size: 1.15em; color: #666; margin-top: 5px; }
 table#recentNewHires { width: 100%; border: solid 1px #eee; border-top: none; -moz-box-shadow: 0px 5px 10px 1px #eee; -webkit-box-shadow: 0px 5px 10px 1px #eee; box-shadow: 0px 5px 10px 1px #eee; }
@@ -116,8 +116,17 @@ ul#secondaryNavigation > li > ul { margin-top: -2px; border-top: solid 4px #00a3
 }
 
 @media (max-width: 779px) {
-	#secondaryNavContainer { margin-top: 35px; margin-left:2%;}
+	#secondaryNavContainer { margin-top: 35px; margin-left:0;}
 }
+
+@media (min-width: 768px) and (max-width: 979px) {
+    /*#page { width: 768px; }*/
+    .table { width: auto; }
+    /*#rightSubContentColumn { clear: both; }*/
+    #mainNavigation { position: relative }
+    p.pull-right { position: absolute; top 2px; right: 10px; }
+}
+
 @media (min-width: 980px) and (max-width: 1087px) {
 	#mainNavigation .container-fluid {padding-left:13px;padding-right: 13px;}
 	#randomSpacer {width:0px !important;}
@@ -125,8 +134,8 @@ ul#secondaryNavigation > li > ul { margin-top: -2px; border-top: solid 4px #00a3
 }
 
 @media (max-width: 980px) {
+    #page {padding-left:0px; padding-right: 0px;}
     #mainNavigation > .navbar-inner {padding-right:0px;}
-    #mainNavigation .container-fluid {padding-right: 0px; padding-left: 0px;}
     #mainNavList > li {display:block;}
     #mainNavList > li.divider-vertical {display:none;}
 }
