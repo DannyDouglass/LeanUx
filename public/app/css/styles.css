@@ -29,7 +29,7 @@ div#lastSavedDetails { margin: 20px 0; background-color: #f4f6f7; padding: 10px 
 div#needHelpWell { margin-top: 15px; }
 footer { margin: 40px 0 0 0; height: 60px; width: 100%; line-height: 60px; background: -webkit-linear-gradient(top, #00a356, #009c50); -webkit-box-shadow: 0px 3px 10px 1px #ddd; box-shadow: 0px 3px 10px 2px #ddd; }
 div#footerLinksTop { text-align: center; }
-div#footerLinksTop a, #footerLinksBottom a { padding: 0 25px; color: #fff; font-weight: 700; font-size: .7em; }
+div#footerLinksTop a, #footerLinksBottom a { padding: 0 3%; color: #fff; font-weight: 700; font-size: .7em; }
 ul#footerLogos { list-style-type: none; margin: 20px 0 0 40px; }
 	ul#footerLogos li { display: inline; margin: 10px; }
 div#footerLinksBottom { line-height: 100px; margin-right: 50px; }
