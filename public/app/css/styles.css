@@ -138,6 +138,7 @@ ul#secondaryNavigation > li > ul { margin-top: -2px; border-top: solid 4px #00a3
     #mainNavigation > .navbar-inner {padding-right:0px;}
     #mainNavList > li {display:block;}
     #mainNavList > li.divider-vertical {display:none;}
+    div#footerLinksTop a, #footerLinksBottom a { padding: 0 1.5%;}
 }
 
 @media (max-width: 1100px) {
