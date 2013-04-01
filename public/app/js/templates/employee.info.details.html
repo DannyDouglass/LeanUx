@@ -17,9 +17,9 @@
             <ul class="inline">
                 <li>
                     <label>Salutation</label>
-                    <select style="width: 80px;">
-                        <option selected="<% salutation === 'Mr' ? 'selected' : '' %>">Mr.</option>
-                        <option selected="<% salutation === 'Mrs' ? 'selected' : '' %>">Mrs.</option>
+                    <select id="salutation" name="salutation" style="width: 80px;">
+                        <option selected="<% salutation === 'Mr.' ? 'selected' : '' %>">Mr.</option>
+                        <option selected="<% salutation === 'Mrs.' ? 'selected' : '' %>">Mrs.</option>
                     </select>
                 </li>
                 <li style="margin-right: 10px;">
@@ -47,14 +47,14 @@
             <ul class="inline">
                 <li>
                     <label>Martial Status</label>
-                    <select>
+                    <select id="marital_status" name="maritalStatus">
                         <option selected="<% maritalStatus === 'Married' ? 'selected' : ''  %>">Married</option>
                         <option selected="<% maritalStatus === 'Single' ? 'selected' : ''  %>">Single</option>
                     </select>
                 </li>
                 <li>
                     <label>Date of Birth *</label>
-                    <input id="dateOfBirth" type="text" placeholder="__/__/____" value="<%= formatDate('dateOfBirth') %>" />
+                    <input id="dateOfBirth" name="dateOfBirth" type="text" placeholder="__/__/____" value="<%= formatDate('dateOfBirth') %>" />
                 </li>
             </ul>
         </div>
@@ -82,6 +82,7 @@
 <div class="legendSpacer"></div>
 <div class="legendFooter">
     <div class="text-right">
+        <button class="btn cancel">Cancel</button>
         <button id="done" class="btn btn-success">Done</button>
     </div>
 </div>

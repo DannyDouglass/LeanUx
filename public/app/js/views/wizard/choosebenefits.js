@@ -43,7 +43,7 @@ define(
 
         var four01kPlanSummaryDisplay = Marionette.ItemView.extend({
             tagName: "div",
-            className: "four01k-summary-display",
+            className: "summary-display",
             template: Four01kSummaryDisplayTmpl,
             serializeData: serialize401kData
         });
@@ -99,7 +99,7 @@ define(
                 this.model.save({ employeePercentage: employeeContrib, companyPercentage: companyContrib, lastSaved: new Date() }, {
                     success: function() {
                         that.enrolled = true;
-                        that.setState();
+                        that._setCurrentState(that.states.summary);
                     },
                     error: function() {
                         console.log("error");
@@ -108,7 +108,7 @@ define(
             },
 
             cancel: function(){
-                this.setState();
+                this._setCurrentState(this.enrolled ? this.states.summary: this.states.thumbnailed);
             },
 
             initialize: function() {
@@ -124,12 +124,8 @@ define(
                 this.collection.fetch();
             },
 
-            setState: function() {
-                this._setCurrentState(this.enrolled ? this.states.summary: this.states.thumbnailed);
-            },
-
             onRender: function() {
-                this.setState();
+                this._setCurrentState(this.model.isNew() ? this.states.thumbnailed : this.states.details);
             },
 
             _setCurrentState: function(state) {
