@@ -1,12 +1,24 @@
 <div class="legendBody">
-  <ul id="employee-info-thubmnail" class="inline">
+  <ul class="inline">
       <li style="margin-right: 50px;">
-          <span>Social Security Number</span>
-          <strong class="strong"><%= socialSecurityNumber %></strong>
+          <label>Social Security Number *</label>
+          <input id="socialSecurityNumber" 
+                 name="socialSecurityNumber" 
+                 type="text" 
+                 value="<%= socialSecurityNumber %>" 
+                 placeholder="___-__-____" />
       </li>
       <li>
-          <span>Name</span>
-          <strong class="strong"><%= firstName %> <%= middleName %> <%= lastName %></strong>
+          <label>Date of Hire *</label>
+          <input id="dateOfHire" 
+                 name="dateOfHire" 
+                 type="text" 
+                 placeholder="__/__/____" 
+                 value="<%= formatDate('dateOfHire') %>" />
+      </li>
+      <li class="pull-right" style="margin-top: 24px;">
+          <button id="start_new_hire"  
+                  class="btn">Start New Hire</button>
       </li>
   </ul>
 </div>

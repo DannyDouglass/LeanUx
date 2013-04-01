@@ -125,7 +125,7 @@ define(
             },
 
             onRender: function() {
-                this._setCurrentState(this.model.isNew() ? this.states.thumbnailed : this.states.details);
+                this._setCurrentState(this.model.isNew() ? this.states.thumbnailed: this.states.details);
             },
 
             _setCurrentState: function(state) {

@@ -92,7 +92,7 @@ define(["marionette", "underscore", "views/fadetransitionregion", 'tpl!templates
             this.on("state:changed", this._stateChanged);
 
             var that = this;
-            var expectedAttrs = ["salutation", "firstName","middleName", "lastName", "suffix", "gender", "maritalStatus", "dateOfBirth"];
+            var expectedAttrs = ["firstName", "lastName", "gender", "dateOfBirth", "socialSecurityNumber", "dateOfHire"];
 
             this.completed = _.every(expectedAttrs, function(attr) {
                 var value = that.model.get(attr);
@@ -122,7 +122,7 @@ define(["marionette", "underscore", "views/fadetransitionregion", 'tpl!templates
         },
 
         onRender: function() {
-            this._setCurrentState(this.model.isNew() ? this.states.thumbnailed : this.states.details);
+            this._setCurrentState(this.model.isNew() ? this.states.thumbnailed: this.states.details);
         },
 
         startNewHire: function() {
