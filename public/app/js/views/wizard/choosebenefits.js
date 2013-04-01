@@ -1,10 +1,10 @@
 define(
     ["jquery", "marionette", "views/fadetransitionregion", "models/four01kplan", "collections/four01kplancollection",
         'tpl!templates/401k.plan.details.display.html', 'tpl!templates/401k.plan.details.input.html', 'tpl!templates/401k.plan.item.html',
-        'tpl!templates/401k.plan.options.html', 'tpl!templates/401k.plan.summary.display.html', 'tpl!templates/benefits.choose.html'],
+        'tpl!templates/401k.plan.options.html', 'tpl!templates/401k.plan.summary.display.html', 'tpl!templates/benefits.choose.html', 'views/rightsidebarview'],
 
     function($, Marionette, FadeTransitionRegion, Four01kPlan, Four01kPlanCollection, Four01kDetailsDisplayTmpl,
-             Four01kDetailsInputTmpl, Four01kItemTmpl, Four01kOptionsTmpl, Four01kSummaryDisplayTmpl, benefitsChooseTmpl) {
+             Four01kDetailsInputTmpl, Four01kItemTmpl, Four01kOptionsTmpl, Four01kSummaryDisplayTmpl, benefitsChooseTmpl, RightSideBarView) {
 
          var serialize401kData = function() {
             var employeePercentage = this.model.get("employeePercentage");
@@ -100,6 +100,7 @@ define(
                     success: function() {
                         that.enrolled = true;
                         that._setCurrentState(that.states.summary);
+                        that.rightSideBar = new RightSideBarView({ model: that.model });
                     },
                     error: function() {
                         console.log("error");

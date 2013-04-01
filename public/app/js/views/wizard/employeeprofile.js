@@ -133,7 +133,7 @@ define(["marionette", "underscore", "views/fadetransitionregion", 'tpl!templates
 
             var that = this;
 
-            this.model.save({ socialSecurityNumber: ssn, dateOfHire: dateOfHire }, {
+            this.model.save({ socialSecurityNumber: ssn, dateOfHire: dateOfHire, lastSaved: new Date() }, {
                 success: function() {
                     LeanUx.router.navigate("employeeProfile/" + that.model.id);
 
@@ -156,7 +156,7 @@ define(["marionette", "underscore", "views/fadetransitionregion", 'tpl!templates
                 gender: "",
                 maritalStatus: this.$("#marital_status").val(),
                 dateOfBirth: this.$("#dateOfBirth").val(),
-                lastSaved: "",
+                lastSaved: new Date()
             };
 
             if (this.$("#gender_male").is(":checked")) {
@@ -172,6 +172,7 @@ define(["marionette", "underscore", "views/fadetransitionregion", 'tpl!templates
                 success: function() {
                     that.completed = true;
                     that._setCurrentState(that.states.summary);
+                    that.rightSideBar = new RightSideBarView({ model: that.model });
                 },
                 error: function() {
                     alert("Something went horribly wrong.");
