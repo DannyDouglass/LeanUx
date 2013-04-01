@@ -44,7 +44,7 @@ div.legendBody > ul {background-color: #f4f6f7; padding:15px 15px 25px 15px;marg
 div.legendSpacer { height: 0px; border-top: solid 1px #dfdfdf; background-color: #fff }
 div.legendFooter { background-color: #e2e7e8; height: 60px; line-height: 60px; padding: 0 20px;}
 
-.wizard-step-body, .wizard-step-body-static { background-color: #fff; width: 100%; border: solid 0px #eee; border-top: none; }
+.wizard-step-body, .wizard-step-body-static { background-color: #fff; width: 100%;min-width: 728px; border: solid 0px #eee; border-top: none; }
 .wizard-step-body > *, .wizard-step-body-static > * {  }
 .wizard-thumbnail, .wizard-thumbnail-static { padding: 3px 5px 10px 15px; }
 .wizard-thumbnail ul li, .wizard-thumbnail-static ul li, .summary-display .strong { font-weight: bold; color: #666; }
