@@ -161,7 +161,7 @@ define(["marionette", "underscore", "views/fadetransitionregion", 'tpl!templates
             if (this.$("#gender_male").is(":checked")) {
                 attr.gender = "Male";
             }
-            if (this.$("#gender_female").is(":checked")) {
+            else if (this.$("#gender_female").is(":checked")) {
                 attr.gender = "Female";
             }
 

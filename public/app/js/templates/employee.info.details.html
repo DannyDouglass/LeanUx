@@ -18,8 +18,19 @@
                 <li>
                     <label>Salutation</label>
                     <select id="salutation" name="salutation" style="width: 80px;">
-                        <option selected="<% salutation === 'Mr.' ? 'selected' : '' %>">Mr.</option>
-                        <option selected="<% salutation === 'Mrs.' ? 'selected' : '' %>">Mrs.</option>
+                        <% if (salutation === 'Mr.') { %>
+                            <option selected="selected">Mr.</option>
+                        <% }
+                         else { %>
+                            <option>Mr.</option>
+                        <% } %>
+
+                        <% if (salutation === 'Mrs.') { %>
+                            <option selected="selected">Mrs.</option>
+                        <% }
+                         else { %>
+                            <option>Mrs.</option>
+                        <% } %>
                     </select>
                 </li>
                 <li style="margin-right: 10px;">
@@ -37,8 +48,19 @@
                 <li>
                     <label>Suffix</label>
                     <select id="suffix" name="suffix" style="width: 80px;">
-                        <option selected="<%= suffix === 'Jr.' ? 'selected' : '' %>">Jr.</option>
-                        <option selected="<%= suffix === 'Esq.' ? 'selected' : '' %>">Esq.</option>
+                        <% if (suffix === 'Jr.') { %>
+                            <option selected="selected">Jr.</option>
+                        <% }
+                         else { %>
+                            <option>Jr.</option>
+                        <% } %>
+
+                        <% if (suffix === 'Esq.') { %>
+                            <option selected="selected">Esq.</option>
+                        <% }
+                         else { %>
+                            <option>Esq.</option>
+                        <% } %>
                     </select>
                 </li>
             </ul>
@@ -48,8 +70,19 @@
                 <li>
                     <label>Martial Status</label>
                     <select id="marital_status" name="maritalStatus">
-                        <option selected="<% maritalStatus === 'Married' ? 'selected' : ''  %>">Married</option>
-                        <option selected="<% maritalStatus === 'Single' ? 'selected' : ''  %>">Single</option>
+                        <% if (maritalStatus === 'Married') { %>
+                            <option selected="selected">Married</option>
+                        <% }
+                         else { %>
+                            <option>Married</option>
+                        <% } %>
+
+                        <% if (maritalStatus === 'Single') { %>
+                            <option selected="selected">Single</option>
+                        <% }
+                         else { %>
+                            <option>Single</option>
+                        <% } %>
                     </select>
                 </li>
                 <li>
@@ -63,15 +96,23 @@
                 <li>
                     Gender *<br />
                     <label class="radio inline">
-                        <input id="gender_male" name="gender" type="radio" value="Male" 
-                            checked="<% gender === 'Male' ? 'checked' : ''  %>" />
+                        <% if (gender === 'Male') { %>
+                            <input id="gender_male" name="gender" type="radio" value="Male" checked="checked" />
+                        <% }
+                         else { %>
+                            <input id="gender_male" name="gender" type="radio" value="Male" />
+                        <% } %>
                         Male
                     </label>
                 </li>
                 <li>
                     <label class="radio inline">
-                        <input id="gender_female" name="gender" type="radio" value="Female" 
-                            checked="<% gender === 'Female' ? 'checked' : ''  %>" />
+                         <% if (gender === 'Female') { %>
+                            <input id="gender_female" name="gender" type="radio" value="Female" checked="checked" />
+                        <% }
+                        else { %>
+                            <input id="gender_female" name="gender" type="radio" value="Female" />
+                        <% } %>
                         Female
                     </label>
                 </li>
