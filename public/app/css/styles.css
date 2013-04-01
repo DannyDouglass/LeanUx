@@ -63,7 +63,7 @@ div.legendFooter { background-color: #e2e7e8; height: 60px; line-height: 60px; p
 .actions { margin: 20px 0 0 0; }
 .wizard-step-body .summary { background-color: #f4f6f7; border: solid 1px #DFDFDF; margin-bottom: 15px; }
 .new-hire-summary { margin-top: 8px; }
-.new-hire-details { border-top: solid 1px #e2e7e8; padding: 15px; }
+.new-hire-details { border-top: solid 1px #e2e7e8; padding: 15px; background-color: #f4f6f7; }
 
 /* Styles added to compliment existing twitter bootstrap styles */
 .table-outlined { border: solid 1px #ddd; }
