@@ -30,9 +30,9 @@ div#needHelpWell { margin-top: 15px; }
 footer { margin: 40px 0 0 0; height: 60px; width: 100%; line-height: 60px; background: -webkit-linear-gradient(top, #00a356, #009c50); -webkit-box-shadow: 0px 3px 10px 1px #ddd; box-shadow: 0px 3px 10px 2px #ddd; }
 div#footerLinksTop { text-align: center; }
 div#footerLinksTop a, #footerLinksBottom a { padding: 0 3%; color: #fff; font-weight: 700; font-size: .7em; }
-ul#footerLogos { list-style-type: none; margin: 20px 0 0 40px; }
-	ul#footerLogos li { display: inline; margin: 10px; }
-div#footerLinksBottom { line-height: 100px; margin-right: 50px; }
+ul#footerLogos { list-style-type: none; margin: 20px 0 0 40px; float:left; }
+ul#footerLogos li { display: inline; margin: 10px; }
+div#footerLinksBottom { line-height: 100px; margin-right: 50px; float: right; }
 div#footerLinksBottom a { color: #00a356; padding: 0 10px; font-weight: 600; }
 span.grayDivider { color: #ccc; font-weight: 300; }
 
@@ -129,6 +129,11 @@ ul#secondaryNavigation > li > ul { margin-top: -2px; border-top: solid 4px #00a3
     p.pull-right { position: absolute; top 2px; right: 10px; }
 }
 
+@media (min-width: 769px) and (max-width: 1087px) {
+    ul#footerLogos {margin-left: 30px;}
+    div#footerLinksBottom {margin-right: 20px;}
+}
+
 @media (min-width: 980px) and (max-width: 1087px) {
 	#mainNavigation .container-fluid {padding-left:13px;padding-right: 13px;}
 	#randomSpacer {width:0px !important;}
@@ -140,7 +145,10 @@ ul#secondaryNavigation > li > ul { margin-top: -2px; border-top: solid 4px #00a3
     #mainNavigation > .navbar-inner {padding-right:0px;}
     #mainNavList > li {display:block;}
     #mainNavList > li.divider-vertical {display:none;}
-    div#footerLinksTop a, #footerLinksBottom a { padding: 0 1.5%;}
+    ul#footerLogos {float:none;margin:20px auto 5px;width:85%;}
+    ul#footerLogos > li {display:block; float:left;width:30%;}
+    div#footerLinksTop a, div#footerLinksBottom a { padding: 0 1.5%;}
+    div#footerLinksBottom {float:none;clear:both;width:100%;text-align: center;line-height: 4em;margin-bottom:35px;}
 }
 
 @media (max-width: 1100px) {
