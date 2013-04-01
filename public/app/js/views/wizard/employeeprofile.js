@@ -155,7 +155,8 @@ define(["marionette", "underscore", "views/fadetransitionregion", 'tpl!templates
                 suffix: this.$("#suffix").val(),
                 gender: "",
                 maritalStatus: this.$("#marital_status").val(),
-                dateOfBirth: this.$("#dateOfBirth").val()
+                dateOfBirth: this.$("#dateOfBirth").val(),
+                lastSaved: "",
             };
 
             if (this.$("#gender_male").is(":checked")) {
