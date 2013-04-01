@@ -41,13 +41,5 @@
     summaryFields: {
       subgroupId: "01-00091-001", employmentStatus: "Active", employmentReason: "", typeOfEmployee: "Full-Time", jobStatus: "Active", jobCode: "Employee", unionMember: "No", outsideEmployee: "No", annualBaseSalary: "$56,000", payrollFrequency: "Bi-Weekly", retirementSecurityEligible: "Yes"
     }                    
-  },
-  { 
-    socialSecurityNumber: "000-00-0000", dateOfHire: "03/01/2013", salutation: "Mr",
-    firstName: "Missing", lastName: "401k", suffix: "",
-    gender: "Male", maritalStatus: "Single", dateOfBirth: "09/13/1985", status: "Not Completed", statusLocation: "1 of 5: New Hire Profile ",
-    summaryFields: {
-      subgroupId: "01-00091-001", employmentStatus: "Active", employmentReason: "", typeOfEmployee: "Full-Time", jobStatus: "Active", jobCode: "Employee", unionMember: "No", outsideEmployee: "No", annualBaseSalary: "$56,000", payrollFrequency: "Bi-Weekly", retirementSecurityEligible: "Yes"
-    }
   }
 ]
